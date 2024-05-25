@@ -35,14 +35,15 @@
             label36 = new Label();
             textBox13 = new TextBox();
             textBox14 = new TextBox();
-            textBox16 = new TextBox();
             button1 = new Button();
+            button2 = new Button();
+            dateTimePicker1 = new DateTimePicker();
             SuspendLayout();
             // 
             // label32
             // 
             label32.AutoSize = true;
-            label32.Location = new Point(406, 212);
+            label32.Location = new Point(47, 157);
             label32.Name = "label32";
             label32.Size = new Size(57, 15);
             label32.TabIndex = 71;
@@ -50,15 +51,15 @@
             // 
             // textBox12
             // 
-            textBox12.Location = new Point(500, 115);
+            textBox12.Location = new Point(133, 52);
             textBox12.Name = "textBox12";
-            textBox12.Size = new Size(148, 23);
+            textBox12.Size = new Size(214, 23);
             textBox12.TabIndex = 70;
             // 
             // label33
             // 
             label33.AutoSize = true;
-            label33.Location = new Point(406, 115);
+            label33.Location = new Point(47, 60);
             label33.Name = "label33";
             label33.Size = new Size(44, 15);
             label33.TabIndex = 69;
@@ -67,7 +68,7 @@
             // label34
             // 
             label34.AutoSize = true;
-            label34.Location = new Point(24, 207);
+            label34.Location = new Point(49, 204);
             label34.Name = "label34";
             label34.Size = new Size(42, 15);
             label34.TabIndex = 68;
@@ -76,7 +77,7 @@
             // label36
             // 
             label36.AutoSize = true;
-            label36.Location = new Point(24, 110);
+            label36.Location = new Point(47, 110);
             label36.Name = "label36";
             label36.Size = new Size(41, 15);
             label36.TabIndex = 67;
@@ -84,40 +85,51 @@
             // 
             // textBox13
             // 
-            textBox13.Location = new Point(93, 107);
+            textBox13.Location = new Point(133, 102);
             textBox13.Name = "textBox13";
             textBox13.PasswordChar = '*';
-            textBox13.Size = new Size(146, 23);
+            textBox13.Size = new Size(214, 23);
             textBox13.TabIndex = 66;
             // 
             // textBox14
             // 
-            textBox14.Location = new Point(93, 204);
+            textBox14.Location = new Point(133, 196);
             textBox14.Name = "textBox14";
-            textBox14.Size = new Size(146, 23);
+            textBox14.Size = new Size(214, 23);
             textBox14.TabIndex = 65;
-            // 
-            // textBox16
-            // 
-            textBox16.Location = new Point(500, 209);
-            textBox16.Name = "textBox16";
-            textBox16.Size = new Size(148, 23);
-            textBox16.TabIndex = 64;
             // 
             // button1
             // 
-            button1.Location = new Point(292, 292);
+            button1.Location = new Point(145, 255);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 72;
             button1.Text = "Save";
             button1.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            button2.Location = new Point(243, 255);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 73;
+            button2.Text = "Cancel";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(133, 149);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(214, 23);
+            dateTimePicker1.TabIndex = 74;
+            // 
             // Editar_AcessLogs
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(767, 450);
+            ClientSize = new Size(444, 310);
+            Controls.Add(dateTimePicker1);
+            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label32);
             Controls.Add(textBox12);
@@ -126,7 +138,6 @@
             Controls.Add(label36);
             Controls.Add(textBox13);
             Controls.Add(textBox14);
-            Controls.Add(textBox16);
             Name = "Editar_AcessLogs";
             Text = "Editar_AcessLogs";
             ResumeLayout(false);
@@ -142,7 +153,8 @@
         private Label label36;
         private TextBox textBox13;
         private TextBox textBox14;
-        private TextBox textBox16;
         private Button button1;
+        private Button button2;
+        private DateTimePicker dateTimePicker1;
     }
 }

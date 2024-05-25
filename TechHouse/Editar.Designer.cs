@@ -45,12 +45,13 @@
             Email = new TextBox();
             LastName = new TextBox();
             FirstName = new TextBox();
+            button1 = new Button();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(123, 298);
+            label1.Location = new Point(69, 179);
             label1.Name = "label1";
             label1.Size = new Size(0, 15);
             label1.TabIndex = 49;
@@ -58,14 +59,14 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(43, 55);
+            label6.Location = new Point(82, -16);
             label6.Name = "label6";
             label6.Size = new Size(0, 15);
             label6.TabIndex = 47;
             // 
             // button26
             // 
-            button26.Location = new Point(357, 247);
+            button26.Location = new Point(140, 264);
             button26.Name = "button26";
             button26.Size = new Size(75, 23);
             button26.TabIndex = 64;
@@ -76,7 +77,7 @@
             // label49
             // 
             label49.AutoSize = true;
-            label49.Location = new Point(15, 79);
+            label49.Location = new Point(64, 28);
             label49.Name = "label49";
             label49.Size = new Size(44, 15);
             label49.TabIndex = 78;
@@ -84,15 +85,15 @@
             // 
             // textBox43
             // 
-            textBox43.Location = new Point(84, 72);
+            textBox43.Location = new Point(114, 20);
             textBox43.Name = "textBox43";
-            textBox43.Size = new Size(164, 23);
+            textBox43.Size = new Size(238, 23);
             textBox43.TabIndex = 77;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(544, 116);
+            label2.Location = new Point(59, 153);
             label2.Name = "label2";
             label2.Size = new Size(49, 15);
             label2.TabIndex = 76;
@@ -101,7 +102,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(271, 111);
+            label5.Location = new Point(51, 214);
             label5.Name = "label5";
             label5.Size = new Size(57, 15);
             label5.TabIndex = 75;
@@ -110,7 +111,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(544, 80);
+            label4.Location = new Point(59, 119);
             label4.Name = "label4";
             label4.Size = new Size(49, 15);
             label4.TabIndex = 74;
@@ -119,7 +120,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(15, 142);
+            label3.Location = new Point(45, 90);
             label3.Name = "label3";
             label3.Size = new Size(63, 15);
             label3.TabIndex = 73;
@@ -128,7 +129,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(292, 79);
+            label7.Location = new Point(72, 182);
             label7.Name = "label7";
             label7.Size = new Size(36, 15);
             label7.TabIndex = 72;
@@ -137,7 +138,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(14, 108);
+            label8.Location = new Point(44, 57);
             label8.Name = "label8";
             label8.Size = new Size(64, 15);
             label8.TabIndex = 71;
@@ -145,52 +146,62 @@
             // 
             // Password
             // 
-            Password.Location = new Point(334, 108);
+            Password.Location = new Point(114, 211);
             Password.Name = "Password";
             Password.PasswordChar = '*';
-            Password.Size = new Size(164, 23);
+            Password.Size = new Size(238, 23);
             Password.TabIndex = 70;
             // 
             // Contact
             // 
-            Contact.Location = new Point(599, 77);
+            Contact.Location = new Point(114, 116);
             Contact.Name = "Contact";
-            Contact.Size = new Size(164, 23);
+            Contact.Size = new Size(238, 23);
             Contact.TabIndex = 69;
             // 
             // Address
             // 
-            Address.Location = new Point(599, 111);
+            Address.Location = new Point(114, 150);
             Address.Name = "Address";
-            Address.Size = new Size(164, 23);
+            Address.Size = new Size(238, 23);
             Address.TabIndex = 68;
             // 
             // Email
             // 
-            Email.Location = new Point(334, 76);
+            Email.Location = new Point(114, 179);
             Email.Name = "Email";
-            Email.Size = new Size(164, 23);
+            Email.Size = new Size(238, 23);
             Email.TabIndex = 67;
             // 
             // LastName
             // 
-            LastName.Location = new Point(84, 139);
+            LastName.Location = new Point(114, 87);
             LastName.Name = "LastName";
-            LastName.Size = new Size(164, 23);
+            LastName.Size = new Size(238, 23);
             LastName.TabIndex = 66;
             // 
             // FirstName
             // 
-            FirstName.Location = new Point(84, 106);
+            FirstName.Location = new Point(114, 54);
             FirstName.Name = "FirstName";
-            FirstName.Size = new Size(164, 23);
+            FirstName.Size = new Size(238, 23);
             FirstName.TabIndex = 65;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(244, 264);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 79;
+            button1.Text = "Cancel";
+            button1.UseVisualStyleBackColor = true;
             // 
             // Editar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(444, 310);
+            Controls.Add(button1);
             Controls.Add(label49);
             Controls.Add(textBox43);
             Controls.Add(label2);
@@ -233,5 +244,6 @@
         private TextBox Email;
         private TextBox LastName;
         private TextBox FirstName;
+        private Button button1;
     }
 }

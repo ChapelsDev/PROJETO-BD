@@ -21,5 +21,10 @@ namespace TechHouse
         {
 
         }
+
+        private void Editar_whilist_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

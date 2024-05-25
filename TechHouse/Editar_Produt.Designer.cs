@@ -41,12 +41,13 @@
             Product_Brand = new TextBox();
             ProductName = new TextBox();
             button1 = new Button();
+            button2 = new Button();
             SuspendLayout();
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(2, 64);
+            label7.Location = new Point(66, 31);
             label7.Name = "label7";
             label7.Size = new Size(63, 15);
             label7.TabIndex = 63;
@@ -54,15 +55,15 @@
             // 
             // ProductID
             // 
-            ProductID.Location = new Point(73, 61);
+            ProductID.Location = new Point(137, 28);
             ProductID.Name = "ProductID";
-            ProductID.Size = new Size(164, 23);
+            ProductID.Size = new Size(232, 23);
             ProductID.TabIndex = 62;
             // 
             // CategoryId
             // 
             CategoryId.AutoSize = true;
-            CategoryId.Location = new Point(559, 90);
+            CategoryId.Location = new Point(63, 180);
             CategoryId.Name = "CategoryId";
             CategoryId.Size = new Size(66, 15);
             CategoryId.TabIndex = 61;
@@ -71,7 +72,7 @@
             // ProductPrice
             // 
             ProductPrice.AutoSize = true;
-            ProductPrice.Location = new Point(286, 95);
+            ProductPrice.Location = new Point(96, 122);
             ProductPrice.Name = "ProductPrice";
             ProductPrice.Size = new Size(33, 15);
             ProductPrice.TabIndex = 60;
@@ -80,7 +81,7 @@
             // StockQty
             // 
             StockQty.AutoSize = true;
-            StockQty.Location = new Point(540, 64);
+            StockQty.Location = new Point(44, 154);
             StockQty.Name = "StockQty";
             StockQty.Size = new Size(85, 15);
             StockQty.TabIndex = 59;
@@ -89,7 +90,7 @@
             // ProductBrand
             // 
             ProductBrand.AutoSize = true;
-            ProductBrand.Location = new Point(281, 64);
+            ProductBrand.Location = new Point(91, 91);
             ProductBrand.Name = "ProductBrand";
             ProductBrand.Size = new Size(38, 15);
             ProductBrand.TabIndex = 58;
@@ -98,7 +99,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(28, 95);
+            label13.Location = new Point(92, 62);
             label13.Name = "label13";
             label13.Size = new Size(39, 15);
             label13.TabIndex = 57;
@@ -106,42 +107,42 @@
             // 
             // Product_Price
             // 
-            Product_Price.Location = new Point(325, 92);
+            Product_Price.Location = new Point(135, 119);
             Product_Price.Name = "Product_Price";
-            Product_Price.Size = new Size(164, 23);
+            Product_Price.Size = new Size(234, 23);
             Product_Price.TabIndex = 56;
             // 
             // product_qty
             // 
-            product_qty.Location = new Point(631, 58);
+            product_qty.Location = new Point(135, 148);
             product_qty.Name = "product_qty";
-            product_qty.Size = new Size(164, 23);
+            product_qty.Size = new Size(234, 23);
             product_qty.TabIndex = 55;
             // 
             // Product_CategoryID
             // 
-            Product_CategoryID.Location = new Point(631, 92);
+            Product_CategoryID.Location = new Point(135, 182);
             Product_CategoryID.Name = "Product_CategoryID";
-            Product_CategoryID.Size = new Size(164, 23);
+            Product_CategoryID.Size = new Size(234, 23);
             Product_CategoryID.TabIndex = 54;
             // 
             // Product_Brand
             // 
-            Product_Brand.Location = new Point(325, 61);
+            Product_Brand.Location = new Point(135, 88);
             Product_Brand.Name = "Product_Brand";
-            Product_Brand.Size = new Size(164, 23);
+            Product_Brand.Size = new Size(234, 23);
             Product_Brand.TabIndex = 53;
             // 
             // ProductName
             // 
-            ProductName.Location = new Point(73, 92);
+            ProductName.Location = new Point(137, 59);
             ProductName.Name = "ProductName";
-            ProductName.Size = new Size(164, 23);
+            ProductName.Size = new Size(232, 23);
             ProductName.TabIndex = 52;
             // 
             // button1
             // 
-            button1.Location = new Point(334, 212);
+            button1.Location = new Point(156, 247);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 64;
@@ -149,11 +150,21 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // button2
+            // 
+            button2.Location = new Point(262, 247);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 65;
+            button2.Text = "Cancel";
+            button2.UseVisualStyleBackColor = true;
+            // 
             // Editar_Produt
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(444, 310);
+            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label7);
             Controls.Add(ProductID);
@@ -188,5 +199,6 @@
         private TextBox Product_Brand;
         private TextBox ProductName;
         private Button button1;
+        private Button button2;
     }
 }

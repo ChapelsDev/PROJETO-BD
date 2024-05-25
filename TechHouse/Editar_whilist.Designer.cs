@@ -38,12 +38,13 @@
             textBox35 = new TextBox();
             textBox1 = new TextBox();
             button1 = new Button();
+            button2 = new Button();
             SuspendLayout();
             // 
             // label35
             // 
             label35.AutoSize = true;
-            label35.Location = new Point(501, 121);
+            label35.Location = new Point(86, 141);
             label35.Name = "label35";
             label35.Size = new Size(44, 15);
             label35.TabIndex = 59;
@@ -51,15 +52,15 @@
             // 
             // textBox29
             // 
-            textBox29.Location = new Point(107, 121);
+            textBox29.Location = new Point(136, 39);
             textBox29.Name = "textBox29";
-            textBox29.Size = new Size(72, 23);
+            textBox29.Size = new Size(200, 23);
             textBox29.TabIndex = 58;
             // 
             // label37
             // 
             label37.AutoSize = true;
-            label37.Location = new Point(501, 194);
+            label37.Location = new Point(70, 189);
             label37.Name = "label37";
             label37.Size = new Size(60, 15);
             label37.TabIndex = 57;
@@ -68,7 +69,7 @@
             // label40
             // 
             label40.AutoSize = true;
-            label40.Location = new Point(23, 189);
+            label40.Location = new Point(61, 91);
             label40.Name = "label40";
             label40.Size = new Size(69, 15);
             label40.TabIndex = 56;
@@ -77,7 +78,7 @@
             // label41
             // 
             label41.AutoSize = true;
-            label41.Location = new Point(23, 121);
+            label41.Location = new Point(64, 42);
             label41.Name = "label41";
             label41.Size = new Size(66, 15);
             label41.TabIndex = 55;
@@ -94,39 +95,49 @@
             // 
             // textBox33
             // 
-            textBox33.Location = new Point(107, 186);
+            textBox33.Location = new Point(136, 88);
             textBox33.Name = "textBox33";
-            textBox33.Size = new Size(72, 23);
+            textBox33.Size = new Size(200, 23);
             textBox33.TabIndex = 53;
             // 
             // textBox35
             // 
-            textBox35.Location = new Point(588, 118);
+            textBox35.Location = new Point(136, 138);
             textBox35.Name = "textBox35";
-            textBox35.Size = new Size(72, 23);
+            textBox35.Size = new Size(200, 23);
             textBox35.TabIndex = 52;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(588, 191);
+            textBox1.Location = new Point(136, 186);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(72, 23);
+            textBox1.Size = new Size(200, 23);
             textBox1.TabIndex = 60;
             // 
             // button1
             // 
-            button1.Location = new Point(296, 233);
+            button1.Location = new Point(136, 255);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 61;
             button1.Text = "Save";
             button1.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            button2.Location = new Point(261, 255);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 62;
+            button2.Text = "Cancel";
+            button2.UseVisualStyleBackColor = true;
+            // 
             // Editar_whilist
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(444, 310);
+            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(textBox1);
             Controls.Add(label35);
@@ -139,6 +150,7 @@
             Controls.Add(textBox35);
             Name = "Editar_whilist";
             Text = "Editar_whilist";
+            Load += Editar_whilist_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -155,5 +167,6 @@
         private TextBox textBox35;
         private TextBox textBox1;
         private Button button1;
+        private Button button2;
     }
 }

@@ -36,17 +36,18 @@
             label17 = new Label();
             label18 = new Label();
             ShippingAddress = new TextBox();
-            PaymentMethod = new TextBox();
             Orders_UserID = new TextBox();
             Status = new TextBox();
-            OrderDate = new TextBox();
             button1 = new Button();
+            button2 = new Button();
+            comboBox1 = new ComboBox();
+            dateTimePicker1 = new DateTimePicker();
             SuspendLayout();
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(5, 49);
+            label11.Location = new Point(91, 42);
             label11.Name = "label11";
             label11.Size = new Size(51, 15);
             label11.TabIndex = 79;
@@ -54,15 +55,15 @@
             // 
             // OrderID
             // 
-            OrderID.Location = new Point(66, 49);
+            OrderID.Location = new Point(152, 39);
             OrderID.Name = "OrderID";
-            OrderID.Size = new Size(115, 23);
+            OrderID.Size = new Size(211, 23);
             OrderID.TabIndex = 78;
             // 
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(593, 109);
+            label14.Location = new Point(103, 213);
             label14.Name = "label14";
             label14.Size = new Size(44, 15);
             label14.TabIndex = 77;
@@ -71,7 +72,7 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(251, 106);
+            label15.Location = new Point(48, 174);
             label15.Name = "label15";
             label15.Size = new Size(99, 15);
             label15.TabIndex = 76;
@@ -80,7 +81,7 @@
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(550, 52);
+            label16.Location = new Point(48, 138);
             label16.Name = "label16";
             label16.Size = new Size(99, 15);
             label16.TabIndex = 75;
@@ -89,7 +90,7 @@
             // label17
             // 
             label17.AutoSize = true;
-            label17.Location = new Point(311, 54);
+            label17.Location = new Point(103, 103);
             label17.Name = "label17";
             label17.Size = new Size(39, 15);
             label17.TabIndex = 74;
@@ -98,7 +99,7 @@
             // label18
             // 
             label18.AutoSize = true;
-            label18.Location = new Point(-1, 101);
+            label18.Location = new Point(81, 71);
             label18.Name = "label18";
             label18.Size = new Size(61, 15);
             label18.TabIndex = 73;
@@ -106,53 +107,66 @@
             // 
             // ShippingAddress
             // 
-            ShippingAddress.Location = new Point(356, 101);
+            ShippingAddress.Location = new Point(152, 171);
             ShippingAddress.Name = "ShippingAddress";
-            ShippingAddress.Size = new Size(115, 23);
+            ShippingAddress.Size = new Size(211, 23);
             ShippingAddress.TabIndex = 72;
-            // 
-            // PaymentMethod
-            // 
-            PaymentMethod.Location = new Point(655, 49);
-            PaymentMethod.Name = "PaymentMethod";
-            PaymentMethod.Size = new Size(115, 23);
-            PaymentMethod.TabIndex = 71;
             // 
             // Orders_UserID
             // 
-            Orders_UserID.Location = new Point(655, 106);
+            Orders_UserID.Location = new Point(152, 210);
             Orders_UserID.Name = "Orders_UserID";
-            Orders_UserID.Size = new Size(115, 23);
+            Orders_UserID.Size = new Size(211, 23);
             Orders_UserID.TabIndex = 70;
             // 
             // Status
             // 
-            Status.Location = new Point(356, 51);
+            Status.Location = new Point(152, 100);
             Status.Name = "Status";
-            Status.Size = new Size(115, 23);
+            Status.Size = new Size(211, 23);
             Status.TabIndex = 69;
-            // 
-            // OrderDate
-            // 
-            OrderDate.Location = new Point(66, 98);
-            OrderDate.Name = "OrderDate";
-            OrderDate.Size = new Size(115, 23);
-            OrderDate.TabIndex = 68;
             // 
             // button1
             // 
-            button1.Location = new Point(369, 205);
+            button1.Location = new Point(169, 264);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 80;
             button1.Text = "Save";
             button1.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            button2.Location = new Point(268, 264);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 81;
+            button2.Text = "Cancel";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(152, 135);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(211, 23);
+            comboBox1.TabIndex = 82;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(154, 70);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(209, 23);
+            dateTimePicker1.TabIndex = 83;
+            // 
             // Editar_Order
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(444, 310);
+            Controls.Add(dateTimePicker1);
+            Controls.Add(comboBox1);
+            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label11);
             Controls.Add(OrderID);
@@ -162,10 +176,8 @@
             Controls.Add(label17);
             Controls.Add(label18);
             Controls.Add(ShippingAddress);
-            Controls.Add(PaymentMethod);
             Controls.Add(Orders_UserID);
             Controls.Add(Status);
-            Controls.Add(OrderDate);
             Name = "Editar_Order";
             Text = "Editar_Order";
             ResumeLayout(false);
@@ -182,10 +194,11 @@
         private Label label17;
         private Label label18;
         private TextBox ShippingAddress;
-        private TextBox PaymentMethod;
         private TextBox Orders_UserID;
         private TextBox Status;
-        private TextBox OrderDate;
         private Button button1;
+        private Button button2;
+        private ComboBox comboBox1;
+        private DateTimePicker dateTimePicker1;
     }
 }
