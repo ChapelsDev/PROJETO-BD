@@ -47,3 +47,11 @@ D:\Universidade\Ano 3\PROJETO-BD\TechHouse\obj\Debug\net8.0-windows\refint\TechH
 D:\Universidade\Ano 3\PROJETO-BD\TechHouse\obj\Debug\net8.0-windows\TechHouse.pdb
 D:\Universidade\Ano 3\PROJETO-BD\TechHouse\obj\Debug\net8.0-windows\TechHouse.genruntimeconfig.cache
 D:\Universidade\Ano 3\PROJETO-BD\TechHouse\obj\Debug\net8.0-windows\ref\TechHouse.dll
+D:\Universidade\Ano 3\PROJETO-BD\TechHouse\bin\Debug\net8.0-windows\System.Data.SqlClient.dll
+D:\Universidade\Ano 3\PROJETO-BD\TechHouse\bin\Debug\net8.0-windows\runtimes\win-arm64\native\sni.dll
+D:\Universidade\Ano 3\PROJETO-BD\TechHouse\bin\Debug\net8.0-windows\runtimes\win-x64\native\sni.dll
+D:\Universidade\Ano 3\PROJETO-BD\TechHouse\bin\Debug\net8.0-windows\runtimes\win-x86\native\sni.dll
+D:\Universidade\Ano 3\PROJETO-BD\TechHouse\bin\Debug\net8.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Universidade\Ano 3\PROJETO-BD\TechHouse\bin\Debug\net8.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Universidade\Ano 3\PROJETO-BD\TechHouse\obj\Debug\net8.0-windows\TechHouse.csproj.AssemblyReference.cache
+D:\Universidade\Ano 3\PROJETO-BD\TechHouse\obj\Debug\net8.0-windows\TechHouse.csproj.Up2Date
