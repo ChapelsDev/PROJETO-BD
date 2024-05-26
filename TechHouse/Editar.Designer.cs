@@ -32,7 +32,7 @@
             label6 = new Label();
             button26 = new Button();
             label49 = new Label();
-            textBox43 = new TextBox();
+            UserID = new TextBox();
             label2 = new Label();
             label5 = new Label();
             label4 = new Label();
@@ -83,12 +83,12 @@
             label49.TabIndex = 78;
             label49.Text = "User ID";
             // 
-            // textBox43
+            // UserID
             // 
-            textBox43.Location = new Point(114, 20);
-            textBox43.Name = "textBox43";
-            textBox43.Size = new Size(238, 23);
-            textBox43.TabIndex = 77;
+            UserID.Location = new Point(114, 20);
+            UserID.Name = "UserID";
+            UserID.Size = new Size(238, 23);
+            UserID.TabIndex = 77;
             // 
             // label2
             // 
@@ -195,6 +195,7 @@
             button1.TabIndex = 79;
             button1.Text = "Cancel";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_2;
             // 
             // Editar
             // 
@@ -203,7 +204,7 @@
             ClientSize = new Size(444, 310);
             Controls.Add(button1);
             Controls.Add(label49);
-            Controls.Add(textBox43);
+            Controls.Add(UserID);
             Controls.Add(label2);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -232,18 +233,18 @@
         private Label label3;
         private Button button26;
         private Label label49;
-        private TextBox textBox43;
+        public TextBox UserID;
         private Label label2;
         private Label label5;
         private Label label4;
         private Label label7;
         private Label label8;
-        private TextBox Password;
-        private TextBox Contact;
-        private TextBox Address;
-        private TextBox Email;
-        private TextBox LastName;
-        private TextBox FirstName;
+        public TextBox Password;
+        public TextBox Contact;
+        public TextBox Address;
+        public TextBox Email;
+        public TextBox LastName;
+        public TextBox FirstName;
         private Button button1;
     }
 }

@@ -40,8 +40,8 @@
             Product_CategoryID = new TextBox();
             Product_Brand = new TextBox();
             ProductName = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
+            Save = new Button();
+            Cancel = new Button();
             SuspendLayout();
             // 
             // label7
@@ -57,7 +57,7 @@
             // 
             ProductID.Location = new Point(137, 28);
             ProductID.Name = "ProductID";
-            ProductID.Size = new Size(232, 23);
+            ProductID.Size = new Size(234, 23);
             ProductID.TabIndex = 62;
             // 
             // CategoryId
@@ -107,28 +107,28 @@
             // 
             // Product_Price
             // 
-            Product_Price.Location = new Point(135, 119);
+            Product_Price.Location = new Point(137, 119);
             Product_Price.Name = "Product_Price";
             Product_Price.Size = new Size(234, 23);
             Product_Price.TabIndex = 56;
             // 
             // product_qty
             // 
-            product_qty.Location = new Point(135, 148);
+            product_qty.Location = new Point(137, 151);
             product_qty.Name = "product_qty";
             product_qty.Size = new Size(234, 23);
             product_qty.TabIndex = 55;
             // 
             // Product_CategoryID
             // 
-            Product_CategoryID.Location = new Point(135, 182);
+            Product_CategoryID.Location = new Point(137, 180);
             Product_CategoryID.Name = "Product_CategoryID";
             Product_CategoryID.Size = new Size(234, 23);
             Product_CategoryID.TabIndex = 54;
             // 
             // Product_Brand
             // 
-            Product_Brand.Location = new Point(135, 88);
+            Product_Brand.Location = new Point(137, 88);
             Product_Brand.Name = "Product_Brand";
             Product_Brand.Size = new Size(234, 23);
             Product_Brand.TabIndex = 53;
@@ -137,35 +137,35 @@
             // 
             ProductName.Location = new Point(137, 59);
             ProductName.Name = "ProductName";
-            ProductName.Size = new Size(232, 23);
+            ProductName.Size = new Size(234, 23);
             ProductName.TabIndex = 52;
             // 
-            // button1
+            // Save
             // 
-            button1.Location = new Point(156, 247);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 64;
-            button1.Text = "Save";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            Save.Location = new Point(137, 247);
+            Save.Name = "Save";
+            Save.Size = new Size(75, 23);
+            Save.TabIndex = 64;
+            Save.Text = "Save";
+            Save.UseVisualStyleBackColor = true;
+            Save.Click += button1_Click;
             // 
-            // button2
+            // Cancel
             // 
-            button2.Location = new Point(262, 247);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 65;
-            button2.Text = "Cancel";
-            button2.UseVisualStyleBackColor = true;
+            Cancel.Location = new Point(296, 247);
+            Cancel.Name = "Cancel";
+            Cancel.Size = new Size(75, 23);
+            Cancel.TabIndex = 65;
+            Cancel.Text = "Cancel";
+            Cancel.UseVisualStyleBackColor = true;
             // 
             // Editar_Produt
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(444, 310);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(Cancel);
+            Controls.Add(Save);
             Controls.Add(label7);
             Controls.Add(ProductID);
             Controls.Add(CategoryId);
@@ -187,18 +187,18 @@
         #endregion
 
         private Label label7;
-        private TextBox ProductID;
+        public TextBox ProductID;
         private Label CategoryId;
         private Label ProductPrice;
         private Label StockQty;
         private Label ProductBrand;
         private Label label13;
-        private TextBox Product_Price;
-        private TextBox product_qty;
-        private TextBox Product_CategoryID;
-        private TextBox Product_Brand;
-        private TextBox ProductName;
-        private Button button1;
-        private Button button2;
+        public TextBox Product_Price;
+        public TextBox product_qty;
+        public TextBox Product_CategoryID;
+        public TextBox Product_Brand;
+        public TextBox ProductName;
+        private Button Save;
+        private Button Cancel;
     }
 }

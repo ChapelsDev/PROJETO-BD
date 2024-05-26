@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             label21 = new Label();
-            textBox15 = new TextBox();
+            EID = new TextBox();
             label22 = new Label();
             EmployeeTipeID = new Label();
             label24 = new Label();
@@ -55,12 +55,12 @@
             label21.TabIndex = 65;
             label21.Text = "Employee ID";
             // 
-            // textBox15
+            // EID
             // 
-            textBox15.Location = new Point(135, 24);
-            textBox15.Name = "textBox15";
-            textBox15.Size = new Size(224, 23);
-            textBox15.TabIndex = 64;
+            EID.Location = new Point(135, 24);
+            EID.Name = "EID";
+            EID.Size = new Size(224, 23);
+            EID.TabIndex = 64;
             // 
             // label22
             // 
@@ -159,6 +159,7 @@
             button1.TabIndex = 66;
             button1.Text = "Save";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // comboBox1
             // 
@@ -186,7 +187,7 @@
             Controls.Add(comboBox1);
             Controls.Add(button1);
             Controls.Add(label21);
-            Controls.Add(textBox15);
+            Controls.Add(EID);
             Controls.Add(label22);
             Controls.Add(EmployeeTipeID);
             Controls.Add(label24);
@@ -207,20 +208,20 @@
         #endregion
 
         private Label label21;
-        private TextBox textBox15;
+        public TextBox EID;
         private Label label22;
         private Label EmployeeTipeID;
         private Label label24;
         private Label label25;
         private Label label26;
         private Label label27;
-        private TextBox Contact_Employee;
-        private TextBox Address_Employee;
-        private TextBox Email_Employee;
-        private TextBox LN_Employee;
-        private TextBox FN_Employee;
+        public TextBox Contact_Employee;
+        public TextBox Address_Employee;
+        public TextBox Email_Employee;
+        public TextBox LN_Employee;
+        public TextBox FN_Employee;
         private Button button1;
-        private ComboBox comboBox1;
+        public ComboBox comboBox1;
         private Button button2;
     }
 }

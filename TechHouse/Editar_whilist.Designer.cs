@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             label35 = new Label();
-            textBox29 = new TextBox();
+            WID = new TextBox();
             label37 = new Label();
             label40 = new Label();
             label41 = new Label();
             textBox30 = new TextBox();
-            textBox33 = new TextBox();
-            textBox35 = new TextBox();
-            textBox1 = new TextBox();
+            UID = new TextBox();
+            PID = new TextBox();
             button1 = new Button();
             button2 = new Button();
+            dateTimePicker1 = new DateTimePicker();
             SuspendLayout();
             // 
             // label35
@@ -50,12 +50,12 @@
             label35.TabIndex = 59;
             label35.Text = "User ID";
             // 
-            // textBox29
+            // WID
             // 
-            textBox29.Location = new Point(136, 39);
-            textBox29.Name = "textBox29";
-            textBox29.Size = new Size(200, 23);
-            textBox29.TabIndex = 58;
+            WID.Location = new Point(136, 39);
+            WID.Name = "WID";
+            WID.Size = new Size(200, 23);
+            WID.TabIndex = 58;
             // 
             // label37
             // 
@@ -93,26 +93,19 @@
             textBox30.Size = new Size(72, 23);
             textBox30.TabIndex = 54;
             // 
-            // textBox33
+            // UID
             // 
-            textBox33.Location = new Point(136, 88);
-            textBox33.Name = "textBox33";
-            textBox33.Size = new Size(200, 23);
-            textBox33.TabIndex = 53;
+            UID.Location = new Point(136, 138);
+            UID.Name = "UID";
+            UID.Size = new Size(200, 23);
+            UID.TabIndex = 52;
             // 
-            // textBox35
+            // PID
             // 
-            textBox35.Location = new Point(136, 138);
-            textBox35.Name = "textBox35";
-            textBox35.Size = new Size(200, 23);
-            textBox35.TabIndex = 52;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(136, 186);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(200, 23);
-            textBox1.TabIndex = 60;
+            PID.Location = new Point(136, 186);
+            PID.Name = "PID";
+            PID.Size = new Size(200, 23);
+            PID.TabIndex = 60;
             // 
             // button1
             // 
@@ -132,22 +125,29 @@
             button2.Text = "Cancel";
             button2.UseVisualStyleBackColor = true;
             // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(136, 85);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(200, 23);
+            dateTimePicker1.TabIndex = 63;
+            // 
             // Editar_whilist
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(444, 310);
+            Controls.Add(dateTimePicker1);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(textBox1);
+            Controls.Add(PID);
             Controls.Add(label35);
-            Controls.Add(textBox29);
+            Controls.Add(WID);
             Controls.Add(label37);
             Controls.Add(label40);
             Controls.Add(label41);
             Controls.Add(textBox30);
-            Controls.Add(textBox33);
-            Controls.Add(textBox35);
+            Controls.Add(UID);
             Name = "Editar_whilist";
             Text = "Editar_whilist";
             Load += Editar_whilist_Load;
@@ -158,15 +158,15 @@
         #endregion
 
         private Label label35;
-        private TextBox textBox29;
+        public TextBox WID;
         private Label label37;
         private Label label40;
         private Label label41;
         private TextBox textBox30;
-        private TextBox textBox33;
-        private TextBox textBox35;
-        private TextBox textBox1;
+        public TextBox UID;
+        public TextBox PID;
         private Button button1;
         private Button button2;
+        public DateTimePicker dateTimePicker1;
     }
 }

@@ -38,8 +38,8 @@
             ShippingAddress = new TextBox();
             Orders_UserID = new TextBox();
             Status = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
+            Save = new Button();
+            Cancel = new Button();
             comboBox1 = new ComboBox();
             dateTimePicker1 = new DateTimePicker();
             SuspendLayout();
@@ -126,23 +126,24 @@
             Status.Size = new Size(211, 23);
             Status.TabIndex = 69;
             // 
-            // button1
+            // Save
             // 
-            button1.Location = new Point(169, 264);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 80;
-            button1.Text = "Save";
-            button1.UseVisualStyleBackColor = true;
+            Save.Location = new Point(169, 264);
+            Save.Name = "Save";
+            Save.Size = new Size(75, 23);
+            Save.TabIndex = 80;
+            Save.Text = "Save";
+            Save.UseVisualStyleBackColor = true;
+            Save.Click += Save_Click;
             // 
-            // button2
+            // Cancel
             // 
-            button2.Location = new Point(268, 264);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 81;
-            button2.Text = "Cancel";
-            button2.UseVisualStyleBackColor = true;
+            Cancel.Location = new Point(268, 264);
+            Cancel.Name = "Cancel";
+            Cancel.Size = new Size(75, 23);
+            Cancel.TabIndex = 81;
+            Cancel.Text = "Cancel";
+            Cancel.UseVisualStyleBackColor = true;
             // 
             // comboBox1
             // 
@@ -166,8 +167,8 @@
             ClientSize = new Size(444, 310);
             Controls.Add(dateTimePicker1);
             Controls.Add(comboBox1);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(Cancel);
+            Controls.Add(Save);
             Controls.Add(label11);
             Controls.Add(OrderID);
             Controls.Add(label14);
@@ -187,18 +188,18 @@
         #endregion
 
         private Label label11;
-        private TextBox OrderID;
+        public TextBox OrderID;
         private Label label14;
         private Label label15;
         private Label label16;
         private Label label17;
         private Label label18;
-        private TextBox ShippingAddress;
-        private TextBox Orders_UserID;
-        private TextBox Status;
-        private Button button1;
-        private Button button2;
-        private ComboBox comboBox1;
-        private DateTimePicker dateTimePicker1;
+        public TextBox ShippingAddress;
+        public TextBox Orders_UserID;
+        public TextBox Status;
+        private Button Save;
+        private Button Cancel;
+        public ComboBox comboBox1;
+        public DateTimePicker dateTimePicker1;
     }
 }

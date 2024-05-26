@@ -1,6 +1,9 @@
+using Microsoft.VisualBasic.ApplicationServices;
 using System.Data;
 using System.Data.SqlClient;
+using System.Text;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
 namespace TechHouse
@@ -15,52 +18,225 @@ namespace TechHouse
 
         }
 
-        private void button33_Click_1(object sender, EventArgs e)
+        private void button33_Click_1(object sender, EventArgs e) //logica para quando clica no botão de editar
         {
-            Editar Edi1 = new Editar();
-            Edi1.ShowDialog();
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                // Assume that the ID of the user is in the first column of the DataGridView
+                int selectedUserId = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
+                Editar Edi1 = new Editar();
+
+                // Pass the selected user ID to the Edit form
+                Edi1.UserID.Text = selectedUserId.ToString();
+
+                // Fill the TextBoxes in the Edit form with the values of the selected row
+                for (int i = 0; i < dataGridView1.Columns.Count; i++)
+                {
+                    Edi1.TextBoxes[i].Text = dataGridView1.SelectedRows[0].Cells[i].Value.ToString();
+                }
+
+                Edi1.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please select a row before clicking Edit Users.");
+            }
+
         }
 
-        private void button34_Click_1(object sender, EventArgs e)
+        private void button34_Click_1(object sender, EventArgs e) //logica para quando clica no botão de editar
         {
-            Editar_Produt Edi2 = new Editar_Produt();
-            Edi2.ShowDialog();
+            if (dataGridView2.SelectedRows.Count > 0)
+            {
+                // Assume that the ID of the user is in the first column of the DataGridView
+                int selectedPID = (int)dataGridView2.SelectedRows[0].Cells[0].Value;
+                Editar_Produt Edi2 = new Editar_Produt();
+
+                // Pass the selected user ID to the Edit form
+                Edi2.ProductID.Text = selectedPID.ToString();
+
+                // Fill the TextBoxes in the Edit form with the values of the selected row
+                for (int i = 0; i < dataGridView2.Columns.Count; i++)
+                {
+                    Edi2.TextBoxes[i].Text = dataGridView2.SelectedRows[0].Cells[i].Value.ToString();
+                }
+
+                Edi2.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please select a row before clicking Edit Users.");
+            }
+
         }
 
-        private void button35_Click_1(object sender, EventArgs e)
+        private void button35_Click_1(object sender, EventArgs e) //logica para quando clica no botão de editar
         {
-            Editar_Order Edi3 = new Editar_Order();
-            Edi3.ShowDialog();
+            if (dataGridView3.SelectedRows.Count > 0)
+            {
+                // Assume that the ID of the user is in the first column of the DataGridView
+                int selectedOrderId = (int)dataGridView3.SelectedRows[0].Cells[0].Value;
+                Editar_Order Edi3 = new Editar_Order();
+
+                // Pass the selected user ID to the Edit form
+                Edi3.OrderID.Text = selectedOrderId.ToString();
+                int textBoxIndex = 0;
+                // Fill the TextBoxes in the Edit form with the values of the selected row
+                for (int i = 0; i < dataGridView3.Columns.Count; i++)
+                {
+                    if (i == 1) { continue; }  //skip the second column porque não são textboxes
+                    if (i == 4) { continue; } //skip the fifth column porque não são textboxes
+
+                    Edi3.TextBoxes[textBoxIndex].Text = dataGridView3.SelectedRows[0].Cells[i].Value.ToString();
+                    textBoxIndex++;
+                }
+
+                Edi3.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please select a row before clicking Edit Users.");
+            }
         }
 
-        private void button36_Click_1(object sender, EventArgs e)
+        private void button36_Click_1(object sender, EventArgs e) //logica para quando clica no botão editar
         {
-            Editar_Employees Edi4 = new Editar_Employees();
-            Edi4.ShowDialog();
+            if (dataGridView4.SelectedRows.Count > 0)
+            {
+                // Assume that the ID of the user is in the first column of the DataGridView
+                int selectedEID = (int)dataGridView4.SelectedRows[0].Cells[0].Value;
+                Editar_Employees Edi4 = new Editar_Employees();
+
+                // Pass the selected user ID to the Edit form
+                Edi4.EID.Text = selectedEID.ToString();
+
+                int textBoxIndex = 0;
+                // Fill the TextBoxes in the Edit form with the values of the selected row
+                for (int i = 0; i < dataGridView4.Columns.Count; i++)
+                {
+                    if (i == 5) { continue; } //skip the sixth column porque não é textbox
+                    Edi4.TextBoxes[textBoxIndex].Text = dataGridView4.SelectedRows[0].Cells[i].Value.ToString();
+                    textBoxIndex++;
+                }
+
+                Edi4.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please select a row before clicking Edit Users.");
+            }
         }
 
-        private void button37_Click_1(object sender, EventArgs e)
+        private void button37_Click_1(object sender, EventArgs e) //logica para quando clica no botão editar
         {
-            Editar_Reviews Edi5 = new Editar_Reviews();
-            Edi5.ShowDialog();
+            if (dataGridView5.SelectedRows.Count > 0)
+            {
+                // Assume that the ID of the user is in the first column of the DataGridView
+                int selectedRID = (int)dataGridView5.SelectedRows[0].Cells[0].Value;
+                Editar_Reviews Edi5 = new Editar_Reviews();
+
+                // Pass the selected user ID to the Edit form
+                Edi5.RID.Text = selectedRID.ToString();
+
+                int textBoxIndex = 0;
+                // Fill the TextBoxes in the Edit form with the values of the selected row
+                for (int i = 0; i < dataGridView5.Columns.Count; i++)
+                {
+                    if (i == 1) { continue; } //skip the second column porque não é textbox
+                    Edi5.TextBoxes[textBoxIndex].Text = dataGridView5.SelectedRows[0].Cells[i].Value.ToString();
+                    textBoxIndex++;
+                }
+
+                Edi5.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please select a row before clicking Edit Users.");
+            }
         }
 
-        private void button38_Click_1(object sender, EventArgs e)
+        private void button38_Click_1(object sender, EventArgs e) //logica para quando clica no botão editar
         {
-            Editar_whilist Edi6 = new Editar_whilist();
-            Edi6.ShowDialog();
+            if (dataGridView6.SelectedRows.Count > 0)
+            {
+                // Assume that the ID of the user is in the first column of the DataGridView
+                int selectedWID = (int)dataGridView6.SelectedRows[0].Cells[0].Value;
+                Editar_whilist Edi6 = new Editar_whilist();
+
+                // Pass the selected user ID to the Edit form
+                Edi6.WID.Text = selectedWID.ToString();
+
+                int textBoxIndex = 0;
+                // Fill the TextBoxes in the Edit form with the values of the selected row
+                for (int i = 0; i < dataGridView6.Columns.Count; i++)
+                {
+                    if (i == 3) { continue; } //skip the fourth column porque não é textbox
+                    Edi6.TextBoxes[textBoxIndex].Text = dataGridView6.SelectedRows[0].Cells[i].Value.ToString();
+                    textBoxIndex++;
+                }
+
+                Edi6.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please select a row before clicking Edit Users.");
+            }
         }
 
-        private void button39_Click_1(object sender, EventArgs e)
+        private void button39_Click_1(object sender, EventArgs e) //logica para quando clica no botão editar
         {
-            Editar_ServiceRequest Edi7 = new Editar_ServiceRequest();
-            Edi7.ShowDialog();
+            if (dataGridView7.SelectedRows.Count > 0)
+            {
+                // Assume that the ID of the user is in the first column of the DataGridView
+                int selectedRID = (int)dataGridView7.SelectedRows[0].Cells[0].Value;
+                Editar_ServiceRequest Edi7 = new Editar_ServiceRequest();
+
+                // Pass the selected user ID to the Edit form
+                Edi7.RID.Text = selectedRID.ToString();
+
+                int textBoxIndex = 0;
+                // Fill the TextBoxes in the Edit form with the values of the selected row
+                for (int i = 0; i < dataGridView7.Columns.Count; i++)
+                {
+                    if (i == 4) { continue; } //skip the fifth column porque não é textbox
+                    Edi7.TextBoxes[textBoxIndex].Text = dataGridView7.SelectedRows[0].Cells[i].Value.ToString();
+                    textBoxIndex++;
+                }
+
+                Edi7.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please select a row before clicking Edit Users.");
+            }
         }
 
         private void button40_Click_1(object sender, EventArgs e)
         {
-            Editar_AcessLogs Edi8 = new Editar_AcessLogs();
-            Edi8.ShowDialog();
+            if (dataGridView8.SelectedRows.Count > 0) //logica para quando clica no botão editar
+            {
+                // Assume that the ID of the user is in the first column of the DataGridView
+                int selectedLogId = (int)dataGridView8.SelectedRows[0].Cells[0].Value;
+                Editar_AcessLogs Edi8 = new Editar_AcessLogs();
+
+                // Pass the selected user ID to the Edit form
+                Edi8.LogID.Text = selectedLogId.ToString();
+
+                int textBoxIndex = 0;
+                // Fill the TextBoxes in the Edit form with the values of the selected row
+                for (int i = 0; i < dataGridView8.Columns.Count; i++)
+                {
+                    if (i == 2) { continue; } //skip the second column porque não é textbox
+                    Edi8.TextBoxes[textBoxIndex].Text = dataGridView8.SelectedRows[0].Cells[i].Value.ToString();
+                    textBoxIndex++;
+                }
+
+                Edi8.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please select a row before clicking Edit Users.");
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -131,10 +307,109 @@ namespace TechHouse
                     FillDataGridView(dataGridView8, connectionString, tableName);
                     break;
 
-                    
+
             }
         }
-    }
 
+        private void AddUser_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string query = "INSERT INTO [TechHouse].[User] (FirstName, LastName, Email, PhoneNumber, Password, Address) VALUES (@FirstName, @LastName, @Email, @PhoneNumber, @Password, @Address)";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@FirstName", Users_FName.Text); //The textboxes are named Users_FName, Users_LName, etc.
+                    command.Parameters.AddWithValue("@LastName", Users_LName.Text);
+                    command.Parameters.AddWithValue("@Email", Users_Email.Text);
+                    command.Parameters.AddWithValue("@PhoneNumber", Users_Contact.Text);
+                    command.Parameters.AddWithValue("@Password", Users_Password.Text);
+                    command.Parameters.AddWithValue("@Address", Users_Address.Text);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+
+            MessageBox.Show("User added successfully");
+        }
+
+        private void DeleteUser_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string query = "DELETE FROM [TechHouse].[User] WHERE UserID = @UserID";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    // Assume that the ID of the user is in the first column of the DataGridView
+                    int selectedUserId = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
+                    command.Parameters.AddWithValue("@UserID", selectedUserId);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+
+            MessageBox.Show("User deleted successfully");
+        }
+
+        private void SearchLog_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void SearchUser_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            StringBuilder query = new StringBuilder("SELECT * FROM [TechHouse].[User] WHERE 1=1");
+
+            if (!string.IsNullOrEmpty(Users_FName.Text))
+            {
+                query.Append($" AND FirstName LIKE '%{Users_FName.Text}%'");
+            }
+
+            if (!string.IsNullOrEmpty(Users_LName.Text))
+            {
+                query.Append($" AND LastName LIKE '%{Users_LName.Text}%'");
+            }
+
+            if (!string.IsNullOrEmpty(Users_UserID.Text))
+            {
+                query.Append($" AND UserID LIKE '%{Users_UserID.Text}%'");
+            }
+
+            if (!string.IsNullOrEmpty(Users_Email.Text))
+            {
+                query.Append($" AND Email LIKE '%{Users_Email.Text}%'");
+            }
+
+            if (!string.IsNullOrEmpty(Users_Contact.Text))
+            {
+                query.Append($" AND PhoneNumber LIKE '%{Users_Contact.Text}%'");
+            }
+
+            if (!string.IsNullOrEmpty(Users_Address.Text))
+            {
+                query.Append($" AND Address LIKE '%{Users_Address.Text}%'");
+            }
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlDataAdapter adapter = new SqlDataAdapter(query.ToString(), connection))
+                {
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+                    dataGridView1.DataSource = table;
+                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                }
+            }
+
+        }
+    }
 }
+
 
