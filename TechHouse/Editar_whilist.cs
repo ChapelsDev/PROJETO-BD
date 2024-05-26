@@ -12,9 +12,13 @@ namespace TechHouse
 {
     public partial class Editar_whilist : Form
     {
+        public List<System.Windows.Forms.TextBox> TextBoxes { get; set; }
+        public System.Windows.Forms.TextBox[] TextBox { get; set; }
         public Editar_whilist()
         {
             InitializeComponent();
+            TextBoxes = new List<System.Windows.Forms.TextBox> { WID, UID, PID};
+
         }
 
         private void label41_Click(object sender, EventArgs e)
@@ -23,6 +27,11 @@ namespace TechHouse
         }
 
         private void Editar_whilist_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Save_Click(object sender, EventArgs e)
         {
 
         }

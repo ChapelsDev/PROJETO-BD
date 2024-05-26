@@ -31,12 +31,11 @@
             tabControl1 = new TabControl();
             Users = new TabPage();
             button33 = new Button();
-            button25 = new Button();
+            SearchUser = new Button();
             label49 = new Label();
-            textBox43 = new TextBox();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
+            Users_UserID = new TextBox();
+            DeleteUser = new Button();
+            AddUser = new Button();
             dataGridView1 = new DataGridView();
             label6 = new Label();
             label5 = new Label();
@@ -44,20 +43,19 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            Password = new TextBox();
-            Contact = new TextBox();
-            Address = new TextBox();
-            Email = new TextBox();
-            LastName = new TextBox();
-            FirstName = new TextBox();
+            Users_Password = new TextBox();
+            Users_Contact = new TextBox();
+            Users_Address = new TextBox();
+            Users_Email = new TextBox();
+            Users_LName = new TextBox();
+            Users_FName = new TextBox();
             tabPage2 = new TabPage();
             button34 = new Button();
-            button26 = new Button();
+            SearchProduct = new Button();
             label7 = new Label();
-            ProductID = new TextBox();
-            button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
+            Products_ProductID = new TextBox();
+            DeleteProduct = new Button();
+            AddProduct = new Button();
             dataGridView2 = new DataGridView();
             CategoryId = new Label();
             ProductPrice = new Label();
@@ -68,35 +66,33 @@
             product_qty = new TextBox();
             Product_CategoryID = new TextBox();
             Product_Brand = new TextBox();
-            ProductName = new TextBox();
+            Products_ProductName = new TextBox();
             tabPage3 = new TabPage();
             button35 = new Button();
-            button27 = new Button();
-            dateTimePicker1 = new DateTimePicker();
-            comboBox1 = new ComboBox();
+            SearchOrder = new Button();
+            Order_OrderDate = new DateTimePicker();
+            Order_PayMethod = new ComboBox();
             label11 = new Label();
-            OrderID = new TextBox();
-            button7 = new Button();
-            button8 = new Button();
-            button9 = new Button();
+            Order_OrderID = new TextBox();
+            DeleteOrder = new Button();
+            AddOrder = new Button();
             dataGridView3 = new DataGridView();
             label14 = new Label();
             label15 = new Label();
             label16 = new Label();
             label17 = new Label();
             label18 = new Label();
-            ShippingAddress = new TextBox();
+            Order_ShippAddr = new TextBox();
             Orders_UserID = new TextBox();
-            Status = new TextBox();
+            Order_Status = new TextBox();
             tabPage4 = new TabPage();
             button36 = new Button();
-            comboBox4 = new ComboBox();
-            button28 = new Button();
+            Employ_EmpType = new ComboBox();
+            SearchEmployee = new Button();
             label21 = new Label();
-            textBox15 = new TextBox();
-            button10 = new Button();
-            button11 = new Button();
-            button12 = new Button();
+            Employ_EmpID = new TextBox();
+            DeleteEmployee = new Button();
+            AddEmployee = new Button();
             dataGridView4 = new DataGridView();
             label22 = new Label();
             EmployeeTipeID = new Label();
@@ -111,70 +107,66 @@
             FN_Employee = new TextBox();
             tabPage5 = new TabPage();
             button37 = new Button();
-            comboBox2 = new ComboBox();
-            button29 = new Button();
+            Reviews_Rating = new ComboBox();
+            SearchReview = new Button();
             label8 = new Label();
-            textBox1 = new TextBox();
-            button13 = new Button();
-            button14 = new Button();
-            button15 = new Button();
+            Reviews_RID = new TextBox();
+            DeleteReview = new Button();
+            AddReview = new Button();
             dataGridView5 = new DataGridView();
             label9 = new Label();
             label12 = new Label();
             label19 = new Label();
             label20 = new Label();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
+            Reviews_PID = new TextBox();
+            Reviews_UID = new TextBox();
+            Reviews_Comment = new TextBox();
             tabPage6 = new TabPage();
             button38 = new Button();
-            dateTimePicker2 = new DateTimePicker();
-            button30 = new Button();
+            Wish_DAdd = new DateTimePicker();
+            SearchWhish = new Button();
             label35 = new Label();
-            textBox29 = new TextBox();
-            button16 = new Button();
-            button17 = new Button();
-            button18 = new Button();
+            Whish_WID = new TextBox();
+            DeleteWhish = new Button();
+            AddWhish = new Button();
             dataGridView6 = new DataGridView();
             label37 = new Label();
             label40 = new Label();
             label41 = new Label();
-            textBox30 = new TextBox();
-            textBox35 = new TextBox();
+            Whish_PID = new TextBox();
+            Whish_UID = new TextBox();
             tabPage7 = new TabPage();
             button39 = new Button();
-            button31 = new Button();
-            comboBox3 = new ComboBox();
-            dateTimePicker3 = new DateTimePicker();
+            SearchRequest = new Button();
+            Request_Status = new ComboBox();
+            Request_RD = new DateTimePicker();
             label10 = new Label();
-            textBox2 = new TextBox();
-            button19 = new Button();
-            button20 = new Button();
-            button21 = new Button();
+            Request_RID = new TextBox();
+            DeleteRequest = new Button();
+            AddRequest = new Button();
             dataGridView7 = new DataGridView();
             label23 = new Label();
             label28 = new Label();
             label29 = new Label();
             label30 = new Label();
             label31 = new Label();
-            textBox7 = new TextBox();
-            textBox10 = new TextBox();
-            textBox11 = new TextBox();
+            Request_EID = new TextBox();
+            Request_UID = new TextBox();
+            Request_Description = new TextBox();
             tabPage8 = new TabPage();
             button40 = new Button();
-            dateTimePicker4 = new DateTimePicker();
-            button32 = new Button();
+            Logs_DT = new DateTimePicker();
+            SearchLog = new Button();
             label32 = new Label();
-            textBox12 = new TextBox();
-            button22 = new Button();
-            button23 = new Button();
-            button24 = new Button();
+            Logs_LogID = new TextBox();
+            DeleteLog = new Button();
+            AddLog = new Button();
             dataGridView8 = new DataGridView();
             label33 = new Label();
             label34 = new Label();
             label36 = new Label();
-            textBox13 = new TextBox();
-            textBox14 = new TextBox();
+            Logs_UID = new TextBox();
+            Logs_Action = new TextBox();
             tabControl1.SuspendLayout();
             Users.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -214,12 +206,11 @@
             // Users
             // 
             Users.Controls.Add(button33);
-            Users.Controls.Add(button25);
+            Users.Controls.Add(SearchUser);
             Users.Controls.Add(label49);
-            Users.Controls.Add(textBox43);
-            Users.Controls.Add(button3);
-            Users.Controls.Add(button2);
-            Users.Controls.Add(button1);
+            Users.Controls.Add(Users_UserID);
+            Users.Controls.Add(DeleteUser);
+            Users.Controls.Add(AddUser);
             Users.Controls.Add(dataGridView1);
             Users.Controls.Add(label6);
             Users.Controls.Add(label5);
@@ -227,12 +218,12 @@
             Users.Controls.Add(label3);
             Users.Controls.Add(label2);
             Users.Controls.Add(label1);
-            Users.Controls.Add(Password);
-            Users.Controls.Add(Contact);
-            Users.Controls.Add(Address);
-            Users.Controls.Add(Email);
-            Users.Controls.Add(LastName);
-            Users.Controls.Add(FirstName);
+            Users.Controls.Add(Users_Password);
+            Users.Controls.Add(Users_Contact);
+            Users.Controls.Add(Users_Address);
+            Users.Controls.Add(Users_Email);
+            Users.Controls.Add(Users_LName);
+            Users.Controls.Add(Users_FName);
             Users.Location = new Point(4, 24);
             Users.Name = "Users";
             Users.Padding = new Padding(3);
@@ -243,7 +234,7 @@
             // 
             // button33
             // 
-            button33.Location = new Point(409, 560);
+            button33.Location = new Point(280, 560);
             button33.Name = "button33";
             button33.Size = new Size(108, 23);
             button33.TabIndex = 35;
@@ -251,14 +242,15 @@
             button33.UseVisualStyleBackColor = true;
             button33.Click += button33_Click_1;
             // 
-            // button25
+            // SearchUser
             // 
-            button25.Location = new Point(895, 560);
-            button25.Name = "button25";
-            button25.Size = new Size(108, 23);
-            button25.TabIndex = 34;
-            button25.Text = "Search";
-            button25.UseVisualStyleBackColor = true;
+            SearchUser.Location = new Point(895, 560);
+            SearchUser.Name = "SearchUser";
+            SearchUser.Size = new Size(108, 23);
+            SearchUser.TabIndex = 34;
+            SearchUser.Text = "Search";
+            SearchUser.UseVisualStyleBackColor = true;
+            SearchUser.Click += SearchUser_Click;
             // 
             // label49
             // 
@@ -269,39 +261,32 @@
             label49.TabIndex = 33;
             label49.Text = "User ID";
             // 
-            // textBox43
+            // Users_UserID
             // 
-            textBox43.Location = new Point(74, 28);
-            textBox43.Name = "textBox43";
-            textBox43.Size = new Size(164, 23);
-            textBox43.TabIndex = 32;
+            Users_UserID.Location = new Point(74, 28);
+            Users_UserID.Name = "Users_UserID";
+            Users_UserID.Size = new Size(164, 23);
+            Users_UserID.TabIndex = 32;
             // 
-            // button3
+            // DeleteUser
             // 
-            button3.Location = new Point(279, 560);
-            button3.Name = "button3";
-            button3.Size = new Size(108, 23);
-            button3.TabIndex = 31;
-            button3.Text = "Delete User";
-            button3.UseVisualStyleBackColor = true;
+            DeleteUser.Location = new Point(150, 560);
+            DeleteUser.Name = "DeleteUser";
+            DeleteUser.Size = new Size(108, 23);
+            DeleteUser.TabIndex = 31;
+            DeleteUser.Text = "Delete User";
+            DeleteUser.UseVisualStyleBackColor = true;
+            DeleteUser.Click += DeleteUser_Click;
             // 
-            // button2
+            // AddUser
             // 
-            button2.Location = new Point(149, 560);
-            button2.Name = "button2";
-            button2.Size = new Size(108, 23);
-            button2.TabIndex = 30;
-            button2.Text = "Update User";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(22, 560);
-            button1.Name = "button1";
-            button1.Size = new Size(108, 23);
-            button1.TabIndex = 29;
-            button1.Text = "Add User";
-            button1.UseVisualStyleBackColor = true;
+            AddUser.Location = new Point(22, 560);
+            AddUser.Name = "AddUser";
+            AddUser.Size = new Size(108, 23);
+            AddUser.TabIndex = 29;
+            AddUser.Text = "Add User";
+            AddUser.UseVisualStyleBackColor = true;
+            AddUser.Click += AddUser_Click;
             // 
             // dataGridView1
             // 
@@ -365,58 +350,57 @@
             label1.TabIndex = 22;
             label1.Text = "First Name";
             // 
-            // Password
+            // Users_Password
             // 
-            Password.Location = new Point(587, 48);
-            Password.Name = "Password";
-            Password.PasswordChar = '*';
-            Password.Size = new Size(164, 23);
-            Password.TabIndex = 21;
+            Users_Password.Location = new Point(587, 48);
+            Users_Password.Name = "Users_Password";
+            Users_Password.PasswordChar = '*';
+            Users_Password.Size = new Size(164, 23);
+            Users_Password.TabIndex = 21;
             // 
-            // Contact
+            // Users_Contact
             // 
-            Contact.Location = new Point(839, 12);
-            Contact.Name = "Contact";
-            Contact.Size = new Size(164, 23);
-            Contact.TabIndex = 20;
+            Users_Contact.Location = new Point(839, 12);
+            Users_Contact.Name = "Users_Contact";
+            Users_Contact.Size = new Size(164, 23);
+            Users_Contact.TabIndex = 20;
             // 
-            // Address
+            // Users_Address
             // 
-            Address.Location = new Point(839, 45);
-            Address.Name = "Address";
-            Address.Size = new Size(164, 23);
-            Address.TabIndex = 19;
+            Users_Address.Location = new Point(839, 45);
+            Users_Address.Name = "Users_Address";
+            Users_Address.Size = new Size(164, 23);
+            Users_Address.TabIndex = 19;
             // 
-            // Email
+            // Users_Email
             // 
-            Email.Location = new Point(587, 12);
-            Email.Name = "Email";
-            Email.Size = new Size(164, 23);
-            Email.TabIndex = 18;
+            Users_Email.Location = new Point(587, 12);
+            Users_Email.Name = "Users_Email";
+            Users_Email.Size = new Size(164, 23);
+            Users_Email.TabIndex = 18;
             // 
-            // LastName
+            // Users_LName
             // 
-            LastName.Location = new Point(339, 45);
-            LastName.Name = "LastName";
-            LastName.Size = new Size(164, 23);
-            LastName.TabIndex = 17;
+            Users_LName.Location = new Point(339, 45);
+            Users_LName.Name = "Users_LName";
+            Users_LName.Size = new Size(164, 23);
+            Users_LName.TabIndex = 17;
             // 
-            // FirstName
+            // Users_FName
             // 
-            FirstName.Location = new Point(339, 12);
-            FirstName.Name = "FirstName";
-            FirstName.Size = new Size(164, 23);
-            FirstName.TabIndex = 16;
+            Users_FName.Location = new Point(339, 12);
+            Users_FName.Name = "Users_FName";
+            Users_FName.Size = new Size(164, 23);
+            Users_FName.TabIndex = 16;
             // 
             // tabPage2
             // 
             tabPage2.Controls.Add(button34);
-            tabPage2.Controls.Add(button26);
+            tabPage2.Controls.Add(SearchProduct);
             tabPage2.Controls.Add(label7);
-            tabPage2.Controls.Add(ProductID);
-            tabPage2.Controls.Add(button4);
-            tabPage2.Controls.Add(button5);
-            tabPage2.Controls.Add(button6);
+            tabPage2.Controls.Add(Products_ProductID);
+            tabPage2.Controls.Add(DeleteProduct);
+            tabPage2.Controls.Add(AddProduct);
             tabPage2.Controls.Add(dataGridView2);
             tabPage2.Controls.Add(CategoryId);
             tabPage2.Controls.Add(ProductPrice);
@@ -427,7 +411,7 @@
             tabPage2.Controls.Add(product_qty);
             tabPage2.Controls.Add(Product_CategoryID);
             tabPage2.Controls.Add(Product_Brand);
-            tabPage2.Controls.Add(ProductName);
+            tabPage2.Controls.Add(Products_ProductName);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
@@ -438,7 +422,7 @@
             // 
             // button34
             // 
-            button34.Location = new Point(400, 558);
+            button34.Location = new Point(278, 558);
             button34.Name = "button34";
             button34.Size = new Size(108, 23);
             button34.TabIndex = 53;
@@ -446,14 +430,14 @@
             button34.UseVisualStyleBackColor = true;
             button34.Click += button34_Click_1;
             // 
-            // button26
+            // SearchProduct
             // 
-            button26.Location = new Point(896, 558);
-            button26.Name = "button26";
-            button26.Size = new Size(108, 23);
-            button26.TabIndex = 52;
-            button26.Text = "Search";
-            button26.UseVisualStyleBackColor = true;
+            SearchProduct.Location = new Point(896, 558);
+            SearchProduct.Name = "SearchProduct";
+            SearchProduct.Size = new Size(108, 23);
+            SearchProduct.TabIndex = 52;
+            SearchProduct.Text = "Search";
+            SearchProduct.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -464,39 +448,30 @@
             label7.TabIndex = 51;
             label7.Text = "Product ID";
             // 
-            // ProductID
+            // Products_ProductID
             // 
-            ProductID.Location = new Point(177, 24);
-            ProductID.Name = "ProductID";
-            ProductID.Size = new Size(164, 23);
-            ProductID.TabIndex = 50;
+            Products_ProductID.Location = new Point(177, 24);
+            Products_ProductID.Name = "Products_ProductID";
+            Products_ProductID.Size = new Size(164, 23);
+            Products_ProductID.TabIndex = 50;
             // 
-            // button4
+            // DeleteProduct
             // 
-            button4.Location = new Point(273, 558);
-            button4.Name = "button4";
-            button4.Size = new Size(108, 23);
-            button4.TabIndex = 49;
-            button4.Text = "Delete Product";
-            button4.UseVisualStyleBackColor = true;
+            DeleteProduct.Location = new Point(151, 558);
+            DeleteProduct.Name = "DeleteProduct";
+            DeleteProduct.Size = new Size(108, 23);
+            DeleteProduct.TabIndex = 49;
+            DeleteProduct.Text = "Delete Product";
+            DeleteProduct.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // AddProduct
             // 
-            button5.Location = new Point(148, 558);
-            button5.Name = "button5";
-            button5.Size = new Size(108, 23);
-            button5.TabIndex = 48;
-            button5.Text = "Update Product";
-            button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            button6.Location = new Point(23, 558);
-            button6.Name = "button6";
-            button6.Size = new Size(108, 23);
-            button6.TabIndex = 47;
-            button6.Text = "Add Product";
-            button6.UseVisualStyleBackColor = true;
+            AddProduct.Location = new Point(23, 558);
+            AddProduct.Name = "AddProduct";
+            AddProduct.Size = new Size(108, 23);
+            AddProduct.TabIndex = 47;
+            AddProduct.Text = "Add Product";
+            AddProduct.UseVisualStyleBackColor = true;
             // 
             // dataGridView2
             // 
@@ -579,33 +554,32 @@
             Product_Brand.Size = new Size(164, 23);
             Product_Brand.TabIndex = 36;
             // 
-            // ProductName
+            // Products_ProductName
             // 
-            ProductName.Location = new Point(177, 55);
-            ProductName.Name = "ProductName";
-            ProductName.Size = new Size(164, 23);
-            ProductName.TabIndex = 34;
+            Products_ProductName.Location = new Point(177, 55);
+            Products_ProductName.Name = "Products_ProductName";
+            Products_ProductName.Size = new Size(164, 23);
+            Products_ProductName.TabIndex = 34;
             // 
             // tabPage3
             // 
             tabPage3.Controls.Add(button35);
-            tabPage3.Controls.Add(button27);
-            tabPage3.Controls.Add(dateTimePicker1);
-            tabPage3.Controls.Add(comboBox1);
+            tabPage3.Controls.Add(SearchOrder);
+            tabPage3.Controls.Add(Order_OrderDate);
+            tabPage3.Controls.Add(Order_PayMethod);
             tabPage3.Controls.Add(label11);
-            tabPage3.Controls.Add(OrderID);
-            tabPage3.Controls.Add(button7);
-            tabPage3.Controls.Add(button8);
-            tabPage3.Controls.Add(button9);
+            tabPage3.Controls.Add(Order_OrderID);
+            tabPage3.Controls.Add(DeleteOrder);
+            tabPage3.Controls.Add(AddOrder);
             tabPage3.Controls.Add(dataGridView3);
             tabPage3.Controls.Add(label14);
             tabPage3.Controls.Add(label15);
             tabPage3.Controls.Add(label16);
             tabPage3.Controls.Add(label17);
             tabPage3.Controls.Add(label18);
-            tabPage3.Controls.Add(ShippingAddress);
+            tabPage3.Controls.Add(Order_ShippAddr);
             tabPage3.Controls.Add(Orders_UserID);
-            tabPage3.Controls.Add(Status);
+            tabPage3.Controls.Add(Order_Status);
             tabPage3.Location = new Point(4, 24);
             tabPage3.Name = "tabPage3";
             tabPage3.Size = new Size(1026, 591);
@@ -615,7 +589,7 @@
             // 
             // button35
             // 
-            button35.Location = new Point(446, 553);
+            button35.Location = new Point(298, 553);
             button35.Name = "button35";
             button35.Size = new Size(125, 23);
             button35.TabIndex = 71;
@@ -623,29 +597,29 @@
             button35.UseVisualStyleBackColor = true;
             button35.Click += button35_Click_1;
             // 
-            // button27
+            // SearchOrder
             // 
-            button27.Location = new Point(896, 553);
-            button27.Name = "button27";
-            button27.Size = new Size(108, 23);
-            button27.TabIndex = 70;
-            button27.Text = "Search";
-            button27.UseVisualStyleBackColor = true;
+            SearchOrder.Location = new Point(896, 553);
+            SearchOrder.Name = "SearchOrder";
+            SearchOrder.Size = new Size(108, 23);
+            SearchOrder.TabIndex = 70;
+            SearchOrder.Text = "Search";
+            SearchOrder.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
+            // Order_OrderDate
             // 
-            dateTimePicker1.Location = new Point(143, 53);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(179, 23);
-            dateTimePicker1.TabIndex = 69;
+            Order_OrderDate.Location = new Point(143, 53);
+            Order_OrderDate.Name = "Order_OrderDate";
+            Order_OrderDate.Size = new Size(179, 23);
+            Order_OrderDate.TabIndex = 69;
             // 
-            // comboBox1
+            // Order_PayMethod
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(767, 19);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(164, 23);
-            comboBox1.TabIndex = 68;
+            Order_PayMethod.FormattingEnabled = true;
+            Order_PayMethod.Location = new Point(767, 19);
+            Order_PayMethod.Name = "Order_PayMethod";
+            Order_PayMethod.Size = new Size(164, 23);
+            Order_PayMethod.TabIndex = 68;
             // 
             // label11
             // 
@@ -656,39 +630,30 @@
             label11.TabIndex = 67;
             label11.Text = "Order ID";
             // 
-            // OrderID
+            // Order_OrderID
             // 
-            OrderID.Location = new Point(143, 19);
-            OrderID.Name = "OrderID";
-            OrderID.Size = new Size(179, 23);
-            OrderID.TabIndex = 66;
+            Order_OrderID.Location = new Point(143, 19);
+            Order_OrderID.Name = "Order_OrderID";
+            Order_OrderID.Size = new Size(179, 23);
+            Order_OrderID.TabIndex = 66;
             // 
-            // button7
+            // DeleteOrder
             // 
-            button7.Location = new Point(300, 553);
-            button7.Name = "button7";
-            button7.Size = new Size(125, 23);
-            button7.TabIndex = 65;
-            button7.Text = "Delete Order";
-            button7.UseVisualStyleBackColor = true;
+            DeleteOrder.Location = new Point(152, 553);
+            DeleteOrder.Name = "DeleteOrder";
+            DeleteOrder.Size = new Size(125, 23);
+            DeleteOrder.TabIndex = 65;
+            DeleteOrder.Text = "Delete Order";
+            DeleteOrder.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // AddOrder
             // 
-            button8.Location = new Point(151, 553);
-            button8.Name = "button8";
-            button8.Size = new Size(125, 23);
-            button8.TabIndex = 64;
-            button8.Text = "Update Order";
-            button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            button9.Location = new Point(23, 553);
-            button9.Name = "button9";
-            button9.Size = new Size(108, 23);
-            button9.TabIndex = 63;
-            button9.Text = "Add Order";
-            button9.UseVisualStyleBackColor = true;
+            AddOrder.Location = new Point(23, 553);
+            AddOrder.Name = "AddOrder";
+            AddOrder.Size = new Size(108, 23);
+            AddOrder.TabIndex = 63;
+            AddOrder.Text = "Add Order";
+            AddOrder.UseVisualStyleBackColor = true;
             // 
             // dataGridView3
             // 
@@ -743,12 +708,12 @@
             label18.TabIndex = 57;
             label18.Text = "OrderDate";
             // 
-            // ShippingAddress
+            // Order_ShippAddr
             // 
-            ShippingAddress.Location = new Point(462, 50);
-            ShippingAddress.Name = "ShippingAddress";
-            ShippingAddress.Size = new Size(164, 23);
-            ShippingAddress.TabIndex = 56;
+            Order_ShippAddr.Location = new Point(462, 50);
+            Order_ShippAddr.Name = "Order_ShippAddr";
+            Order_ShippAddr.Size = new Size(164, 23);
+            Order_ShippAddr.TabIndex = 56;
             // 
             // Orders_UserID
             // 
@@ -757,23 +722,22 @@
             Orders_UserID.Size = new Size(164, 23);
             Orders_UserID.TabIndex = 54;
             // 
-            // Status
+            // Order_Status
             // 
-            Status.Location = new Point(462, 21);
-            Status.Name = "Status";
-            Status.Size = new Size(164, 23);
-            Status.TabIndex = 53;
+            Order_Status.Location = new Point(462, 21);
+            Order_Status.Name = "Order_Status";
+            Order_Status.Size = new Size(164, 23);
+            Order_Status.TabIndex = 53;
             // 
             // tabPage4
             // 
             tabPage4.Controls.Add(button36);
-            tabPage4.Controls.Add(comboBox4);
-            tabPage4.Controls.Add(button28);
+            tabPage4.Controls.Add(Employ_EmpType);
+            tabPage4.Controls.Add(SearchEmployee);
             tabPage4.Controls.Add(label21);
-            tabPage4.Controls.Add(textBox15);
-            tabPage4.Controls.Add(button10);
-            tabPage4.Controls.Add(button11);
-            tabPage4.Controls.Add(button12);
+            tabPage4.Controls.Add(Employ_EmpID);
+            tabPage4.Controls.Add(DeleteEmployee);
+            tabPage4.Controls.Add(AddEmployee);
             tabPage4.Controls.Add(dataGridView4);
             tabPage4.Controls.Add(label22);
             tabPage4.Controls.Add(EmployeeTipeID);
@@ -795,7 +759,7 @@
             // 
             // button36
             // 
-            button36.Location = new Point(402, 558);
+            button36.Location = new Point(276, 558);
             button36.Name = "button36";
             button36.Size = new Size(108, 23);
             button36.TabIndex = 54;
@@ -803,22 +767,22 @@
             button36.UseVisualStyleBackColor = true;
             button36.Click += button36_Click_1;
             // 
-            // comboBox4
+            // Employ_EmpType
             // 
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(615, 43);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(164, 23);
-            comboBox4.TabIndex = 53;
+            Employ_EmpType.FormattingEnabled = true;
+            Employ_EmpType.Location = new Point(615, 43);
+            Employ_EmpType.Name = "Employ_EmpType";
+            Employ_EmpType.Size = new Size(164, 23);
+            Employ_EmpType.TabIndex = 53;
             // 
-            // button28
+            // SearchEmployee
             // 
-            button28.Location = new Point(896, 558);
-            button28.Name = "button28";
-            button28.Size = new Size(108, 23);
-            button28.TabIndex = 52;
-            button28.Text = "Search";
-            button28.UseVisualStyleBackColor = true;
+            SearchEmployee.Location = new Point(896, 558);
+            SearchEmployee.Name = "SearchEmployee";
+            SearchEmployee.Size = new Size(108, 23);
+            SearchEmployee.TabIndex = 52;
+            SearchEmployee.Text = "Search";
+            SearchEmployee.UseVisualStyleBackColor = true;
             // 
             // label21
             // 
@@ -829,39 +793,30 @@
             label21.TabIndex = 51;
             label21.Text = "Employee ID";
             // 
-            // textBox15
+            // Employ_EmpID
             // 
-            textBox15.Location = new Point(102, 10);
-            textBox15.Name = "textBox15";
-            textBox15.Size = new Size(164, 23);
-            textBox15.TabIndex = 50;
+            Employ_EmpID.Location = new Point(102, 10);
+            Employ_EmpID.Name = "Employ_EmpID";
+            Employ_EmpID.Size = new Size(164, 23);
+            Employ_EmpID.TabIndex = 50;
             // 
-            // button10
+            // DeleteEmployee
             // 
-            button10.Location = new Point(275, 558);
-            button10.Name = "button10";
-            button10.Size = new Size(108, 23);
-            button10.TabIndex = 49;
-            button10.Text = "Delete Employee";
-            button10.UseVisualStyleBackColor = true;
+            DeleteEmployee.Location = new Point(149, 558);
+            DeleteEmployee.Name = "DeleteEmployee";
+            DeleteEmployee.Size = new Size(108, 23);
+            DeleteEmployee.TabIndex = 49;
+            DeleteEmployee.Text = "Delete Employee";
+            DeleteEmployee.UseVisualStyleBackColor = true;
             // 
-            // button11
+            // AddEmployee
             // 
-            button11.Location = new Point(148, 558);
-            button11.Name = "button11";
-            button11.Size = new Size(108, 23);
-            button11.TabIndex = 48;
-            button11.Text = "Update Employee";
-            button11.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            button12.Location = new Point(23, 558);
-            button12.Name = "button12";
-            button12.Size = new Size(108, 23);
-            button12.TabIndex = 47;
-            button12.Text = "Add Employee";
-            button12.UseVisualStyleBackColor = true;
+            AddEmployee.Location = new Point(23, 558);
+            AddEmployee.Name = "AddEmployee";
+            AddEmployee.Size = new Size(108, 23);
+            AddEmployee.TabIndex = 47;
+            AddEmployee.Text = "Add Employee";
+            AddEmployee.UseVisualStyleBackColor = true;
             // 
             // dataGridView4
             // 
@@ -885,9 +840,9 @@
             EmployeeTipeID.AutoSize = true;
             EmployeeTipeID.Location = new Point(526, 49);
             EmployeeTipeID.Name = "EmployeeTipeID";
-            EmployeeTipeID.Size = new Size(83, 15);
+            EmployeeTipeID.Size = new Size(86, 15);
             EmployeeTipeID.TabIndex = 44;
-            EmployeeTipeID.Text = "EmployeeType";
+            EmployeeTipeID.Text = "Employee Type";
             // 
             // label24
             // 
@@ -963,21 +918,20 @@
             // tabPage5
             // 
             tabPage5.Controls.Add(button37);
-            tabPage5.Controls.Add(comboBox2);
-            tabPage5.Controls.Add(button29);
+            tabPage5.Controls.Add(Reviews_Rating);
+            tabPage5.Controls.Add(SearchReview);
             tabPage5.Controls.Add(label8);
-            tabPage5.Controls.Add(textBox1);
-            tabPage5.Controls.Add(button13);
-            tabPage5.Controls.Add(button14);
-            tabPage5.Controls.Add(button15);
+            tabPage5.Controls.Add(Reviews_RID);
+            tabPage5.Controls.Add(DeleteReview);
+            tabPage5.Controls.Add(AddReview);
             tabPage5.Controls.Add(dataGridView5);
             tabPage5.Controls.Add(label9);
             tabPage5.Controls.Add(label12);
             tabPage5.Controls.Add(label19);
             tabPage5.Controls.Add(label20);
-            tabPage5.Controls.Add(textBox3);
-            tabPage5.Controls.Add(textBox4);
-            tabPage5.Controls.Add(textBox5);
+            tabPage5.Controls.Add(Reviews_PID);
+            tabPage5.Controls.Add(Reviews_UID);
+            tabPage5.Controls.Add(Reviews_Comment);
             tabPage5.Location = new Point(4, 24);
             tabPage5.Name = "tabPage5";
             tabPage5.Size = new Size(1026, 591);
@@ -987,7 +941,7 @@
             // 
             // button37
             // 
-            button37.Location = new Point(367, 551);
+            button37.Location = new Point(253, 551);
             button37.Name = "button37";
             button37.Size = new Size(94, 23);
             button37.TabIndex = 86;
@@ -995,22 +949,22 @@
             button37.UseVisualStyleBackColor = true;
             button37.Click += button37_Click_1;
             // 
-            // comboBox2
+            // Reviews_Rating
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(166, 52);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(164, 23);
-            comboBox2.TabIndex = 85;
+            Reviews_Rating.FormattingEnabled = true;
+            Reviews_Rating.Location = new Point(166, 52);
+            Reviews_Rating.Name = "Reviews_Rating";
+            Reviews_Rating.Size = new Size(164, 23);
+            Reviews_Rating.TabIndex = 85;
             // 
-            // button29
+            // SearchReview
             // 
-            button29.Location = new Point(910, 551);
-            button29.Name = "button29";
-            button29.Size = new Size(94, 23);
-            button29.TabIndex = 84;
-            button29.Text = "Search";
-            button29.UseVisualStyleBackColor = true;
+            SearchReview.Location = new Point(910, 551);
+            SearchReview.Name = "SearchReview";
+            SearchReview.Size = new Size(94, 23);
+            SearchReview.TabIndex = 84;
+            SearchReview.Text = "Search";
+            SearchReview.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
@@ -1021,39 +975,30 @@
             label8.TabIndex = 83;
             label8.Text = "Review ID";
             // 
-            // textBox1
+            // Reviews_RID
             // 
-            textBox1.Location = new Point(166, 18);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(164, 23);
-            textBox1.TabIndex = 82;
+            Reviews_RID.Location = new Point(166, 18);
+            Reviews_RID.Name = "Reviews_RID";
+            Reviews_RID.Size = new Size(164, 23);
+            Reviews_RID.TabIndex = 82;
             // 
-            // button13
+            // DeleteReview
             // 
-            button13.Location = new Point(244, 551);
-            button13.Name = "button13";
-            button13.Size = new Size(94, 23);
-            button13.TabIndex = 81;
-            button13.Text = "Delete Review";
-            button13.UseVisualStyleBackColor = true;
+            DeleteReview.Location = new Point(130, 551);
+            DeleteReview.Name = "DeleteReview";
+            DeleteReview.Size = new Size(94, 23);
+            DeleteReview.TabIndex = 81;
+            DeleteReview.Text = "Delete Review";
+            DeleteReview.UseVisualStyleBackColor = true;
             // 
-            // button14
+            // AddReview
             // 
-            button14.Location = new Point(127, 551);
-            button14.Name = "button14";
-            button14.Size = new Size(94, 23);
-            button14.TabIndex = 80;
-            button14.Text = "Update Review";
-            button14.UseVisualStyleBackColor = true;
-            // 
-            // button15
-            // 
-            button15.Location = new Point(23, 551);
-            button15.Name = "button15";
-            button15.Size = new Size(84, 23);
-            button15.TabIndex = 79;
-            button15.Text = "Add Review";
-            button15.UseVisualStyleBackColor = true;
+            AddReview.Location = new Point(23, 551);
+            AddReview.Name = "AddReview";
+            AddReview.Size = new Size(84, 23);
+            AddReview.TabIndex = 79;
+            AddReview.Text = "Add Review";
+            AddReview.UseVisualStyleBackColor = true;
             // 
             // dataGridView5
             // 
@@ -1099,43 +1044,42 @@
             label20.TabIndex = 73;
             label20.Text = "Rating";
             // 
-            // textBox3
+            // Reviews_PID
             // 
-            textBox3.Location = new Point(755, 18);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(164, 23);
-            textBox3.TabIndex = 71;
+            Reviews_PID.Location = new Point(755, 18);
+            Reviews_PID.Name = "Reviews_PID";
+            Reviews_PID.Size = new Size(164, 23);
+            Reviews_PID.TabIndex = 71;
             // 
-            // textBox4
+            // Reviews_UID
             // 
-            textBox4.Location = new Point(755, 49);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(164, 23);
-            textBox4.TabIndex = 70;
+            Reviews_UID.Location = new Point(755, 49);
+            Reviews_UID.Name = "Reviews_UID";
+            Reviews_UID.Size = new Size(164, 23);
+            Reviews_UID.TabIndex = 70;
             // 
-            // textBox5
+            // Reviews_Comment
             // 
-            textBox5.Location = new Point(456, 33);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(164, 23);
-            textBox5.TabIndex = 69;
+            Reviews_Comment.Location = new Point(456, 33);
+            Reviews_Comment.Name = "Reviews_Comment";
+            Reviews_Comment.Size = new Size(164, 23);
+            Reviews_Comment.TabIndex = 69;
             // 
             // tabPage6
             // 
             tabPage6.Controls.Add(button38);
-            tabPage6.Controls.Add(dateTimePicker2);
-            tabPage6.Controls.Add(button30);
+            tabPage6.Controls.Add(Wish_DAdd);
+            tabPage6.Controls.Add(SearchWhish);
             tabPage6.Controls.Add(label35);
-            tabPage6.Controls.Add(textBox29);
-            tabPage6.Controls.Add(button16);
-            tabPage6.Controls.Add(button17);
-            tabPage6.Controls.Add(button18);
+            tabPage6.Controls.Add(Whish_WID);
+            tabPage6.Controls.Add(DeleteWhish);
+            tabPage6.Controls.Add(AddWhish);
             tabPage6.Controls.Add(dataGridView6);
             tabPage6.Controls.Add(label37);
             tabPage6.Controls.Add(label40);
             tabPage6.Controls.Add(label41);
-            tabPage6.Controls.Add(textBox30);
-            tabPage6.Controls.Add(textBox35);
+            tabPage6.Controls.Add(Whish_PID);
+            tabPage6.Controls.Add(Whish_UID);
             tabPage6.Location = new Point(4, 24);
             tabPage6.Name = "tabPage6";
             tabPage6.Size = new Size(1026, 591);
@@ -1145,7 +1089,7 @@
             // 
             // button38
             // 
-            button38.Location = new Point(399, 558);
+            button38.Location = new Point(274, 558);
             button38.Name = "button38";
             button38.Size = new Size(108, 23);
             button38.TabIndex = 54;
@@ -1153,21 +1097,21 @@
             button38.UseVisualStyleBackColor = true;
             button38.Click += button38_Click_1;
             // 
-            // dateTimePicker2
+            // Wish_DAdd
             // 
-            dateTimePicker2.Location = new Point(359, 19);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(175, 23);
-            dateTimePicker2.TabIndex = 53;
+            Wish_DAdd.Location = new Point(359, 19);
+            Wish_DAdd.Name = "Wish_DAdd";
+            Wish_DAdd.Size = new Size(175, 23);
+            Wish_DAdd.TabIndex = 53;
             // 
-            // button30
+            // SearchWhish
             // 
-            button30.Location = new Point(896, 558);
-            button30.Name = "button30";
-            button30.Size = new Size(108, 23);
-            button30.TabIndex = 52;
-            button30.Text = "Search";
-            button30.UseVisualStyleBackColor = true;
+            SearchWhish.Location = new Point(896, 558);
+            SearchWhish.Name = "SearchWhish";
+            SearchWhish.Size = new Size(108, 23);
+            SearchWhish.TabIndex = 52;
+            SearchWhish.Text = "Search";
+            SearchWhish.UseVisualStyleBackColor = true;
             // 
             // label35
             // 
@@ -1178,39 +1122,30 @@
             label35.TabIndex = 51;
             label35.Text = "User ID";
             // 
-            // textBox29
+            // Whish_WID
             // 
-            textBox29.Location = new Point(95, 19);
-            textBox29.Name = "textBox29";
-            textBox29.Size = new Size(164, 23);
-            textBox29.TabIndex = 50;
+            Whish_WID.Location = new Point(95, 19);
+            Whish_WID.Name = "Whish_WID";
+            Whish_WID.Size = new Size(164, 23);
+            Whish_WID.TabIndex = 50;
             // 
-            // button16
+            // DeleteWhish
             // 
-            button16.Location = new Point(275, 558);
-            button16.Name = "button16";
-            button16.Size = new Size(108, 23);
-            button16.TabIndex = 49;
-            button16.Text = "Delete Wishlist";
-            button16.UseVisualStyleBackColor = true;
+            DeleteWhish.Location = new Point(150, 558);
+            DeleteWhish.Name = "DeleteWhish";
+            DeleteWhish.Size = new Size(108, 23);
+            DeleteWhish.TabIndex = 49;
+            DeleteWhish.Text = "Delete Wishlist";
+            DeleteWhish.UseVisualStyleBackColor = true;
             // 
-            // button17
+            // AddWhish
             // 
-            button17.Location = new Point(151, 558);
-            button17.Name = "button17";
-            button17.Size = new Size(108, 23);
-            button17.TabIndex = 48;
-            button17.Text = "Update Wishlists";
-            button17.UseVisualStyleBackColor = true;
-            // 
-            // button18
-            // 
-            button18.Location = new Point(23, 558);
-            button18.Name = "button18";
-            button18.Size = new Size(108, 23);
-            button18.TabIndex = 47;
-            button18.Text = "Add Whishlist";
-            button18.UseVisualStyleBackColor = true;
+            AddWhish.Location = new Point(23, 558);
+            AddWhish.Name = "AddWhish";
+            AddWhish.Size = new Size(108, 23);
+            AddWhish.TabIndex = 47;
+            AddWhish.Text = "Add Whishlist";
+            AddWhish.UseVisualStyleBackColor = true;
             // 
             // dataGridView6
             // 
@@ -1247,41 +1182,40 @@
             label41.TabIndex = 40;
             label41.Text = "WhishlistID";
             // 
-            // textBox30
+            // Whish_PID
             // 
-            textBox30.Location = new Point(840, 19);
-            textBox30.Name = "textBox30";
-            textBox30.PasswordChar = '*';
-            textBox30.Size = new Size(164, 23);
-            textBox30.TabIndex = 39;
+            Whish_PID.Location = new Point(840, 19);
+            Whish_PID.Name = "Whish_PID";
+            Whish_PID.PasswordChar = '*';
+            Whish_PID.Size = new Size(164, 23);
+            Whish_PID.TabIndex = 39;
             // 
-            // textBox35
+            // Whish_UID
             // 
-            textBox35.Location = new Point(604, 19);
-            textBox35.Name = "textBox35";
-            textBox35.Size = new Size(164, 23);
-            textBox35.TabIndex = 34;
+            Whish_UID.Location = new Point(604, 19);
+            Whish_UID.Name = "Whish_UID";
+            Whish_UID.Size = new Size(164, 23);
+            Whish_UID.TabIndex = 34;
             // 
             // tabPage7
             // 
             tabPage7.Controls.Add(button39);
-            tabPage7.Controls.Add(button31);
-            tabPage7.Controls.Add(comboBox3);
-            tabPage7.Controls.Add(dateTimePicker3);
+            tabPage7.Controls.Add(SearchRequest);
+            tabPage7.Controls.Add(Request_Status);
+            tabPage7.Controls.Add(Request_RD);
             tabPage7.Controls.Add(label10);
-            tabPage7.Controls.Add(textBox2);
-            tabPage7.Controls.Add(button19);
-            tabPage7.Controls.Add(button20);
-            tabPage7.Controls.Add(button21);
+            tabPage7.Controls.Add(Request_RID);
+            tabPage7.Controls.Add(DeleteRequest);
+            tabPage7.Controls.Add(AddRequest);
             tabPage7.Controls.Add(dataGridView7);
             tabPage7.Controls.Add(label23);
             tabPage7.Controls.Add(label28);
             tabPage7.Controls.Add(label29);
             tabPage7.Controls.Add(label30);
             tabPage7.Controls.Add(label31);
-            tabPage7.Controls.Add(textBox7);
-            tabPage7.Controls.Add(textBox10);
-            tabPage7.Controls.Add(textBox11);
+            tabPage7.Controls.Add(Request_EID);
+            tabPage7.Controls.Add(Request_UID);
+            tabPage7.Controls.Add(Request_Description);
             tabPage7.Location = new Point(4, 24);
             tabPage7.Name = "tabPage7";
             tabPage7.Size = new Size(1026, 591);
@@ -1291,7 +1225,7 @@
             // 
             // button39
             // 
-            button39.Location = new Point(396, 551);
+            button39.Location = new Point(277, 551);
             button39.Name = "button39";
             button39.Size = new Size(108, 23);
             button39.TabIndex = 87;
@@ -1299,29 +1233,29 @@
             button39.UseVisualStyleBackColor = true;
             button39.Click += button39_Click_1;
             // 
-            // button31
+            // SearchRequest
             // 
-            button31.Location = new Point(896, 551);
-            button31.Name = "button31";
-            button31.Size = new Size(108, 23);
-            button31.TabIndex = 86;
-            button31.Text = "Search";
-            button31.UseVisualStyleBackColor = true;
+            SearchRequest.Location = new Point(896, 551);
+            SearchRequest.Name = "SearchRequest";
+            SearchRequest.Size = new Size(108, 23);
+            SearchRequest.TabIndex = 86;
+            SearchRequest.Text = "Search";
+            SearchRequest.UseVisualStyleBackColor = true;
             // 
-            // comboBox3
+            // Request_Status
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(757, 47);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(176, 23);
-            comboBox3.TabIndex = 85;
+            Request_Status.FormattingEnabled = true;
+            Request_Status.Location = new Point(757, 47);
+            Request_Status.Name = "Request_Status";
+            Request_Status.Size = new Size(176, 23);
+            Request_Status.TabIndex = 85;
             // 
-            // dateTimePicker3
+            // Request_RD
             // 
-            dateTimePicker3.Location = new Point(757, 18);
-            dateTimePicker3.Name = "dateTimePicker3";
-            dateTimePicker3.Size = new Size(176, 23);
-            dateTimePicker3.TabIndex = 84;
+            Request_RD.Location = new Point(757, 18);
+            Request_RD.Name = "Request_RD";
+            Request_RD.Size = new Size(176, 23);
+            Request_RD.TabIndex = 84;
             // 
             // label10
             // 
@@ -1332,39 +1266,30 @@
             label10.TabIndex = 83;
             label10.Text = "Request ID";
             // 
-            // textBox2
+            // Request_RID
             // 
-            textBox2.Location = new Point(174, 18);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(164, 23);
-            textBox2.TabIndex = 82;
+            Request_RID.Location = new Point(174, 18);
+            Request_RID.Name = "Request_RID";
+            Request_RID.Size = new Size(164, 23);
+            Request_RID.TabIndex = 82;
             // 
-            // button19
+            // DeleteRequest
             // 
-            button19.Location = new Point(272, 551);
-            button19.Name = "button19";
-            button19.Size = new Size(108, 23);
-            button19.TabIndex = 81;
-            button19.Text = "Delete Request";
-            button19.UseVisualStyleBackColor = true;
+            DeleteRequest.Location = new Point(153, 551);
+            DeleteRequest.Name = "DeleteRequest";
+            DeleteRequest.Size = new Size(108, 23);
+            DeleteRequest.TabIndex = 81;
+            DeleteRequest.Text = "Delete Request";
+            DeleteRequest.UseVisualStyleBackColor = true;
             // 
-            // button20
+            // AddRequest
             // 
-            button20.Location = new Point(148, 551);
-            button20.Name = "button20";
-            button20.Size = new Size(108, 23);
-            button20.TabIndex = 80;
-            button20.Text = "Update Requests";
-            button20.UseVisualStyleBackColor = true;
-            // 
-            // button21
-            // 
-            button21.Location = new Point(23, 551);
-            button21.Name = "button21";
-            button21.Size = new Size(108, 23);
-            button21.TabIndex = 79;
-            button21.Text = "Add Request";
-            button21.UseVisualStyleBackColor = true;
+            AddRequest.Location = new Point(23, 551);
+            AddRequest.Name = "AddRequest";
+            AddRequest.Size = new Size(108, 23);
+            AddRequest.TabIndex = 79;
+            AddRequest.Text = "Add Request";
+            AddRequest.UseVisualStyleBackColor = true;
             // 
             // dataGridView7
             // 
@@ -1419,43 +1344,42 @@
             label31.TabIndex = 73;
             label31.Text = "Description";
             // 
-            // textBox7
+            // Request_EID
             // 
-            textBox7.Location = new Point(455, 47);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(164, 23);
-            textBox7.TabIndex = 72;
+            Request_EID.Location = new Point(455, 47);
+            Request_EID.Name = "Request_EID";
+            Request_EID.Size = new Size(164, 23);
+            Request_EID.TabIndex = 72;
             // 
-            // textBox10
+            // Request_UID
             // 
-            textBox10.Location = new Point(455, 18);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(164, 23);
-            textBox10.TabIndex = 69;
+            Request_UID.Location = new Point(455, 18);
+            Request_UID.Name = "Request_UID";
+            Request_UID.Size = new Size(164, 23);
+            Request_UID.TabIndex = 69;
             // 
-            // textBox11
+            // Request_Description
             // 
-            textBox11.Location = new Point(174, 50);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(164, 23);
-            textBox11.TabIndex = 68;
+            Request_Description.Location = new Point(174, 50);
+            Request_Description.Name = "Request_Description";
+            Request_Description.Size = new Size(164, 23);
+            Request_Description.TabIndex = 68;
             // 
             // tabPage8
             // 
             tabPage8.Controls.Add(button40);
-            tabPage8.Controls.Add(dateTimePicker4);
-            tabPage8.Controls.Add(button32);
+            tabPage8.Controls.Add(Logs_DT);
+            tabPage8.Controls.Add(SearchLog);
             tabPage8.Controls.Add(label32);
-            tabPage8.Controls.Add(textBox12);
-            tabPage8.Controls.Add(button22);
-            tabPage8.Controls.Add(button23);
-            tabPage8.Controls.Add(button24);
+            tabPage8.Controls.Add(Logs_LogID);
+            tabPage8.Controls.Add(DeleteLog);
+            tabPage8.Controls.Add(AddLog);
             tabPage8.Controls.Add(dataGridView8);
             tabPage8.Controls.Add(label33);
             tabPage8.Controls.Add(label34);
             tabPage8.Controls.Add(label36);
-            tabPage8.Controls.Add(textBox13);
-            tabPage8.Controls.Add(textBox14);
+            tabPage8.Controls.Add(Logs_UID);
+            tabPage8.Controls.Add(Logs_Action);
             tabPage8.Location = new Point(4, 24);
             tabPage8.Name = "tabPage8";
             tabPage8.Size = new Size(1026, 591);
@@ -1465,7 +1389,7 @@
             // 
             // button40
             // 
-            button40.Location = new Point(361, 554);
+            button40.Location = new Point(240, 554);
             button40.Name = "button40";
             button40.Size = new Size(94, 23);
             button40.TabIndex = 66;
@@ -1473,21 +1397,22 @@
             button40.UseVisualStyleBackColor = true;
             button40.Click += button40_Click_1;
             // 
-            // dateTimePicker4
+            // Logs_DT
             // 
-            dateTimePicker4.Location = new Point(572, 15);
-            dateTimePicker4.Name = "dateTimePicker4";
-            dateTimePicker4.Size = new Size(200, 23);
-            dateTimePicker4.TabIndex = 65;
+            Logs_DT.Location = new Point(572, 15);
+            Logs_DT.Name = "Logs_DT";
+            Logs_DT.Size = new Size(200, 23);
+            Logs_DT.TabIndex = 65;
             // 
-            // button32
+            // SearchLog
             // 
-            button32.Location = new Point(910, 554);
-            button32.Name = "button32";
-            button32.Size = new Size(94, 23);
-            button32.TabIndex = 64;
-            button32.Text = "Search";
-            button32.UseVisualStyleBackColor = true;
+            SearchLog.Location = new Point(910, 554);
+            SearchLog.Name = "SearchLog";
+            SearchLog.Size = new Size(94, 23);
+            SearchLog.TabIndex = 64;
+            SearchLog.Text = "Search";
+            SearchLog.UseVisualStyleBackColor = true;
+            SearchLog.Click += SearchLog_Click;
             // 
             // label32
             // 
@@ -1498,39 +1423,30 @@
             label32.TabIndex = 63;
             label32.Text = "DateTime";
             // 
-            // textBox12
+            // Logs_LogID
             // 
-            textBox12.Location = new Point(70, 15);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(164, 23);
-            textBox12.TabIndex = 62;
+            Logs_LogID.Location = new Point(70, 15);
+            Logs_LogID.Name = "Logs_LogID";
+            Logs_LogID.Size = new Size(164, 23);
+            Logs_LogID.TabIndex = 62;
             // 
-            // button22
+            // DeleteLog
             // 
-            button22.Location = new Point(244, 554);
-            button22.Name = "button22";
-            button22.Size = new Size(94, 23);
-            button22.TabIndex = 61;
-            button22.Text = "Delete Log";
-            button22.UseVisualStyleBackColor = true;
+            DeleteLog.Location = new Point(123, 554);
+            DeleteLog.Name = "DeleteLog";
+            DeleteLog.Size = new Size(94, 23);
+            DeleteLog.TabIndex = 61;
+            DeleteLog.Text = "Delete Log";
+            DeleteLog.UseVisualStyleBackColor = true;
             // 
-            // button23
+            // AddLog
             // 
-            button23.Location = new Point(127, 554);
-            button23.Name = "button23";
-            button23.Size = new Size(94, 23);
-            button23.TabIndex = 60;
-            button23.Text = "Update Logs";
-            button23.UseVisualStyleBackColor = true;
-            // 
-            // button24
-            // 
-            button24.Location = new Point(23, 554);
-            button24.Name = "button24";
-            button24.Size = new Size(84, 23);
-            button24.TabIndex = 59;
-            button24.Text = "Add Log";
-            button24.UseVisualStyleBackColor = true;
+            AddLog.Location = new Point(23, 554);
+            AddLog.Name = "AddLog";
+            AddLog.Size = new Size(84, 23);
+            AddLog.TabIndex = 59;
+            AddLog.Text = "Add Log";
+            AddLog.UseVisualStyleBackColor = true;
             // 
             // dataGridView8
             // 
@@ -1567,20 +1483,20 @@
             label36.TabIndex = 55;
             label36.Text = "Log ID";
             // 
-            // textBox13
+            // Logs_UID
             // 
-            textBox13.Location = new Point(840, 15);
-            textBox13.Name = "textBox13";
-            textBox13.PasswordChar = '*';
-            textBox13.Size = new Size(164, 23);
-            textBox13.TabIndex = 54;
+            Logs_UID.Location = new Point(840, 15);
+            Logs_UID.Name = "Logs_UID";
+            Logs_UID.PasswordChar = '*';
+            Logs_UID.Size = new Size(164, 23);
+            Logs_UID.TabIndex = 54;
             // 
-            // textBox14
+            // Logs_Action
             // 
-            textBox14.Location = new Point(317, 15);
-            textBox14.Name = "textBox14";
-            textBox14.Size = new Size(164, 23);
-            textBox14.TabIndex = 53;
+            Logs_Action.Location = new Point(317, 15);
+            Logs_Action.Name = "Logs_Action";
+            Logs_Action.Size = new Size(164, 23);
+            Logs_Action.TabIndex = 53;
             // 
             // Form1
             // 
@@ -1631,9 +1547,8 @@
         private TabPage tabPage6;
         private TabPage tabPage7;
         private TabPage tabPage8;
-        private Button button3;
-        private Button button2;
-        private Button button1;
+        private Button DeleteUser;
+        private Button AddUser;
         private DataGridView dataGridView1;
         private Label label6;
         private Label label5;
@@ -1641,19 +1556,18 @@
         private Label label3;
         private Label label2;
         private Label label1;
-        private TextBox Password;
-        private TextBox Contact;
-        private TextBox Address;
-        private TextBox Email;
-        private TextBox LastName;
-        private TextBox FirstName;
+        private TextBox Users_Password;
+        private TextBox Users_Contact;
+        private TextBox Users_Address;
+        private TextBox Users_Email;
+        private TextBox Users_LName;
+        private TextBox Users_FName;
         private Label label49;
-        private TextBox textBox43;
+        private TextBox Users_UserID;
         private Label label7;
-        private TextBox ProductID;
-        private Button button4;
-        private Button button5;
-        private Button button6;
+        private TextBox Products_ProductID;
+        private Button DeleteProduct;
+        private Button AddProduct;
         private DataGridView dataGridView2;
         private Label CategoryId;
         private Label ProductPrice;
@@ -1664,12 +1578,11 @@
         private TextBox product_qty;
         private TextBox Product_CategoryID;
         private TextBox Product_Brand;
-        private TextBox ProductName;
+        private TextBox Products_ProductName;
         private Label label21;
-        private TextBox textBox15;
-        private Button button10;
-        private Button button11;
-        private Button button12;
+        private TextBox Employ_EmpID;
+        private Button DeleteEmployee;
+        private Button AddEmployee;
         private DataGridView dataGridView4;
         private Label label22;
         private Label EmployeeTipeID;
@@ -1683,84 +1596,79 @@
         private TextBox LN_Employee;
         private TextBox FN_Employee;
         private Label label35;
-        private TextBox textBox29;
-        private Button button16;
-        private Button button17;
-        private Button button18;
+        private TextBox Whish_WID;
+        private Button DeleteWhish;
+        private Button AddWhish;
         private DataGridView dataGridView6;
         private Label label37;
         private Label label40;
         private Label label41;
-        private TextBox textBox30;
-        private TextBox textBox35;
+        private TextBox Whish_PID;
+        private TextBox Whish_UID;
         private Label label11;
-        private TextBox OrderID;
-        private Button button7;
-        private Button button8;
-        private Button button9;
+        private TextBox Order_OrderID;
+        private Button DeleteOrder;
+        private Button AddOrder;
         private DataGridView dataGridView3;
         private Label label14;
         private Label label15;
         private Label label16;
         private Label label17;
         private Label label18;
-        private TextBox ShippingAddress;
+        private TextBox Order_ShippAddr;
         private TextBox Orders_UserID;
-        private TextBox Status;
+        private TextBox Order_Status;
         private Label label8;
-        private TextBox textBox1;
-        private Button button13;
-        private Button button14;
-        private Button button15;
+        private TextBox Reviews_RID;
+        private Button DeleteReview;
+        private Button AddReview;
         private DataGridView dataGridView5;
         private Label label9;
         private Label label12;
         private Label label19;
         private Label label20;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
+        private TextBox Reviews_PID;
+        private TextBox Reviews_UID;
+        private TextBox Reviews_Comment;
         private Label label10;
-        private TextBox textBox2;
-        private Button button19;
-        private Button button20;
-        private Button button21;
+        private TextBox Request_RID;
+        private Button DeleteRequest;
+        private Button AddRequest;
         private DataGridView dataGridView7;
         private Label label23;
         private Label label28;
         private Label label29;
         private Label label30;
         private Label label31;
-        private TextBox textBox7;
-        private TextBox textBox10;
-        private TextBox textBox11;
+        private TextBox Request_EID;
+        private TextBox Request_UID;
+        private TextBox Request_Description;
         private Label label32;
-        private TextBox textBox12;
-        private Button button22;
-        private Button button23;
-        private Button button24;
+        private TextBox Logs_LogID;
+        private Button DeleteLog;
+        private Button AddLog;
         private DataGridView dataGridView8;
         private Label label33;
         private Label label34;
         private Label label36;
-        private TextBox textBox13;
-        private TextBox textBox14;
-        private ComboBox comboBox1;
-        private Button button25;
-        private DateTimePicker dateTimePicker1;
-        private Button button26;
-        private Button button27;
-        private Button button28;
-        private ComboBox comboBox2;
-        private Button button29;
-        private Button button30;
-        private DateTimePicker dateTimePicker2;
-        private DateTimePicker dateTimePicker3;
-        private Button button31;
-        private ComboBox comboBox3;
-        private Button button32;
-        private DateTimePicker dateTimePicker4;
-        private ComboBox comboBox4;
+        private TextBox Logs_UID;
+        private TextBox Logs_Action;
+        private ComboBox Order_PayMethod;
+        private Button SearchUser;
+        private DateTimePicker Order_OrderDate;
+        private Button SearchProduct;
+        private Button SearchOrder;
+        private Button SearchEmployee;
+        private ComboBox Reviews_Rating;
+        private Button SearchReview;
+        private Button SearchWhish;
+        private DateTimePicker Wish_DAdd;
+        private DateTimePicker Request_RD;
+        private Button SearchRequest;
+        private ComboBox Request_Status;
+        private Button SearchLog;
+        private DateTimePicker Logs_DT;
+        private ComboBox Employ_EmpType;
         private Button button33;
         private Button button34;
         private Button button35;

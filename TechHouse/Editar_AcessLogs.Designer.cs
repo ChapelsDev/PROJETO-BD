@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             label32 = new Label();
-            textBox12 = new TextBox();
+            UserID = new TextBox();
             label33 = new Label();
             label34 = new Label();
             label36 = new Label();
-            textBox13 = new TextBox();
-            textBox14 = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
-            dateTimePicker1 = new DateTimePicker();
+            LogID = new TextBox();
+            LogAction = new TextBox();
+            Save = new Button();
+            Cancel = new Button();
+            LogDate = new DateTimePicker();
             SuspendLayout();
             // 
             // label32
@@ -49,12 +49,12 @@
             label32.TabIndex = 71;
             label32.Text = "DateTime";
             // 
-            // textBox12
+            // UserID
             // 
-            textBox12.Location = new Point(133, 52);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(214, 23);
-            textBox12.TabIndex = 70;
+            UserID.Location = new Point(133, 52);
+            UserID.Name = "UserID";
+            UserID.Size = new Size(214, 23);
+            UserID.TabIndex = 70;
             // 
             // label33
             // 
@@ -83,61 +83,64 @@
             label36.TabIndex = 67;
             label36.Text = "Log ID";
             // 
-            // textBox13
+            // LogID
             // 
-            textBox13.Location = new Point(133, 102);
-            textBox13.Name = "textBox13";
-            textBox13.PasswordChar = '*';
-            textBox13.Size = new Size(214, 23);
-            textBox13.TabIndex = 66;
+            LogID.Location = new Point(133, 102);
+            LogID.Name = "LogID";
+            LogID.PasswordChar = '*';
+            LogID.Size = new Size(214, 23);
+            LogID.TabIndex = 66;
             // 
-            // textBox14
+            // LogAction
             // 
-            textBox14.Location = new Point(133, 196);
-            textBox14.Name = "textBox14";
-            textBox14.Size = new Size(214, 23);
-            textBox14.TabIndex = 65;
+            LogAction.AccessibleDescription = "LogAction";
+            LogAction.Location = new Point(133, 196);
+            LogAction.Name = "LogAction";
+            LogAction.Size = new Size(214, 23);
+            LogAction.TabIndex = 65;
             // 
-            // button1
+            // Save
             // 
-            button1.Location = new Point(145, 255);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 72;
-            button1.Text = "Save";
-            button1.UseVisualStyleBackColor = true;
+            Save.Location = new Point(145, 255);
+            Save.Name = "Save";
+            Save.Size = new Size(75, 23);
+            Save.TabIndex = 72;
+            Save.Text = "Save";
+            Save.UseVisualStyleBackColor = true;
+            Save.Click += Save_Click;
             // 
-            // button2
+            // Cancel
             // 
-            button2.Location = new Point(243, 255);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 73;
-            button2.Text = "Cancel";
-            button2.UseVisualStyleBackColor = true;
+            Cancel.Location = new Point(243, 255);
+            Cancel.Name = "Cancel";
+            Cancel.Size = new Size(75, 23);
+            Cancel.TabIndex = 73;
+            Cancel.Text = "Cancel";
+            Cancel.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
+            // LogDate
             // 
-            dateTimePicker1.Location = new Point(133, 149);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(214, 23);
-            dateTimePicker1.TabIndex = 74;
+            LogDate.AccessibleDescription = "LogDate";
+            LogDate.Location = new Point(133, 149);
+            LogDate.Name = "LogDate";
+            LogDate.Size = new Size(214, 23);
+            LogDate.TabIndex = 74;
             // 
             // Editar_AcessLogs
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(444, 310);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(LogDate);
+            Controls.Add(Cancel);
+            Controls.Add(Save);
             Controls.Add(label32);
-            Controls.Add(textBox12);
+            Controls.Add(UserID);
             Controls.Add(label33);
             Controls.Add(label34);
             Controls.Add(label36);
-            Controls.Add(textBox13);
-            Controls.Add(textBox14);
+            Controls.Add(LogID);
+            Controls.Add(LogAction);
             Name = "Editar_AcessLogs";
             Text = "Editar_AcessLogs";
             ResumeLayout(false);
@@ -147,14 +150,14 @@
         #endregion
 
         private Label label32;
-        private TextBox textBox12;
+        public TextBox UserID;
         private Label label33;
         private Label label34;
         private Label label36;
-        private TextBox textBox13;
-        private TextBox textBox14;
-        private Button button1;
-        private Button button2;
-        private DateTimePicker dateTimePicker1;
+        public TextBox LogID;
+        public TextBox LogAction;
+        private Button Save;
+        private Button Cancel;
+        private DateTimePicker LogDate;
     }
 }

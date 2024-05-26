@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             label10 = new Label();
-            textBox2 = new TextBox();
+            RID = new TextBox();
             label23 = new Label();
             label28 = new Label();
             label29 = new Label();
             label30 = new Label();
             label31 = new Label();
-            textBox7 = new TextBox();
-            textBox9 = new TextBox();
-            textBox10 = new TextBox();
-            textBox11 = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
+            EID = new TextBox();
+            Status = new TextBox();
+            UID = new TextBox();
+            Description = new TextBox();
+            Save = new Button();
+            Cancel = new Button();
             dateTimePicker1 = new DateTimePicker();
             SuspendLayout();
             // 
@@ -53,12 +53,12 @@
             label10.TabIndex = 95;
             label10.Text = "Request ID";
             // 
-            // textBox2
+            // RID
             // 
-            textBox2.Location = new Point(153, 26);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(199, 23);
-            textBox2.TabIndex = 94;
+            RID.Location = new Point(153, 26);
+            RID.Name = "RID";
+            RID.Size = new Size(199, 23);
+            RID.TabIndex = 94;
             // 
             // label23
             // 
@@ -105,51 +105,52 @@
             label31.TabIndex = 89;
             label31.Text = "Description";
             // 
-            // textBox7
+            // EID
             // 
-            textBox7.Location = new Point(153, 142);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(199, 23);
-            textBox7.TabIndex = 88;
+            EID.Location = new Point(153, 142);
+            EID.Name = "EID";
+            EID.Size = new Size(199, 23);
+            EID.TabIndex = 88;
             // 
-            // textBox9
+            // Status
             // 
-            textBox9.Location = new Point(153, 84);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(199, 23);
-            textBox9.TabIndex = 86;
+            Status.Location = new Point(153, 84);
+            Status.Name = "Status";
+            Status.Size = new Size(199, 23);
+            Status.TabIndex = 86;
             // 
-            // textBox10
+            // UID
             // 
-            textBox10.Location = new Point(153, 113);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(199, 23);
-            textBox10.TabIndex = 85;
+            UID.Location = new Point(153, 113);
+            UID.Name = "UID";
+            UID.Size = new Size(199, 23);
+            UID.TabIndex = 85;
             // 
-            // textBox11
+            // Description
             // 
-            textBox11.Location = new Point(153, 55);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(199, 23);
-            textBox11.TabIndex = 84;
+            Description.Location = new Point(153, 55);
+            Description.Name = "Description";
+            Description.Size = new Size(199, 23);
+            Description.TabIndex = 84;
             // 
-            // button1
+            // Save
             // 
-            button1.Location = new Point(153, 232);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 96;
-            button1.Text = "Save";
-            button1.UseVisualStyleBackColor = true;
+            Save.Location = new Point(153, 232);
+            Save.Name = "Save";
+            Save.Size = new Size(75, 23);
+            Save.TabIndex = 96;
+            Save.Text = "Save";
+            Save.UseVisualStyleBackColor = true;
+            Save.Click += Save_Click;
             // 
-            // button2
+            // Cancel
             // 
-            button2.Location = new Point(277, 232);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 97;
-            button2.Text = "Cancel";
-            button2.UseVisualStyleBackColor = true;
+            Cancel.Location = new Point(277, 232);
+            Cancel.Name = "Cancel";
+            Cancel.Size = new Size(75, 23);
+            Cancel.TabIndex = 97;
+            Cancel.Text = "Cancel";
+            Cancel.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker1
             // 
@@ -164,19 +165,19 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(444, 310);
             Controls.Add(dateTimePicker1);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(Cancel);
+            Controls.Add(Save);
             Controls.Add(label10);
-            Controls.Add(textBox2);
+            Controls.Add(RID);
             Controls.Add(label23);
             Controls.Add(label28);
             Controls.Add(label29);
             Controls.Add(label30);
             Controls.Add(label31);
-            Controls.Add(textBox7);
-            Controls.Add(textBox9);
-            Controls.Add(textBox10);
-            Controls.Add(textBox11);
+            Controls.Add(EID);
+            Controls.Add(Status);
+            Controls.Add(UID);
+            Controls.Add(Description);
             Name = "Editar_ServiceRequest";
             Text = "Editar_ServiceRequest";
             ResumeLayout(false);
@@ -186,18 +187,18 @@
         #endregion
 
         private Label label10;
-        private TextBox textBox2;
+        public TextBox RID;
         private Label label23;
         private Label label28;
         private Label label29;
         private Label label30;
         private Label label31;
-        private TextBox textBox7;
-        private TextBox textBox9;
-        private TextBox textBox10;
-        private TextBox textBox11;
-        private Button button1;
-        private Button button2;
-        private DateTimePicker dateTimePicker1;
+        public TextBox EID;
+        public TextBox Status;
+        public TextBox UID;
+        public TextBox Description;
+        private Button Save;
+        private Button Cancel;
+        public DateTimePicker dateTimePicker1;
     }
 }
