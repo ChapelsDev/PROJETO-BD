@@ -50,6 +50,7 @@
             Users_LName = new TextBox();
             Users_FName = new TextBox();
             tabPage2 = new TabPage();
+            Product_CategoryID = new ComboBox();
             button34 = new Button();
             SearchProduct = new Button();
             label7 = new Label();
@@ -67,6 +68,7 @@
             Product_Brand = new TextBox();
             Products_ProductName = new TextBox();
             tabPage3 = new TabPage();
+            Orders_UserID = new ComboBox();
             button35 = new Button();
             SearchOrder = new Button();
             Order_OrderDate = new DateTimePicker();
@@ -82,7 +84,6 @@
             label17 = new Label();
             label18 = new Label();
             Order_ShippAddr = new TextBox();
-            Orders_UserID = new TextBox();
             Order_Status = new TextBox();
             tabPage4 = new TabPage();
             button36 = new Button();
@@ -166,7 +167,6 @@
             label36 = new Label();
             Logs_UID = new TextBox();
             Logs_Action = new TextBox();
-            Product_CategoryID = new ComboBox();
             tabControl1.SuspendLayout();
             Users.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -420,6 +420,14 @@
             tabPage2.Text = "Products";
             tabPage2.UseVisualStyleBackColor = true;
             // 
+            // Product_CategoryID
+            // 
+            Product_CategoryID.FormattingEnabled = true;
+            Product_CategoryID.Location = new Point(735, 53);
+            Product_CategoryID.Name = "Product_CategoryID";
+            Product_CategoryID.Size = new Size(164, 23);
+            Product_CategoryID.TabIndex = 54;
+            // 
             // button34
             // 
             button34.Location = new Point(278, 558);
@@ -559,6 +567,7 @@
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(Orders_UserID);
             tabPage3.Controls.Add(button35);
             tabPage3.Controls.Add(SearchOrder);
             tabPage3.Controls.Add(Order_OrderDate);
@@ -574,7 +583,6 @@
             tabPage3.Controls.Add(label17);
             tabPage3.Controls.Add(label18);
             tabPage3.Controls.Add(Order_ShippAddr);
-            tabPage3.Controls.Add(Orders_UserID);
             tabPage3.Controls.Add(Order_Status);
             tabPage3.Location = new Point(4, 24);
             tabPage3.Name = "tabPage3";
@@ -582,6 +590,14 @@
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Orders";
             tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // Orders_UserID
+            // 
+            Orders_UserID.FormattingEnabled = true;
+            Orders_UserID.Location = new Point(767, 50);
+            Orders_UserID.Name = "Orders_UserID";
+            Orders_UserID.Size = new Size(164, 23);
+            Orders_UserID.TabIndex = 72;
             // 
             // button35
             // 
@@ -601,6 +617,7 @@
             SearchOrder.TabIndex = 70;
             SearchOrder.Text = "Search";
             SearchOrder.UseVisualStyleBackColor = true;
+            SearchOrder.Click += SearchOrder_Click;
             // 
             // Order_OrderDate
             // 
@@ -641,6 +658,7 @@
             DeleteOrder.TabIndex = 65;
             DeleteOrder.Text = "Delete Order";
             DeleteOrder.UseVisualStyleBackColor = true;
+            DeleteOrder.Click += DeleteOrder_Click;
             // 
             // AddOrder
             // 
@@ -650,6 +668,7 @@
             AddOrder.TabIndex = 63;
             AddOrder.Text = "Add Order";
             AddOrder.UseVisualStyleBackColor = true;
+            AddOrder.Click += AddOrder_Click;
             // 
             // dataGridView3
             // 
@@ -710,13 +729,6 @@
             Order_ShippAddr.Name = "Order_ShippAddr";
             Order_ShippAddr.Size = new Size(164, 23);
             Order_ShippAddr.TabIndex = 56;
-            // 
-            // Orders_UserID
-            // 
-            Orders_UserID.Location = new Point(767, 50);
-            Orders_UserID.Name = "Orders_UserID";
-            Orders_UserID.Size = new Size(164, 23);
-            Orders_UserID.TabIndex = 54;
             // 
             // Order_Status
             // 
@@ -1494,14 +1506,6 @@
             Logs_Action.Size = new Size(164, 23);
             Logs_Action.TabIndex = 53;
             // 
-            // Product_CategoryID
-            // 
-            Product_CategoryID.FormattingEnabled = true;
-            Product_CategoryID.Location = new Point(735, 53);
-            Product_CategoryID.Name = "Product_CategoryID";
-            Product_CategoryID.Size = new Size(164, 23);
-            Product_CategoryID.TabIndex = 54;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1619,7 +1623,6 @@
         private Label label17;
         private Label label18;
         private TextBox Order_ShippAddr;
-        private TextBox Orders_UserID;
         private TextBox Order_Status;
         private Label label8;
         private TextBox Reviews_RID;
@@ -1681,5 +1684,6 @@
         private Button button39;
         private Button button40;
         private ComboBox Product_CategoryID;
+        private ComboBox Orders_UserID;
     }
 }
