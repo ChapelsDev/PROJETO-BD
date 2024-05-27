@@ -37,11 +37,11 @@
             label13 = new Label();
             Product_Price = new TextBox();
             product_qty = new TextBox();
-            Product_CategoryID = new TextBox();
             Product_Brand = new TextBox();
             ProductName = new TextBox();
             Save = new Button();
             Cancel = new Button();
+            Product_CategoryID = new ComboBox();
             SuspendLayout();
             // 
             // label7
@@ -63,7 +63,7 @@
             // CategoryId
             // 
             CategoryId.AutoSize = true;
-            CategoryId.Location = new Point(63, 180);
+            CategoryId.Location = new Point(63, 188);
             CategoryId.Name = "CategoryId";
             CategoryId.Size = new Size(66, 15);
             CategoryId.TabIndex = 61;
@@ -119,13 +119,6 @@
             product_qty.Size = new Size(234, 23);
             product_qty.TabIndex = 55;
             // 
-            // Product_CategoryID
-            // 
-            Product_CategoryID.Location = new Point(137, 180);
-            Product_CategoryID.Name = "Product_CategoryID";
-            Product_CategoryID.Size = new Size(234, 23);
-            Product_CategoryID.TabIndex = 54;
-            // 
             // Product_Brand
             // 
             Product_Brand.Location = new Point(137, 88);
@@ -158,12 +151,22 @@
             Cancel.TabIndex = 65;
             Cancel.Text = "Cancel";
             Cancel.UseVisualStyleBackColor = true;
+            Cancel.Click += Cancel_Click;
+            // 
+            // Product_CategoryID
+            // 
+            Product_CategoryID.FormattingEnabled = true;
+            Product_CategoryID.Location = new Point(137, 185);
+            Product_CategoryID.Name = "Product_CategoryID";
+            Product_CategoryID.Size = new Size(234, 23);
+            Product_CategoryID.TabIndex = 66;
             // 
             // Editar_Produt
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(444, 310);
+            Controls.Add(Product_CategoryID);
             Controls.Add(Cancel);
             Controls.Add(Save);
             Controls.Add(label7);
@@ -175,11 +178,11 @@
             Controls.Add(label13);
             Controls.Add(Product_Price);
             Controls.Add(product_qty);
-            Controls.Add(Product_CategoryID);
             Controls.Add(Product_Brand);
             Controls.Add(ProductName);
             Name = "Editar_Produt";
             Text = "Editar_Produt";
+            Load += Editar_Produt_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -195,10 +198,10 @@
         private Label label13;
         public TextBox Product_Price;
         public TextBox product_qty;
-        public TextBox Product_CategoryID;
         public TextBox Product_Brand;
         public TextBox ProductName;
         private Button Save;
         private Button Cancel;
+        public ComboBox Product_CategoryID;
     }
 }

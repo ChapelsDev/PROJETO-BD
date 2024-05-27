@@ -7,12 +7,32 @@
       "RelativeMoniker": "D:0:0:{264E1DC0-9567-4D2C-B8EA-1D63F7400689}|TechHouse.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{264E1DC0-9567-4D2C-B8EA-1D63F7400689}|TechHouse.csproj|d:\\universidade\\ano 3\\projeto-bd\\techhouse\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{264E1DC0-9567-4D2C-B8EA-1D63F7400689}|TechHouse.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{264E1DC0-9567-4D2C-B8EA-1D63F7400689}|TechHouse.csproj|d:\\universidade\\ano 3\\projeto-bd\\techhouse\\editar_produt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{264E1DC0-9567-4D2C-B8EA-1D63F7400689}|TechHouse.csproj|solutionrelative:editar_produt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{264E1DC0-9567-4D2C-B8EA-1D63F7400689}|TechHouse.csproj|D:\\Universidade\\Ano 3\\PROJETO-BD\\TechHouse\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{264E1DC0-9567-4D2C-B8EA-1D63F7400689}|TechHouse.csproj|d:\\universidade\\ano 3\\projeto-bd\\techhouse\\editar_produt.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{264E1DC0-9567-4D2C-B8EA-1D63F7400689}|TechHouse.csproj|solutionrelative:editar_produt.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{264E1DC0-9567-4D2C-B8EA-1D63F7400689}|TechHouse.csproj|d:\\universidade\\ano 3\\projeto-bd\\techhouse\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{264E1DC0-9567-4D2C-B8EA-1D63F7400689}|TechHouse.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{264E1DC0-9567-4D2C-B8EA-1D63F7400689}|TechHouse.csproj|d:\\universidade\\ano 3\\projeto-bd\\techhouse\\editar_produt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{264E1DC0-9567-4D2C-B8EA-1D63F7400689}|TechHouse.csproj|solutionrelative:editar_produt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{264E1DC0-9567-4D2C-B8EA-1D63F7400689}|TechHouse.csproj|d:\\universidade\\ano 3\\projeto-bd\\techhouse\\editar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{264E1DC0-9567-4D2C-B8EA-1D63F7400689}|TechHouse.csproj|solutionrelative:editar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{264E1DC0-9567-4D2C-B8EA-1D63F7400689}|TechHouse.csproj|d:\\universidade\\ano 3\\projeto-bd\\techhouse\\editar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{264E1DC0-9567-4D2C-B8EA-1D63F7400689}|TechHouse.csproj|solutionrelative:editar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{264E1DC0-9567-4D2C-B8EA-1D63F7400689}|TechHouse.csproj|d:\\universidade\\ano 3\\projeto-bd\\techhouse\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{264E1DC0-9567-4D2C-B8EA-1D63F7400689}|TechHouse.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,11 +42,78 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 8,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Editar.cs",
+              "DocumentMoniker": "D:\\Universidade\\Ano 3\\PROJETO-BD\\TechHouse\\Editar.cs",
+              "RelativeDocumentMoniker": "Editar.cs",
+              "ToolTip": "D:\\Universidade\\Ano 3\\PROJETO-BD\\TechHouse\\Editar.cs",
+              "RelativeToolTip": "Editar.cs",
+              "ViewState": "AQIAAG0AAAAAAAAAAAAYwJEAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T15:22:23.733Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Editar.cs [Projeto]",
+              "DocumentMoniker": "D:\\Universidade\\Ano 3\\PROJETO-BD\\TechHouse\\Editar.cs",
+              "RelativeDocumentMoniker": "Editar.cs",
+              "ToolTip": "D:\\Universidade\\Ano 3\\PROJETO-BD\\TechHouse\\Editar.cs [Projeto]",
+              "RelativeToolTip": "Editar.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T15:22:20.131Z",
+              "EditorCaption": " [Projeto]"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Editar_Produt.Designer.cs",
+              "DocumentMoniker": "D:\\Universidade\\Ano 3\\PROJETO-BD\\TechHouse\\Editar_Produt.Designer.cs",
+              "RelativeDocumentMoniker": "Editar_Produt.Designer.cs",
+              "ToolTip": "D:\\Universidade\\Ano 3\\PROJETO-BD\\TechHouse\\Editar_Produt.Designer.cs",
+              "RelativeToolTip": "Editar_Produt.Designer.cs",
+              "ViewState": "AQIAAIUAAAAAAAAAAAAMwKIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T15:17:27.792Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Editar_Produt.cs",
+              "DocumentMoniker": "D:\\Universidade\\Ano 3\\PROJETO-BD\\TechHouse\\Editar_Produt.cs",
+              "RelativeDocumentMoniker": "Editar_Produt.cs",
+              "ToolTip": "D:\\Universidade\\Ano 3\\PROJETO-BD\\TechHouse\\Editar_Produt.cs",
+              "RelativeToolTip": "Editar_Produt.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGgAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T15:02:45.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Editar_Produt.cs [Projeto]",
+              "DocumentMoniker": "D:\\Universidade\\Ano 3\\PROJETO-BD\\TechHouse\\Editar_Produt.cs",
+              "RelativeDocumentMoniker": "Editar_Produt.cs",
+              "ToolTip": "D:\\Universidade\\Ano 3\\PROJETO-BD\\TechHouse\\Editar_Produt.cs [Projeto]",
+              "RelativeToolTip": "Editar_Produt.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T15:02:14.494Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Form1.cs [Projeto]",
               "DocumentMoniker": "D:\\Universidade\\Ano 3\\PROJETO-BD\\TechHouse\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
@@ -38,13 +125,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "D:\\Universidade\\Ano 3\\PROJETO-BD\\TechHouse\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "Form1.Designer.cs",
               "ToolTip": "D:\\Universidade\\Ano 3\\PROJETO-BD\\TechHouse\\Form1.Designer.cs",
               "RelativeToolTip": "Form1.Designer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAEAAAA",
+              "ViewState": "AQIAAMMFAAAAAAAAAAAMwN8FAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-24T22:48:11.671Z",
               "EditorCaption": ""
@@ -57,7 +144,7 @@
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "D:\\Universidade\\Ano 3\\PROJETO-BD\\TechHouse\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AQIAAGwBAAAAAAAAAAAAAH8BAAA4AAAA",
+              "ViewState": "AQIAAJMBAAAAAAAAAAAqwAYCAABQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-24T22:41:39.635Z",
               "EditorCaption": ""
