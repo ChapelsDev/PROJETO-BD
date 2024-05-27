@@ -47,7 +47,7 @@ namespace TechHouse
 
         }
 
-        private void button26_Click(object sender, EventArgs e)
+        private void button26_Click(object sender, EventArgs e) // Save
         {
             string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             string query = "UPDATE [TechHouse].[User] SET FirstName = @FirstName, LastName = @LastName, Email = @Email, PhoneNumber = @PhoneNumber, Password = @Password, Address = @Address WHERE UserID = @Id";
