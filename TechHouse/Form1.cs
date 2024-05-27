@@ -1,6 +1,8 @@
 using Microsoft.VisualBasic.ApplicationServices;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing.Text;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -54,11 +56,13 @@ namespace TechHouse
 
                 // Pass the selected user ID to the Edit form
                 Edi2.ProductID.Text = selectedPID.ToString();
-
+                int textBoxIndex = 0;
                 // Fill the TextBoxes in the Edit form with the values of the selected row
                 for (int i = 0; i < dataGridView2.Columns.Count; i++)
                 {
-                    Edi2.TextBoxes[i].Text = dataGridView2.SelectedRows[0].Cells[i].Value.ToString();
+                    if (i == 5) { Edi2.Product_CategoryID.Text = dataGridView2.SelectedRows[0].Cells[i].Value.ToString(); continue; } 
+                    Edi2.TextBoxes[textBoxIndex].Text = dataGridView2.SelectedRows[0].Cells[i].Value.ToString();
+                    textBoxIndex++;
                 }
 
                 Edi2.ShowDialog();
@@ -241,9 +245,11 @@ namespace TechHouse
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
             tabControl1_SelectedIndexChanged(sender, e);
+            LoadProductsCategory();
+            
         }
-
         public void FillDataGridView(DataGridView dataGridView, string connectionString, string tableName)
         {
             //MessageBox.Show("FillDataGridView is being called");
@@ -311,6 +317,8 @@ namespace TechHouse
             }
         }
 
+        //////////////////////////////////////////////////  USERS TAB PAGE  //////////////////////////////////////////////////
+
         private void AddUser_Click(object sender, EventArgs e)
         {
             string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
@@ -358,7 +366,7 @@ namespace TechHouse
 
         private void SearchLog_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void SearchUser_Click(object sender, EventArgs e)
@@ -409,6 +417,146 @@ namespace TechHouse
             }
 
         }
+
+        //////////////////////////////////////////////////  PRODUCTS TAB PAGE  //////////////////////////////////////////////////
+
+
+        private void AddProduct_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string query = "INSERT INTO [TechHouse].[Products] (Name, Brand, Price, StockQty, CategoryID) VALUES (@Name, @Brand, @Price, @StockQty, @CategoryID)";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Name", Products_ProductName.Text);
+                    command.Parameters.AddWithValue("@Brand", Product_Brand.Text);
+                    decimal price;
+                    if (decimal.TryParse(Product_Price.Text, out price))
+                    {
+                        command.Parameters.AddWithValue("@Price", price);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter a valid price.");
+                        return;
+                    }
+                    int stockQty;
+                    if (int.TryParse(product_qty.Text, out stockQty))
+                    {
+                        command.Parameters.AddWithValue("@StockQty", stockQty);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter a valid stock quantity.");
+                        return;
+                    }
+                    command.Parameters.AddWithValue("@CategoryID", int.Parse(Product_CategoryID.Text.Split('-')[0].Trim()));
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+
+            MessageBox.Show("Product added successfully");
+
+        }
+
+        private void LoadProductsCategory()
+        {
+            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string query = "SELECT CategoryID, Name FROM [TechHouse].[Category]";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        // Limpe o ComboBox antes de preenchê-lo
+                        Product_CategoryID.Items.Clear();
+
+                        while (reader.Read())
+                        {
+                            // Adicione o nome da categoria ao ComboBox
+                            Product_CategoryID.Items.Add(reader["CategoryID"].ToString() + " - " + reader["Name"].ToString());
+                        }
+                    }
+                }
+            }
+        }
+
+        private void DeleteProduct_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string query = "DELETE FROM [TechHouse].[Products] WHERE ProductID = @ProductID";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    // Assume that the ID of the user is in the first column of the DataGridView
+                    int selectedProductId = (int)dataGridView2.SelectedRows[0].Cells[0].Value;
+                    command.Parameters.AddWithValue("@ProductID", selectedProductId);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+
+            MessageBox.Show("Product deleted successfully");
+        }
+
+        private void SearchProduct_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            StringBuilder query = new StringBuilder("SELECT * FROM [TechHouse].[Products] WHERE 1=1");
+
+            if (!string.IsNullOrEmpty(Products_ProductName.Text))
+            {
+                query.Append($" AND Name LIKE '%{Products_ProductName.Text}%'");
+            }
+
+            if (!string.IsNullOrEmpty(Product_Brand.Text))
+            {
+                query.Append($" AND Brand LIKE '%{Product_Brand.Text}%'");
+            }
+
+            if (!string.IsNullOrEmpty(Products_ProductID.Text))
+            {
+                query.Append($" AND ProductID LIKE '%{Products_ProductID.Text}%'");
+            }
+
+            if (!string.IsNullOrEmpty(Product_Price.Text))
+            {
+                query.Append($" AND Price LIKE '%{Product_Price.Text}%'");
+            }
+
+            if (!string.IsNullOrEmpty(product_qty.Text))
+            {
+                query.Append($" AND StockQty LIKE '%{product_qty.Text}%'");
+            }
+
+            if (!string.IsNullOrEmpty(Product_CategoryID.Text))
+            {
+                query.Append($" AND CategoryID LIKE '%{(Product_CategoryID.Text.Split('-')[0].Trim())}%'");
+            }
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlDataAdapter adapter = new SqlDataAdapter(query.ToString(), connection))
+                {
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+                    dataGridView2.DataSource = table;
+                    dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                }
+            }
+        }
+
     }
 }
 

@@ -64,7 +64,6 @@
             label13 = new Label();
             Product_Price = new TextBox();
             product_qty = new TextBox();
-            Product_CategoryID = new TextBox();
             Product_Brand = new TextBox();
             Products_ProductName = new TextBox();
             tabPage3 = new TabPage();
@@ -167,6 +166,7 @@
             label36 = new Label();
             Logs_UID = new TextBox();
             Logs_Action = new TextBox();
+            Product_CategoryID = new ComboBox();
             tabControl1.SuspendLayout();
             Users.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -395,6 +395,7 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(Product_CategoryID);
             tabPage2.Controls.Add(button34);
             tabPage2.Controls.Add(SearchProduct);
             tabPage2.Controls.Add(label7);
@@ -409,7 +410,6 @@
             tabPage2.Controls.Add(label13);
             tabPage2.Controls.Add(Product_Price);
             tabPage2.Controls.Add(product_qty);
-            tabPage2.Controls.Add(Product_CategoryID);
             tabPage2.Controls.Add(Product_Brand);
             tabPage2.Controls.Add(Products_ProductName);
             tabPage2.Location = new Point(4, 24);
@@ -438,6 +438,7 @@
             SearchProduct.TabIndex = 52;
             SearchProduct.Text = "Search";
             SearchProduct.UseVisualStyleBackColor = true;
+            SearchProduct.Click += SearchProduct_Click;
             // 
             // label7
             // 
@@ -463,6 +464,7 @@
             DeleteProduct.TabIndex = 49;
             DeleteProduct.Text = "Delete Product";
             DeleteProduct.UseVisualStyleBackColor = true;
+            DeleteProduct.Click += DeleteProduct_Click;
             // 
             // AddProduct
             // 
@@ -472,6 +474,7 @@
             AddProduct.TabIndex = 47;
             AddProduct.Text = "Add Product";
             AddProduct.UseVisualStyleBackColor = true;
+            AddProduct.Click += AddProduct_Click;
             // 
             // dataGridView2
             // 
@@ -539,13 +542,6 @@
             product_qty.Name = "product_qty";
             product_qty.Size = new Size(164, 23);
             product_qty.TabIndex = 38;
-            // 
-            // Product_CategoryID
-            // 
-            Product_CategoryID.Location = new Point(735, 55);
-            Product_CategoryID.Name = "Product_CategoryID";
-            Product_CategoryID.Size = new Size(164, 23);
-            Product_CategoryID.TabIndex = 37;
             // 
             // Product_Brand
             // 
@@ -1498,6 +1494,14 @@
             Logs_Action.Size = new Size(164, 23);
             Logs_Action.TabIndex = 53;
             // 
+            // Product_CategoryID
+            // 
+            Product_CategoryID.FormattingEnabled = true;
+            Product_CategoryID.Location = new Point(735, 53);
+            Product_CategoryID.Name = "Product_CategoryID";
+            Product_CategoryID.Size = new Size(164, 23);
+            Product_CategoryID.TabIndex = 54;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1576,7 +1580,6 @@
         private Label label13;
         private TextBox Product_Price;
         private TextBox product_qty;
-        private TextBox Product_CategoryID;
         private TextBox Product_Brand;
         private TextBox Products_ProductName;
         private Label label21;
@@ -1677,5 +1680,6 @@
         private Button button38;
         private Button button39;
         private Button button40;
+        private ComboBox Product_CategoryID;
     }
 }
