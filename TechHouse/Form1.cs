@@ -60,7 +60,7 @@ namespace TechHouse
                 // Fill the TextBoxes in the Edit form with the values of the selected row
                 for (int i = 0; i < dataGridView2.Columns.Count; i++)
                 {
-                    if (i == 5) { Edi2.Product_CategoryID.Text = dataGridView2.SelectedRows[0].Cells[i].Value.ToString(); continue; } 
+                    if (i == 5) { Edi2.Product_CategoryID.Text = dataGridView2.SelectedRows[0].Cells[i].Value.ToString(); continue; }
                     Edi2.TextBoxes[textBoxIndex].Text = dataGridView2.SelectedRows[0].Cells[i].Value.ToString();
                     textBoxIndex++;
                 }
@@ -88,8 +88,15 @@ namespace TechHouse
                 // Fill the TextBoxes in the Edit form with the values of the selected row
                 for (int i = 0; i < dataGridView3.Columns.Count; i++)
                 {
-                    if (i == 1) { continue; }  //skip the second column porque não são textboxes
-                    if (i == 4) { continue; } //skip the fifth column porque não são textboxes
+                    if (i == 1)
+                    {
+                        string date = dataGridView3.SelectedRows[0].Cells[i].Value.ToString();
+                        Edi3.OrderDate.Value = DateTime.Parse(date);
+                        continue;
+                    }
+                    if (i == 4) { Edi3.PaymentMethod.Text = dataGridView3.SelectedRows[0].Cells[i].Value.ToString(); continue; }
+
+                    if (i == 5) { Edi3.UserID.Text = dataGridView3.SelectedRows[0].Cells[i].Value.ToString(); continue; }
 
                     Edi3.TextBoxes[textBoxIndex].Text = dataGridView3.SelectedRows[0].Cells[i].Value.ToString();
                     textBoxIndex++;
@@ -245,10 +252,12 @@ namespace TechHouse
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
             tabControl1_SelectedIndexChanged(sender, e);
             LoadProductsCategory();
-            
+            LoadOrderUser();
+            LoadPayMethod();
+
         }
         public void FillDataGridView(DataGridView dataGridView, string connectionString, string tableName)
         {
@@ -557,6 +566,142 @@ namespace TechHouse
             }
         }
 
+        //////////////////////////////////////////////////  ORDERS TAB PAGE  //////////////////////////////////////////////////
+        private void AddOrder_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string query = "INSERT INTO [TechHouse].[Orders] (OrderDate, Status, ShippingAddress, PaymentMethod, UserID) VALUES (@OrderDate, @Status, @ShippingAddress, @PaymentMethod, @UserID)";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    string formattedDate = Order_OrderDate.Value.ToString("yyyy-MM-dd");
+                    command.Parameters.AddWithValue("@OrderDate", formattedDate); //The textboxes are named Users_FName, Users_LName, etc.
+                    command.Parameters.AddWithValue("@Status", Order_Status.Text);
+                    command.Parameters.AddWithValue("@ShippingAddress", Order_ShippAddr.Text);
+                    command.Parameters.AddWithValue("@PaymentMethod", Order_PayMethod.Text);
+                    if (Orders_UserID.Text == null || Orders_UserID.Text == "")
+                    {
+                        MessageBox.Show("Please select a user");
+                        return;
+                    }
+                    command.Parameters.AddWithValue("@UserID", Orders_UserID.Text.Split('-')[0].Trim());
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+
+            MessageBox.Show("Order added successfully to User " + Orders_UserID.Text);
+
+        }
+
+        private void DeleteOrder_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string query = "DELETE FROM [TechHouse].[Orders] WHERE OrderID = @OrderID";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    // Assume that the ID of the user is in the first column of the DataGridView
+                    int selectedOrderId = (int)dataGridView3.SelectedRows[0].Cells[0].Value;
+                    command.Parameters.AddWithValue("@OrderID", selectedOrderId);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+
+            MessageBox.Show("Order deleted successfully");
+        }
+
+        private void SearchOrder_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            StringBuilder query = new StringBuilder("SELECT * FROM [TechHouse].[Orders] WHERE 1=1");
+            string orderdateNotChanged = Order_OrderDate.Value.ToString();
+
+            if ((!string.IsNullOrEmpty(Order_OrderDate.Value.ToString())) && Order_OrderDate.Value.ToString() != orderdateNotChanged)
+            {
+                string formattedDate = Order_OrderDate.Value.ToString("yyyy-MM-dd");
+                query.Append($" AND OrderDate LIKE '%{formattedDate}%'");
+            }
+
+            if (!string.IsNullOrEmpty(Order_Status.Text))
+            {
+                query.Append($" AND Status LIKE '%{Order_Status.Text}%'");
+            }
+
+            if (!string.IsNullOrEmpty(Order_OrderID.Text))
+            {
+                query.Append($" AND OrderID LIKE '%{Order_OrderID.Text}%'");
+            }
+
+            if (!string.IsNullOrEmpty(Order_ShippAddr.Text))
+            {
+                query.Append($" AND ShippingAddress LIKE '%{Order_ShippAddr.Text}%'");
+            }
+
+            if (!string.IsNullOrEmpty(Order_PayMethod.Text))
+            {
+                query.Append($" AND PaymentMethod LIKE '%{Order_PayMethod.Text}%'");
+            }
+
+            if (!string.IsNullOrEmpty(Orders_UserID.Text))
+            {
+                query.Append($" AND UserID LIKE '%{(Orders_UserID.Text.Split('-')[0].Trim())}%'");
+            }
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlDataAdapter adapter = new SqlDataAdapter(query.ToString(), connection))
+                {
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+                    dataGridView3.DataSource = table;
+                    dataGridView3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                }
+            }
+
+        }
+
+
+        private void LoadOrderUser()
+        {
+            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string query = "SELECT UserID,FirstName FROM [TechHouse].[User]";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        // Limpe o ComboBox antes de preenchê-lo
+                        Orders_UserID.Items.Clear();
+
+                        while (reader.Read())
+                        {
+                            // Adicione o nome da categoria ao ComboBox
+                            Orders_UserID.Items.Add(reader["UserID"].ToString() + " - " + reader["FirstName"].ToString());
+                        }
+                    }
+                }
+            }
+        }
+
+        private void LoadPayMethod()
+        {
+            Order_PayMethod.Items.Clear();
+            Order_PayMethod.Items.Add("Credit Card");
+            Order_PayMethod.Items.Add("Debit Card");
+            Order_PayMethod.Items.Add("Paypal");
+            Order_PayMethod.Items.Add("Cash");
+        }
     }
 }
 

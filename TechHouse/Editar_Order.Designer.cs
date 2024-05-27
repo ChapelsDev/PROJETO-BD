@@ -36,18 +36,18 @@
             label17 = new Label();
             label18 = new Label();
             ShippingAddress = new TextBox();
-            Orders_UserID = new TextBox();
             Status = new TextBox();
             Save = new Button();
             Cancel = new Button();
-            comboBox1 = new ComboBox();
-            dateTimePicker1 = new DateTimePicker();
+            PaymentMethod = new ComboBox();
+            OrderDate = new DateTimePicker();
+            UserID = new ComboBox();
             SuspendLayout();
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(91, 42);
+            label11.Location = new Point(95, 37);
             label11.Name = "label11";
             label11.Size = new Size(51, 15);
             label11.TabIndex = 79;
@@ -55,7 +55,7 @@
             // 
             // OrderID
             // 
-            OrderID.Location = new Point(152, 39);
+            OrderID.Location = new Point(152, 34);
             OrderID.Name = "OrderID";
             OrderID.Size = new Size(211, 23);
             OrderID.TabIndex = 78;
@@ -112,13 +112,6 @@
             ShippingAddress.Size = new Size(211, 23);
             ShippingAddress.TabIndex = 72;
             // 
-            // Orders_UserID
-            // 
-            Orders_UserID.Location = new Point(152, 210);
-            Orders_UserID.Name = "Orders_UserID";
-            Orders_UserID.Size = new Size(211, 23);
-            Orders_UserID.TabIndex = 70;
-            // 
             // Status
             // 
             Status.Location = new Point(152, 100);
@@ -145,28 +138,38 @@
             Cancel.Text = "Cancel";
             Cancel.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // PaymentMethod
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(152, 135);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(211, 23);
-            comboBox1.TabIndex = 82;
+            PaymentMethod.FormattingEnabled = true;
+            PaymentMethod.Location = new Point(152, 135);
+            PaymentMethod.Name = "PaymentMethod";
+            PaymentMethod.Size = new Size(211, 23);
+            PaymentMethod.TabIndex = 82;
+            PaymentMethod.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
-            // dateTimePicker1
+            // OrderDate
             // 
-            dateTimePicker1.Location = new Point(154, 70);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(209, 23);
-            dateTimePicker1.TabIndex = 83;
+            OrderDate.Location = new Point(152, 68);
+            OrderDate.Name = "OrderDate";
+            OrderDate.Size = new Size(211, 23);
+            OrderDate.TabIndex = 83;
+            // 
+            // UserID
+            // 
+            UserID.FormattingEnabled = true;
+            UserID.Location = new Point(152, 210);
+            UserID.Name = "UserID";
+            UserID.Size = new Size(211, 23);
+            UserID.TabIndex = 84;
             // 
             // Editar_Order
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(444, 310);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(comboBox1);
+            Controls.Add(UserID);
+            Controls.Add(OrderDate);
+            Controls.Add(PaymentMethod);
             Controls.Add(Cancel);
             Controls.Add(Save);
             Controls.Add(label11);
@@ -177,10 +180,10 @@
             Controls.Add(label17);
             Controls.Add(label18);
             Controls.Add(ShippingAddress);
-            Controls.Add(Orders_UserID);
             Controls.Add(Status);
             Name = "Editar_Order";
             Text = "Editar_Order";
+            Load += LoadOrder;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -195,11 +198,11 @@
         private Label label17;
         private Label label18;
         public TextBox ShippingAddress;
-        public TextBox Orders_UserID;
         public TextBox Status;
         private Button Save;
         private Button Cancel;
-        public ComboBox comboBox1;
-        public DateTimePicker dateTimePicker1;
+        public ComboBox PaymentMethod;
+        public DateTimePicker OrderDate;
+        public ComboBox UserID;
     }
 }
