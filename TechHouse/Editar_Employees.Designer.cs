@@ -177,6 +177,7 @@
             button2.TabIndex = 68;
             button2.Text = "Cancel";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // Editar_Employees
             // 
@@ -201,6 +202,7 @@
             Controls.Add(FN_Employee);
             Name = "Editar_Employees";
             Text = "Editar_Employees";
+            Load += LoadEmployees;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -791,6 +791,7 @@
             SearchEmployee.TabIndex = 52;
             SearchEmployee.Text = "Search";
             SearchEmployee.UseVisualStyleBackColor = true;
+            SearchEmployee.Click += SearchEmployee_Click;
             // 
             // label21
             // 
@@ -816,6 +817,7 @@
             DeleteEmployee.TabIndex = 49;
             DeleteEmployee.Text = "Delete Employee";
             DeleteEmployee.UseVisualStyleBackColor = true;
+            DeleteEmployee.Click += DeleteEmployee_Click;
             // 
             // AddEmployee
             // 
@@ -825,6 +827,7 @@
             AddEmployee.TabIndex = 47;
             AddEmployee.Text = "Add Employee";
             AddEmployee.UseVisualStyleBackColor = true;
+            AddEmployee.Click += AddEmployee_Click;
             // 
             // dataGridView4
             // 
@@ -1512,8 +1515,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1034, 619);
             Controls.Add(tabControl1);
+            MaximizeBox = false;
             Name = "Form1";
-            Text = "Form1";
+            Text = "TechHouse";
             Activated += Form1_Load;
             Load += Form1_Load;
             tabControl1.ResumeLayout(false);

@@ -69,7 +69,7 @@ namespace TechHouse
             }
             else
             {
-                MessageBox.Show("Please select a row before clicking Edit Users.");
+                MessageBox.Show("Please select a row before clicking Edit Products.");
             }
 
         }
@@ -106,7 +106,7 @@ namespace TechHouse
             }
             else
             {
-                MessageBox.Show("Please select a row before clicking Edit Users.");
+                MessageBox.Show("Please select a row before clicking Edit Order.");
             }
         }
 
@@ -125,7 +125,7 @@ namespace TechHouse
                 // Fill the TextBoxes in the Edit form with the values of the selected row
                 for (int i = 0; i < dataGridView4.Columns.Count; i++)
                 {
-                    if (i == 5) { continue; } //skip the sixth column porque não é textbox
+                    if (i == 5) { Edi4.comboBox1.Text = dataGridView4.SelectedRows[0].Cells[5].Value.ToString(); continue; } //skip the sixth column porque não é textbox
                     Edi4.TextBoxes[textBoxIndex].Text = dataGridView4.SelectedRows[0].Cells[i].Value.ToString();
                     textBoxIndex++;
                 }
@@ -134,7 +134,7 @@ namespace TechHouse
             }
             else
             {
-                MessageBox.Show("Please select a row before clicking Edit Users.");
+                MessageBox.Show("Please select a row before clicking Edit Employee.");
             }
         }
 
@@ -190,7 +190,7 @@ namespace TechHouse
             }
             else
             {
-                MessageBox.Show("Please select a row before clicking Edit Users.");
+                MessageBox.Show("Please select a row before clicking Edit Whishlist.");
             }
         }
 
@@ -218,7 +218,7 @@ namespace TechHouse
             }
             else
             {
-                MessageBox.Show("Please select a row before clicking Edit Users.");
+                MessageBox.Show("Please select a row before clicking Edit Service Request.");
             }
         }
 
@@ -246,7 +246,7 @@ namespace TechHouse
             }
             else
             {
-                MessageBox.Show("Please select a row before clicking Edit Users.");
+                MessageBox.Show("Please select a row before clicking Edit Log.");
             }
         }
 
@@ -257,6 +257,7 @@ namespace TechHouse
             LoadProductsCategory();
             LoadOrderUser();
             LoadPayMethod();
+            LoadEmployeeTypes();
 
         }
         public void FillDataGridView(DataGridView dataGridView, string connectionString, string tableName)
@@ -702,7 +703,143 @@ namespace TechHouse
             Order_PayMethod.Items.Add("Paypal");
             Order_PayMethod.Items.Add("Cash");
         }
+
+        //////////////////////////////////////////////////  EMPLOYEES TAB PAGE  //////////////////////////////////////////////////
+
+        private void AddEmployee_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string query = "INSERT INTO [TechHouse].[Employee] (FirstName, LastName, Email, PhoneNumber, EmployeeTypeID, Address) VALUES (@FirstName, @LastName, @Email, @PhoneNumber, @EmployeeTypeID, @Address)";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@FirstName", FN_Employee.Text); //The textboxes are named Users_FName, Users_LName, etc.
+                    command.Parameters.AddWithValue("@LastName", LN_Employee.Text);
+                    command.Parameters.AddWithValue("@Email", Email_Employee.Text);
+                    command.Parameters.AddWithValue("@PhoneNumber", Contact_Employee.Text);
+                    int EmployeeType;
+                    if (int.TryParse(Employ_EmpType.Text.Split('-')[0].Trim(), out EmployeeType))
+                    {
+                        command.Parameters.AddWithValue("@EmployeeTypeID", EmployeeType);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter a EmployeeTypeID.");
+                        return;
+                    }
+                    command.Parameters.AddWithValue("@Address", Address_Employee.Text);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+
+            MessageBox.Show("Employee added successfully");
+        }
+
+        private void DeleteEmployee_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string query = "DELETE FROM [TechHouse].[Employee] WHERE EmployeeID = @EmployeeID";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    // Assume that the ID of the user is in the first column of the DataGridView
+                    int selectedEmployeeId = (int)dataGridView4.SelectedRows[0].Cells[0].Value;
+                    command.Parameters.AddWithValue("@EmployeeID", selectedEmployeeId);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+
+            MessageBox.Show("Employee deleted successfully");
+
+        }
+
+        private void SearchEmployee_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            StringBuilder query = new StringBuilder("SELECT * FROM [TechHouse].[Employee] WHERE 1=1");
+
+            if (!string.IsNullOrEmpty(FN_Employee.Text))
+            {
+                query.Append($" AND FirstName LIKE '%{FN_Employee.Text}%'");
+            }
+
+            if (!string.IsNullOrEmpty(LN_Employee.Text))
+            {
+                query.Append($" AND LastName LIKE '%{LN_Employee.Text}%'");
+            }
+
+            if (!string.IsNullOrEmpty(Employ_EmpID.Text))
+            {
+                query.Append($" AND EmployeeID LIKE '%{Employ_EmpID.Text}%'");
+            }
+
+            if (!string.IsNullOrEmpty(Email_Employee.Text))
+            {
+                query.Append($" AND Email LIKE '%{Email_Employee.Text}%'");
+            }
+
+            if (!string.IsNullOrEmpty(Contact_Employee.Text))
+            {
+                query.Append($" AND PhoneNumber LIKE '%{Contact_Employee.Text}%'");
+            }
+
+            if (!string.IsNullOrEmpty(Address_Employee.Text))
+            {
+                query.Append($" AND Address LIKE '%{Address_Employee.Text}%'");
+            }
+
+            if (!string.IsNullOrEmpty(Employ_EmpType.Text))
+            {
+                query.Append($" AND EmployeeTypeID LIKE '%{Employ_EmpType.Text.Split('-')[0].Trim()}%'");
+            }
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlDataAdapter adapter = new SqlDataAdapter(query.ToString(), connection))
+                {
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+                    dataGridView4.DataSource = table;
+                    dataGridView4.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                }
+            }
+
+        }
+
+        private void LoadEmployeeTypes()
+        {
+            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string query = "SELECT EmployeeTypeID,Name FROM [TechHouse].[EmployeeType]";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        // Limpe o ComboBox antes de preenchê-lo
+                        Employ_EmpType.Items.Clear();
+
+                        while (reader.Read())
+                        {
+                            // Adicione o nome da categoria ao ComboBox
+                            Employ_EmpType.Items.Add(reader["EmployeeTypeID"].ToString() + " - " + reader["Name"].ToString());
+                        }
+                    }
+                }
+            }
+        }
     }
 }
+
 
 

@@ -21,7 +21,7 @@ namespace TechHouse
         public Editar_Order()
         {
             InitializeComponent();
-            TextBoxes = new List<System.Windows.Forms.TextBox> { OrderID, Status, ShippingAddress};
+            TextBoxes = new List<System.Windows.Forms.TextBox> { OrderID, Status, ShippingAddress };
         }
         private void Save_Click(object sender, EventArgs e)
         {
@@ -71,6 +71,15 @@ namespace TechHouse
                         MessageBox.Show("Please enter a valid UserID");
                         i++;
                     }
+                    if (!(PaymentMethod.Text == ""))
+                    {
+                        command.Parameters.AddWithValue("@PaymentMethod", PaymentMethod.Text);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter a valid Payment Method");
+                        i++;
+                    }
 
                     if (i == 0)
                     {
@@ -89,6 +98,7 @@ namespace TechHouse
         private void LoadOrder(object sender, EventArgs e)
         {
             LoadOrderUser();
+            LoadPayMethod();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -122,6 +132,19 @@ namespace TechHouse
                     }
                 }
             }
+        }
+        private void LoadPayMethod()
+        {
+            PaymentMethod.Items.Clear();
+            PaymentMethod.Items.Add("Credit Card");
+            PaymentMethod.Items.Add("Debit Card");
+            PaymentMethod.Items.Add("Paypal");
+            PaymentMethod.Items.Add("Cash");
+        }
+
+        private void Cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

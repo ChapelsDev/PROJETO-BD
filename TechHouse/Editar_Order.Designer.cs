@@ -137,6 +137,7 @@
             Cancel.TabIndex = 81;
             Cancel.Text = "Cancel";
             Cancel.UseVisualStyleBackColor = true;
+            Cancel.Click += Cancel_Click;
             // 
             // PaymentMethod
             // 
