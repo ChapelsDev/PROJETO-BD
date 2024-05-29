@@ -34,12 +34,12 @@
             label12 = new Label();
             label19 = new Label();
             label20 = new Label();
-            PID = new TextBox();
-            UID = new TextBox();
             Comment = new TextBox();
             Save = new Button();
             Cancel = new Button();
-            comboBox1 = new ComboBox();
+            Rating = new ComboBox();
+            ProductID = new ComboBox();
+            UserID = new ComboBox();
             SuspendLayout();
             // 
             // label8
@@ -94,20 +94,6 @@
             label20.TabIndex = 88;
             label20.Text = "Rating";
             // 
-            // PID
-            // 
-            PID.Location = new Point(138, 92);
-            PID.Name = "PID";
-            PID.Size = new Size(216, 23);
-            PID.TabIndex = 87;
-            // 
-            // UID
-            // 
-            UID.Location = new Point(138, 126);
-            UID.Name = "UID";
-            UID.Size = new Size(216, 23);
-            UID.TabIndex = 86;
-            // 
             // Comment
             // 
             Comment.Location = new Point(138, 160);
@@ -133,21 +119,40 @@
             Cancel.TabIndex = 95;
             Cancel.Text = "Cancel";
             Cancel.UseVisualStyleBackColor = true;
+            Cancel.Click += Cancel_Click;
             // 
-            // comboBox1
+            // Rating
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(138, 57);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(216, 23);
-            comboBox1.TabIndex = 96;
+            Rating.FormattingEnabled = true;
+            Rating.Location = new Point(138, 57);
+            Rating.Name = "Rating";
+            Rating.Size = new Size(216, 23);
+            Rating.TabIndex = 96;
+            // 
+            // ProductID
+            // 
+            ProductID.FormattingEnabled = true;
+            ProductID.Location = new Point(138, 95);
+            ProductID.Name = "ProductID";
+            ProductID.Size = new Size(216, 23);
+            ProductID.TabIndex = 97;
+            // 
+            // UserID
+            // 
+            UserID.FormattingEnabled = true;
+            UserID.Location = new Point(138, 129);
+            UserID.Name = "UserID";
+            UserID.Size = new Size(216, 23);
+            UserID.TabIndex = 98;
             // 
             // Editar_Reviews
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(444, 310);
-            Controls.Add(comboBox1);
+            Controls.Add(UserID);
+            Controls.Add(ProductID);
+            Controls.Add(Rating);
             Controls.Add(Cancel);
             Controls.Add(Save);
             Controls.Add(label8);
@@ -156,11 +161,10 @@
             Controls.Add(label12);
             Controls.Add(label19);
             Controls.Add(label20);
-            Controls.Add(PID);
-            Controls.Add(UID);
             Controls.Add(Comment);
             Name = "Editar_Reviews";
             Text = "Editar_Reviews";
+            Load += LoadReviews;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -178,6 +182,8 @@
         public TextBox Comment;
         private Button Save;
         private Button Cancel;
-        private ComboBox comboBox1;
+        public ComboBox Rating;
+        public ComboBox ProductID;
+        public ComboBox UserID;
     }
 }

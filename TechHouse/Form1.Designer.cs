@@ -118,8 +118,6 @@
             label12 = new Label();
             label19 = new Label();
             label20 = new Label();
-            Reviews_PID = new TextBox();
-            Reviews_UID = new TextBox();
             Reviews_Comment = new TextBox();
             tabPage6 = new TabPage();
             button38 = new Button();
@@ -167,6 +165,8 @@
             label36 = new Label();
             Logs_UID = new TextBox();
             Logs_Action = new TextBox();
+            Reviews_PID = new ComboBox();
+            Reviews_UID = new ComboBox();
             tabControl1.SuspendLayout();
             Users.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -928,6 +928,8 @@
             // 
             // tabPage5
             // 
+            tabPage5.Controls.Add(Reviews_UID);
+            tabPage5.Controls.Add(Reviews_PID);
             tabPage5.Controls.Add(button37);
             tabPage5.Controls.Add(Reviews_Rating);
             tabPage5.Controls.Add(SearchReview);
@@ -940,8 +942,6 @@
             tabPage5.Controls.Add(label12);
             tabPage5.Controls.Add(label19);
             tabPage5.Controls.Add(label20);
-            tabPage5.Controls.Add(Reviews_PID);
-            tabPage5.Controls.Add(Reviews_UID);
             tabPage5.Controls.Add(Reviews_Comment);
             tabPage5.Location = new Point(4, 24);
             tabPage5.Name = "tabPage5";
@@ -976,6 +976,7 @@
             SearchReview.TabIndex = 84;
             SearchReview.Text = "Search";
             SearchReview.UseVisualStyleBackColor = true;
+            SearchReview.Click += SearchReview_Click;
             // 
             // label8
             // 
@@ -1001,6 +1002,7 @@
             DeleteReview.TabIndex = 81;
             DeleteReview.Text = "Delete Review";
             DeleteReview.UseVisualStyleBackColor = true;
+            DeleteReview.Click += DeleteReview_Click;
             // 
             // AddReview
             // 
@@ -1010,6 +1012,7 @@
             AddReview.TabIndex = 79;
             AddReview.Text = "Add Review";
             AddReview.UseVisualStyleBackColor = true;
+            AddReview.Click += AddReview_Click;
             // 
             // dataGridView5
             // 
@@ -1054,20 +1057,6 @@
             label20.Size = new Size(41, 15);
             label20.TabIndex = 73;
             label20.Text = "Rating";
-            // 
-            // Reviews_PID
-            // 
-            Reviews_PID.Location = new Point(755, 18);
-            Reviews_PID.Name = "Reviews_PID";
-            Reviews_PID.Size = new Size(164, 23);
-            Reviews_PID.TabIndex = 71;
-            // 
-            // Reviews_UID
-            // 
-            Reviews_UID.Location = new Point(755, 49);
-            Reviews_UID.Name = "Reviews_UID";
-            Reviews_UID.Size = new Size(164, 23);
-            Reviews_UID.TabIndex = 70;
             // 
             // Reviews_Comment
             // 
@@ -1509,6 +1498,22 @@
             Logs_Action.Size = new Size(164, 23);
             Logs_Action.TabIndex = 53;
             // 
+            // Reviews_PID
+            // 
+            Reviews_PID.FormattingEnabled = true;
+            Reviews_PID.Location = new Point(749, 18);
+            Reviews_PID.Name = "Reviews_PID";
+            Reviews_PID.Size = new Size(164, 23);
+            Reviews_PID.TabIndex = 87;
+            // 
+            // Reviews_UID
+            // 
+            Reviews_UID.FormattingEnabled = true;
+            Reviews_UID.Location = new Point(749, 49);
+            Reviews_UID.Name = "Reviews_UID";
+            Reviews_UID.Size = new Size(164, 23);
+            Reviews_UID.TabIndex = 88;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1637,8 +1642,6 @@
         private Label label12;
         private Label label19;
         private Label label20;
-        private TextBox Reviews_PID;
-        private TextBox Reviews_UID;
         private TextBox Reviews_Comment;
         private Label label10;
         private TextBox Request_RID;
@@ -1689,5 +1692,7 @@
         private Button button40;
         private ComboBox Product_CategoryID;
         private ComboBox Orders_UserID;
+        private ComboBox Reviews_UID;
+        private ComboBox Reviews_PID;
     }
 }

@@ -153,7 +153,10 @@ namespace TechHouse
                 // Fill the TextBoxes in the Edit form with the values of the selected row
                 for (int i = 0; i < dataGridView5.Columns.Count; i++)
                 {
-                    if (i == 1) { continue; } //skip the second column porque não é textbox
+                    if (i == 1) { Edi5.Rating.Text = dataGridView5.SelectedRows[0].Cells[i].Value.ToString(); continue; } //skip the second column porque não é textbox
+                    if (i == 3) { Edi5.UserID.Text = dataGridView5.SelectedRows[0].Cells[i].Value.ToString(); continue; } //skip the fourth column porque não é textbox
+                    if (i == 4) { Edi5.ProductID.Text = dataGridView5.SelectedRows[0].Cells[i].Value.ToString(); continue; } //skip the fifth column porque não é textbox
+
                     Edi5.TextBoxes[textBoxIndex].Text = dataGridView5.SelectedRows[0].Cells[i].Value.ToString();
                     textBoxIndex++;
                 }
@@ -252,13 +255,14 @@ namespace TechHouse
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
             tabControl1_SelectedIndexChanged(sender, e);
             LoadProductsCategory();
             LoadOrderUser();
             LoadPayMethod();
             LoadEmployeeTypes();
-
+            LoadUserReview();
+            LoadProductReview();
+            LoadReviewRating();
         }
         public void FillDataGridView(DataGridView dataGridView, string connectionString, string tableName)
         {
@@ -835,6 +839,183 @@ namespace TechHouse
                             Employ_EmpType.Items.Add(reader["EmployeeTypeID"].ToString() + " - " + reader["Name"].ToString());
                         }
                     }
+                }
+            }
+        }
+
+
+        //////////////////////////////////////////////////  REVIEWS TAB PAGE  //////////////////////////////////////////////////
+
+        private void AddReview_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string query = "INSERT INTO [TechHouse].[Reviews] (Rating, Comment, UserID, ProductID) VALUES (@Rating, @Comment, @UserID, @ProductID)";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Comment", Reviews_Comment.Text);
+
+                    int Rating;
+                    if (int.TryParse(Reviews_Rating.Text.Split('-')[0].Trim(), out Rating))
+                    {
+                        command.Parameters.AddWithValue("@Rating", Rating);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please select a valid rating.");
+                        return;
+                    }
+
+                    int UserID;
+                    if (int.TryParse(Reviews_UID.Text.Split('-')[0].Trim(), out UserID))
+                    {
+                        command.Parameters.AddWithValue("@UserID", UserID);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please select a UserID.");
+                        return;
+                    }
+
+                    int ProductID;
+                    if (int.TryParse(Reviews_PID.Text.Split('-')[0].Trim(), out ProductID))
+                    {
+                        command.Parameters.AddWithValue("@ProductID", ProductID);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please select a ProductID.");
+                        return;
+                    }
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+
+            MessageBox.Show("Review added successfully");
+        }
+
+        private void LoadUserReview()
+        {
+            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string query = "SELECT UserID,FirstName FROM [TechHouse].[User]";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        // Limpe o ComboBox antes de preenchê-lo
+                        Reviews_UID.Items.Clear();
+
+                        while (reader.Read())
+                        {
+                            // Adicione o nome da categoria ao ComboBox
+                            Reviews_UID.Items.Add(reader["UserID"].ToString() + " - " + reader["FirstName"].ToString());
+                        }
+                    }
+                }
+            }
+        }
+
+        private void LoadProductReview()
+        {
+            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string query = "SELECT ProductID,Name,Brand FROM [TechHouse].[Products]";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        // Limpe o ComboBox antes de preenchê-lo
+                        Reviews_PID.Items.Clear();
+
+                        while (reader.Read())
+                        {
+                            // Adicione o nome da categoria ao ComboBox
+                            Reviews_PID.Items.Add(reader["ProductID"].ToString() + " - " + reader["Brand"].ToString() + " - " + reader["Name"].ToString());
+                        }
+                    }
+                }
+            }
+        }
+
+        private void LoadReviewRating()
+        {
+            Reviews_Rating.Items.Clear();
+            Reviews_Rating.Items.Add("1 - Very Bad");
+            Reviews_Rating.Items.Add("2 - Bad");
+            Reviews_Rating.Items.Add("3 - Average");
+            Reviews_Rating.Items.Add("4 - Good");
+            Reviews_Rating.Items.Add("5 - Excellent");
+        }
+
+        private void DeleteReview_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string query = "DELETE FROM [TechHouse].[Reviews] WHERE ReviewID = @ReviewID";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    // Assume that the ID of the user is in the first column of the DataGridView
+                    int selectedReviewId = (int)dataGridView5.SelectedRows[0].Cells[0].Value;
+                    command.Parameters.AddWithValue("@ReviewID", selectedReviewId);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+
+            MessageBox.Show("Review deleted successfully");
+        }
+
+        private void SearchReview_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            StringBuilder query = new StringBuilder("SELECT * FROM [TechHouse].[Reviews] WHERE 1=1");
+
+            if (!string.IsNullOrEmpty(Reviews_Rating.Text))
+            {
+                query.Append($" AND Rating LIKE '%{Reviews_Rating.Text.Split('-')[0].Trim()}%'");
+            }
+
+            if (!string.IsNullOrEmpty(Reviews_Comment.Text))
+            {
+                query.Append($" AND Comment LIKE '%{Reviews_Comment.Text}%'");
+            }
+
+            if (!string.IsNullOrEmpty(Reviews_RID.Text))
+            {
+                query.Append($" AND ReviewID LIKE '%{Reviews_RID.Text}%'");
+            }
+
+            if (!string.IsNullOrEmpty(Reviews_UID.Text))
+            {
+                query.Append($" AND UserID LIKE '%{Reviews_UID.Text.Split('-')[0].Trim()}%'");
+            }
+
+            if (!string.IsNullOrEmpty(Reviews_PID.Text))
+            {
+                query.Append($" AND ProductID LIKE '%{Reviews_PID.Text.Split('-')[0].Trim()}%'");
+            }
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlDataAdapter adapter = new SqlDataAdapter(query.ToString(), connection))
+                {
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+                    dataGridView5.DataSource = table;
+                    dataGridView5.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 }
             }
         }

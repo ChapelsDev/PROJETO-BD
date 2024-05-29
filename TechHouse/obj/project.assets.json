@@ -475,11 +475,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Disco-1TB-Dados\\BD\\PROJETO-BD\\TechHouse\\TechHouse.csproj",
+      "projectUniqueName": "D:\\Universidade\\Ano 3\\PROJETO-BD\\TechHouse\\TechHouse.csproj",
       "projectName": "TechHouse",
-      "projectPath": "D:\\Disco-1TB-Dados\\BD\\PROJETO-BD\\TechHouse\\TechHouse.csproj",
+      "projectPath": "D:\\Universidade\\Ano 3\\PROJETO-BD\\TechHouse\\TechHouse.csproj",
       "packagesPath": "C:\\Users\\guich\\.nuget\\packages\\",
-      "outputPath": "D:\\Disco-1TB-Dados\\BD\\PROJETO-BD\\TechHouse\\obj\\",
+      "outputPath": "D:\\Universidade\\Ano 3\\PROJETO-BD\\TechHouse\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\guich\\AppData\\Roaming\\NuGet\\NuGet.Config",
