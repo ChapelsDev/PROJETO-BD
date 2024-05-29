@@ -106,6 +106,8 @@
             LN_Employee = new TextBox();
             FN_Employee = new TextBox();
             tabPage5 = new TabPage();
+            Reviews_UID = new ComboBox();
+            Reviews_PID = new ComboBox();
             button37 = new Button();
             Reviews_Rating = new ComboBox();
             SearchReview = new Button();
@@ -120,6 +122,8 @@
             label20 = new Label();
             Reviews_Comment = new TextBox();
             tabPage6 = new TabPage();
+            WhishlistPID = new ComboBox();
+            Whishlist_UserID = new ComboBox();
             button38 = new Button();
             Wish_DAdd = new DateTimePicker();
             SearchWhish = new Button();
@@ -131,8 +135,6 @@
             label37 = new Label();
             label40 = new Label();
             label41 = new Label();
-            Whish_PID = new TextBox();
-            Whish_UID = new TextBox();
             tabPage7 = new TabPage();
             button39 = new Button();
             SearchRequest = new Button();
@@ -165,8 +167,6 @@
             label36 = new Label();
             Logs_UID = new TextBox();
             Logs_Action = new TextBox();
-            Reviews_PID = new ComboBox();
-            Reviews_UID = new ComboBox();
             tabControl1.SuspendLayout();
             Users.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -950,6 +950,22 @@
             tabPage5.Text = "Reviews";
             tabPage5.UseVisualStyleBackColor = true;
             // 
+            // Reviews_UID
+            // 
+            Reviews_UID.FormattingEnabled = true;
+            Reviews_UID.Location = new Point(749, 49);
+            Reviews_UID.Name = "Reviews_UID";
+            Reviews_UID.Size = new Size(164, 23);
+            Reviews_UID.TabIndex = 88;
+            // 
+            // Reviews_PID
+            // 
+            Reviews_PID.FormattingEnabled = true;
+            Reviews_PID.Location = new Point(749, 18);
+            Reviews_PID.Name = "Reviews_PID";
+            Reviews_PID.Size = new Size(164, 23);
+            Reviews_PID.TabIndex = 87;
+            // 
             // button37
             // 
             button37.Location = new Point(253, 551);
@@ -1067,6 +1083,8 @@
             // 
             // tabPage6
             // 
+            tabPage6.Controls.Add(WhishlistPID);
+            tabPage6.Controls.Add(Whishlist_UserID);
             tabPage6.Controls.Add(button38);
             tabPage6.Controls.Add(Wish_DAdd);
             tabPage6.Controls.Add(SearchWhish);
@@ -1078,14 +1096,28 @@
             tabPage6.Controls.Add(label37);
             tabPage6.Controls.Add(label40);
             tabPage6.Controls.Add(label41);
-            tabPage6.Controls.Add(Whish_PID);
-            tabPage6.Controls.Add(Whish_UID);
             tabPage6.Location = new Point(4, 24);
             tabPage6.Name = "tabPage6";
             tabPage6.Size = new Size(1026, 591);
             tabPage6.TabIndex = 5;
             tabPage6.Text = "WishList";
             tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // WhishlistPID
+            // 
+            WhishlistPID.FormattingEnabled = true;
+            WhishlistPID.Location = new Point(840, 19);
+            WhishlistPID.Name = "WhishlistPID";
+            WhishlistPID.Size = new Size(164, 23);
+            WhishlistPID.TabIndex = 56;
+            // 
+            // Whishlist_UserID
+            // 
+            Whishlist_UserID.FormattingEnabled = true;
+            Whishlist_UserID.Location = new Point(604, 19);
+            Whishlist_UserID.Name = "Whishlist_UserID";
+            Whishlist_UserID.Size = new Size(164, 23);
+            Whishlist_UserID.TabIndex = 55;
             // 
             // button38
             // 
@@ -1112,6 +1144,7 @@
             SearchWhish.TabIndex = 52;
             SearchWhish.Text = "Search";
             SearchWhish.UseVisualStyleBackColor = true;
+            SearchWhish.Click += SearchWhish_Click;
             // 
             // label35
             // 
@@ -1137,6 +1170,7 @@
             DeleteWhish.TabIndex = 49;
             DeleteWhish.Text = "Delete Wishlist";
             DeleteWhish.UseVisualStyleBackColor = true;
+            DeleteWhish.Click += DeleteWhish_Click;
             // 
             // AddWhish
             // 
@@ -1146,6 +1180,7 @@
             AddWhish.TabIndex = 47;
             AddWhish.Text = "Add Whishlist";
             AddWhish.UseVisualStyleBackColor = true;
+            AddWhish.Click += AddWhish_Click;
             // 
             // dataGridView6
             // 
@@ -1181,21 +1216,6 @@
             label41.Size = new Size(66, 15);
             label41.TabIndex = 40;
             label41.Text = "WhishlistID";
-            // 
-            // Whish_PID
-            // 
-            Whish_PID.Location = new Point(840, 19);
-            Whish_PID.Name = "Whish_PID";
-            Whish_PID.PasswordChar = '*';
-            Whish_PID.Size = new Size(164, 23);
-            Whish_PID.TabIndex = 39;
-            // 
-            // Whish_UID
-            // 
-            Whish_UID.Location = new Point(604, 19);
-            Whish_UID.Name = "Whish_UID";
-            Whish_UID.Size = new Size(164, 23);
-            Whish_UID.TabIndex = 34;
             // 
             // tabPage7
             // 
@@ -1498,22 +1518,6 @@
             Logs_Action.Size = new Size(164, 23);
             Logs_Action.TabIndex = 53;
             // 
-            // Reviews_PID
-            // 
-            Reviews_PID.FormattingEnabled = true;
-            Reviews_PID.Location = new Point(749, 18);
-            Reviews_PID.Name = "Reviews_PID";
-            Reviews_PID.Size = new Size(164, 23);
-            Reviews_PID.TabIndex = 87;
-            // 
-            // Reviews_UID
-            // 
-            Reviews_UID.FormattingEnabled = true;
-            Reviews_UID.Location = new Point(749, 49);
-            Reviews_UID.Name = "Reviews_UID";
-            Reviews_UID.Size = new Size(164, 23);
-            Reviews_UID.TabIndex = 88;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1619,8 +1623,6 @@
         private Label label37;
         private Label label40;
         private Label label41;
-        private TextBox Whish_PID;
-        private TextBox Whish_UID;
         private Label label11;
         private TextBox Order_OrderID;
         private Button DeleteOrder;
@@ -1694,5 +1696,7 @@
         private ComboBox Orders_UserID;
         private ComboBox Reviews_UID;
         private ComboBox Reviews_PID;
+        private ComboBox WhishlistPID;
+        private ComboBox Whishlist_UserID;
     }
 }

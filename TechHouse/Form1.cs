@@ -184,7 +184,14 @@ namespace TechHouse
                 // Fill the TextBoxes in the Edit form with the values of the selected row
                 for (int i = 0; i < dataGridView6.Columns.Count; i++)
                 {
-                    if (i == 3) { continue; } //skip the fourth column porque não é textbox
+                    if (i == 1) { Edi6.Whishlist_UserID.Text = dataGridView6.SelectedRows[0].Cells[i].Value.ToString(); continue; }
+                    if (i == 2) { Edi6.WhishlistPID.Text = dataGridView6.SelectedRows[0].Cells[i].Value.ToString(); continue; }
+                    if (i == 3)
+                    {
+                        string date = dataGridView6.SelectedRows[0].Cells[i].Value.ToString();
+                        Edi6.dateTimePicker1.Value = DateTime.Parse(date);
+                        continue;
+                    }
                     Edi6.TextBoxes[textBoxIndex].Text = dataGridView6.SelectedRows[0].Cells[i].Value.ToString();
                     textBoxIndex++;
                 }
@@ -263,6 +270,8 @@ namespace TechHouse
             LoadUserReview();
             LoadProductReview();
             LoadReviewRating();
+            LoadWhishProduct();
+            LoadWhishUser();
         }
         public void FillDataGridView(DataGridView dataGridView, string connectionString, string tableName)
         {
@@ -1005,6 +1014,140 @@ namespace TechHouse
             if (!string.IsNullOrEmpty(Reviews_PID.Text))
             {
                 query.Append($" AND ProductID LIKE '%{Reviews_PID.Text.Split('-')[0].Trim()}%'");
+            }
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlDataAdapter adapter = new SqlDataAdapter(query.ToString(), connection))
+                {
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+                    dataGridView5.DataSource = table;
+                    dataGridView5.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                }
+            }
+        }
+
+        //////////////////////////////////////////////////  WISHLIST TAB PAGE  //////////////////////////////////////////////////
+
+        private void AddWhish_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string query = "INSERT INTO [TechHouse].[Wishlist] (UserID, ProductID, DateAdded) VALUES (@UserID, @ProductID, @DateAdded)";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    string formattedDate = Wish_DAdd.Value.ToString("yyyy-MM-dd");
+                    command.Parameters.AddWithValue("@DateAdded", formattedDate); //The textboxes are named Users_FName, Users_LName, etc.
+                    command.Parameters.AddWithValue("@ProductID", WhishlistPID.Text.Split('-')[0].Trim());
+                    if (Whishlist_UserID.Text == null || Whishlist_UserID.Text == "")
+                    {
+                        MessageBox.Show("Please select a user");
+                        return;
+                    }
+                    command.Parameters.AddWithValue("@UserID", Whishlist_UserID.Text.Split('-')[0].Trim());
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+
+            MessageBox.Show("Product added successfully to User " + Whishlist_UserID.Text + " Whishlist");
+        }
+
+        private void LoadWhishUser()
+        {
+            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string query = "SELECT UserID,FirstName FROM [TechHouse].[User]";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        // Limpe o ComboBox antes de preenchê-lo
+                        Whishlist_UserID.Items.Clear();
+
+                        while (reader.Read())
+                        {
+                            // Adicione o nome da categoria ao ComboBox
+                            Whishlist_UserID.Items.Add(reader["UserID"].ToString() + " - " + reader["FirstName"].ToString());
+                        }
+                    }
+                }
+
+            }
+        }
+
+        private void LoadWhishProduct()
+        {
+            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string query = "SELECT ProductID,Name,Brand FROM [TechHouse].[Products]";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        // Limpe o ComboBox antes de preenchê-lo
+                        WhishlistPID.Items.Clear();
+
+                        while (reader.Read())
+                        {
+                            // Adicione o nome da categoria ao ComboBox
+                            WhishlistPID.Items.Add(reader["ProductID"].ToString() + " - " + reader["Brand"].ToString() + " - " + reader["Name"].ToString());
+                        }
+                    }
+                }
+            }
+        }
+        private void DeleteWhish_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string query = "DELETE FROM [TechHouse].[Wishlist] WHERE WishlistID = @WhishlistID";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    // Assume that the ID of the user is in the first column of the DataGridView
+                    int selectedWhishId = (int)dataGridView6.SelectedRows[0].Cells[0].Value;
+                    command.Parameters.AddWithValue("@WhishlistID", selectedWhishId);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+
+            MessageBox.Show("Whishlist deleted successfully");
+        }
+
+        private void SearchWhish_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            StringBuilder query = new StringBuilder("SELECT * FROM [TechHouse].[Whishlist] WHERE 1=1");
+            string DateNotChanged = Wish_DAdd.Value.ToString();
+
+
+            if ((!string.IsNullOrEmpty(Wish_DAdd.Value.ToString())) && Wish_DAdd.Value.ToString() != DateNotChanged)
+            {
+                string formattedDate = Wish_DAdd.Value.ToString("yyyy-MM-dd");
+                query.Append($" AND DateAdded LIKE '%{formattedDate}%'");
+            }
+
+            if (!string.IsNullOrEmpty(Whishlist_UserID.Text))
+            {
+                query.Append($" AND UserID LIKE '%{Whishlist_UserID.Text.Split('-')[0].Trim()}%'");
+            }
+
+            if (!string.IsNullOrEmpty(WhishlistPID.Text))
+            {
+                query.Append($" AND ProductID LIKE '%{WhishlistPID.Text.Split('-')[0].Trim()}%'");
             }
 
             using (SqlConnection connection = new SqlConnection(connectionString))
