@@ -163,6 +163,7 @@
             Controls.Add(label20);
             Controls.Add(Comment);
             Name = "Editar_Reviews";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Editar_Reviews";
             Load += LoadReviews;
             ResumeLayout(false);

@@ -20,7 +20,7 @@ namespace TechHouse
 
         }
 
-        private void button33_Click_1(object sender, EventArgs e) //logica para quando clica no botão de editar
+        private void button33_Click_1(object sender, EventArgs e) //logica para quando clica no botão de editar User
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
@@ -46,7 +46,7 @@ namespace TechHouse
 
         }
 
-        private void button34_Click_1(object sender, EventArgs e) //logica para quando clica no botão de editar
+        private void button34_Click_1(object sender, EventArgs e) //logica para quando clica no botão de editar Produto
         {
             if (dataGridView2.SelectedRows.Count > 0)
             {
@@ -74,7 +74,7 @@ namespace TechHouse
 
         }
 
-        private void button35_Click_1(object sender, EventArgs e) //logica para quando clica no botão de editar
+        private void button35_Click_1(object sender, EventArgs e) //logica para quando clica no botão de editar Order
         {
             if (dataGridView3.SelectedRows.Count > 0)
             {
@@ -94,6 +94,7 @@ namespace TechHouse
                         Edi3.OrderDate.Value = DateTime.Parse(date);
                         continue;
                     }
+                    if (i == 2) { Edi3.Status.Text = dataGridView3.SelectedRows[0].Cells[i].Value.ToString(); continue; }
                     if (i == 4) { Edi3.PaymentMethod.Text = dataGridView3.SelectedRows[0].Cells[i].Value.ToString(); continue; }
 
                     if (i == 5) { Edi3.UserID.Text = dataGridView3.SelectedRows[0].Cells[i].Value.ToString(); continue; }
@@ -110,7 +111,7 @@ namespace TechHouse
             }
         }
 
-        private void button36_Click_1(object sender, EventArgs e) //logica para quando clica no botão editar
+        private void button36_Click_1(object sender, EventArgs e) //logica para quando clica no botão editar Employee
         {
             if (dataGridView4.SelectedRows.Count > 0)
             {
@@ -138,7 +139,7 @@ namespace TechHouse
             }
         }
 
-        private void button37_Click_1(object sender, EventArgs e) //logica para quando clica no botão editar
+        private void button37_Click_1(object sender, EventArgs e) //logica para quando clica no botão editar Review
         {
             if (dataGridView5.SelectedRows.Count > 0)
             {
@@ -169,7 +170,7 @@ namespace TechHouse
             }
         }
 
-        private void button38_Click_1(object sender, EventArgs e) //logica para quando clica no botão editar
+        private void button38_Click_1(object sender, EventArgs e) //logica para quando clica no botão editar Whishlist
         {
             if (dataGridView6.SelectedRows.Count > 0)
             {
@@ -204,7 +205,7 @@ namespace TechHouse
             }
         }
 
-        private void button39_Click_1(object sender, EventArgs e) //logica para quando clica no botão editar
+        private void button39_Click_1(object sender, EventArgs e) //logica para quando clica no botão editar Service Request
         {
             if (dataGridView7.SelectedRows.Count > 0)
             {
@@ -219,7 +220,10 @@ namespace TechHouse
                 // Fill the TextBoxes in the Edit form with the values of the selected row
                 for (int i = 0; i < dataGridView7.Columns.Count; i++)
                 {
-                    if (i == 4) { continue; } //skip the fifth column porque não é textbox
+                    if (i == 2) { Edi7.UserID.Text = dataGridView7.SelectedRows[0].Cells[i].Value.ToString(); continue; } //skip the third column porque não é textbox
+                    if (i == 3) { Edi7.EmployeeID.Text = dataGridView7.SelectedRows[0].Cells[i].Value.ToString(); continue; } //skip the fourth column porque não é textbox
+                    if (i == 4) { Edi7.dateTimePicker1.Value = DateTime.Parse(dataGridView7.SelectedRows[0].Cells[i].Value.ToString()); continue; } //skip the fifth column porque não é textbox
+                    if (i == 5) { Edi7.Status.Text = dataGridView7.SelectedRows[0].Cells[i].Value.ToString(); continue; } //skip the sixth column porque não é textbox
                     Edi7.TextBoxes[textBoxIndex].Text = dataGridView7.SelectedRows[0].Cells[i].Value.ToString();
                     textBoxIndex++;
                 }
@@ -229,34 +233,6 @@ namespace TechHouse
             else
             {
                 MessageBox.Show("Please select a row before clicking Edit Service Request.");
-            }
-        }
-
-        private void button40_Click_1(object sender, EventArgs e)
-        {
-            if (dataGridView8.SelectedRows.Count > 0) //logica para quando clica no botão editar
-            {
-                // Assume that the ID of the user is in the first column of the DataGridView
-                int selectedLogId = (int)dataGridView8.SelectedRows[0].Cells[0].Value;
-                Editar_AcessLogs Edi8 = new Editar_AcessLogs();
-
-                // Pass the selected user ID to the Edit form
-                Edi8.LogID.Text = selectedLogId.ToString();
-
-                int textBoxIndex = 0;
-                // Fill the TextBoxes in the Edit form with the values of the selected row
-                for (int i = 0; i < dataGridView8.Columns.Count; i++)
-                {
-                    if (i == 2) { continue; } //skip the second column porque não é textbox
-                    Edi8.TextBoxes[textBoxIndex].Text = dataGridView8.SelectedRows[0].Cells[i].Value.ToString();
-                    textBoxIndex++;
-                }
-
-                Edi8.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Please select a row before clicking Edit Log.");
             }
         }
 
@@ -272,6 +248,11 @@ namespace TechHouse
             LoadReviewRating();
             LoadWhishProduct();
             LoadWhishUser();
+            LoadUserService();
+            LoadServiceEmployee();
+            LoadServiceStatus();
+            LoadUserLog();
+            LoadOrderStatus();
         }
         public void FillDataGridView(DataGridView dataGridView, string connectionString, string tableName)
         {
@@ -387,11 +368,6 @@ namespace TechHouse
             MessageBox.Show("User deleted successfully");
         }
 
-        private void SearchLog_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void SearchUser_Click(object sender, EventArgs e)
         {
             string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
@@ -473,6 +449,11 @@ namespace TechHouse
                     else
                     {
                         MessageBox.Show("Please enter a valid stock quantity.");
+                        return;
+                    }
+                    if (Product_CategoryID.Text == null || Product_CategoryID.Text == "")
+                    {
+                        MessageBox.Show("Please select a category");
                         return;
                     }
                     command.Parameters.AddWithValue("@CategoryID", int.Parse(Product_CategoryID.Text.Split('-')[0].Trim()));
@@ -592,8 +573,18 @@ namespace TechHouse
                 {
                     string formattedDate = Order_OrderDate.Value.ToString("yyyy-MM-dd");
                     command.Parameters.AddWithValue("@OrderDate", formattedDate); //The textboxes are named Users_FName, Users_LName, etc.
+                    if (Order_Status.Text == null || Order_Status.Text == "")
+                    {
+                        MessageBox.Show("Please select a status");
+                        return;
+                    }
                     command.Parameters.AddWithValue("@Status", Order_Status.Text);
                     command.Parameters.AddWithValue("@ShippingAddress", Order_ShippAddr.Text);
+                    if (Order_PayMethod.Text == null || Order_PayMethod.Text == "")
+                    {
+                        MessageBox.Show("Please select a payment method");
+                        return;
+                    }
                     command.Parameters.AddWithValue("@PaymentMethod", Order_PayMethod.Text);
                     if (Orders_UserID.Text == null || Orders_UserID.Text == "")
                     {
@@ -636,9 +627,8 @@ namespace TechHouse
         {
             string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             StringBuilder query = new StringBuilder("SELECT * FROM [TechHouse].[Orders] WHERE 1=1");
-            string orderdateNotChanged = Order_OrderDate.Value.ToString();
 
-            if ((!string.IsNullOrEmpty(Order_OrderDate.Value.ToString())) && Order_OrderDate.Value.ToString() != orderdateNotChanged)
+            if (isOrderDateChanged == true)
             {
                 string formattedDate = Order_OrderDate.Value.ToString("yyyy-MM-dd");
                 query.Append($" AND OrderDate LIKE '%{formattedDate}%'");
@@ -715,6 +705,22 @@ namespace TechHouse
             Order_PayMethod.Items.Add("Debit Card");
             Order_PayMethod.Items.Add("Paypal");
             Order_PayMethod.Items.Add("Cash");
+        }
+
+        private void LoadOrderStatus()
+        {
+            Order_Status.Items.Clear();
+            Order_Status.Items.Add("Pending");
+            Order_Status.Items.Add("Processing");
+            Order_Status.Items.Add("Shipped");
+            Order_Status.Items.Add("Delivered");
+            Order_Status.Items.Add("Cancelled");
+        }
+
+        bool isOrderDateChanged = false;
+        private void Order_OrderDate_ValueChanged(object sender, EventArgs e)
+        {
+            isOrderDateChanged = true;
         }
 
         //////////////////////////////////////////////////  EMPLOYEES TAB PAGE  //////////////////////////////////////////////////
@@ -1042,6 +1048,11 @@ namespace TechHouse
                 {
                     string formattedDate = Wish_DAdd.Value.ToString("yyyy-MM-dd");
                     command.Parameters.AddWithValue("@DateAdded", formattedDate); //The textboxes are named Users_FName, Users_LName, etc.
+                    if (WhishlistPID.Text == null || WhishlistPID.Text == "")
+                    {
+                        MessageBox.Show("Please select a Product");
+                        return;
+                    }
                     command.Parameters.AddWithValue("@ProductID", WhishlistPID.Text.Split('-')[0].Trim());
                     if (Whishlist_UserID.Text == null || Whishlist_UserID.Text == "")
                     {
@@ -1130,11 +1141,9 @@ namespace TechHouse
         private void SearchWhish_Click(object sender, EventArgs e)
         {
             string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-            StringBuilder query = new StringBuilder("SELECT * FROM [TechHouse].[Whishlist] WHERE 1=1");
-            string DateNotChanged = Wish_DAdd.Value.ToString();
+            StringBuilder query = new StringBuilder("SELECT * FROM [TechHouse].[Wishlist] WHERE 1=1");
 
-
-            if ((!string.IsNullOrEmpty(Wish_DAdd.Value.ToString())) && Wish_DAdd.Value.ToString() != DateNotChanged)
+            if (WhishdateChanged == true)
             {
                 string formattedDate = Wish_DAdd.Value.ToString("yyyy-MM-dd");
                 query.Append($" AND DateAdded LIKE '%{formattedDate}%'");
@@ -1157,10 +1166,288 @@ namespace TechHouse
                 {
                     DataTable table = new DataTable();
                     adapter.Fill(table);
-                    dataGridView5.DataSource = table;
-                    dataGridView5.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    dataGridView6.DataSource = table;
+                    dataGridView6.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 }
             }
+        }
+
+        bool WhishdateChanged = false;
+        private void Wish_DAdd_ValueChanged(object sender, EventArgs e)
+        {
+            WhishdateChanged = true;
+        }
+
+
+        //////////////////////////////////////////////////  SERVICE REQUEST TAB PAGE  //////////////////////////////////////////////////
+
+        private void AddRequest_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string query = "INSERT INTO [TechHouse].[ServicesRequests] (Description, UserID, EmployeeID, RequestDate, Status) VALUES (@Description, @UserID, @EmployeeID, @RequestDate, @Status)";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    string formattedDate = Request_RD.Value.ToString("yyyy-MM-dd");
+                    command.Parameters.AddWithValue("@RequestDate", formattedDate); //The textboxes are named Users_FName, Users_LName, etc.
+                    if (Request_EID.Text == null || Request_EID.Text == "")
+                    {
+                        MessageBox.Show("Please select a user");
+                        return;
+                    }
+                    command.Parameters.AddWithValue("@EmployeeID", Request_EID.Text.Split('-')[0].Trim());
+                    if (Request_UID.Text == null || Request_UID.Text == "")
+                    {
+                        MessageBox.Show("Please select a user");
+                        return;
+                    }
+                    command.Parameters.AddWithValue("@UserID", Request_UID.Text.Split('-')[0].Trim());
+                    command.Parameters.AddWithValue("@Description", Request_Description.Text);
+                    command.Parameters.AddWithValue("@Status", Request_Status.Text);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+
+            MessageBox.Show("Service Added Sucessfully for User " + Request_UID.Text);
+        }
+
+        private void LoadUserService()
+        {
+            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string query = "SELECT UserID,FirstName FROM [TechHouse].[User]";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        // Limpe o ComboBox antes de preenchê-lo
+                        Request_UID.Items.Clear();
+
+                        while (reader.Read())
+                        {
+                            // Adicione o nome da categoria ao ComboBox
+                            Request_UID.Items.Add(reader["UserID"].ToString() + " - " + reader["FirstName"].ToString());
+                        }
+                    }
+                }
+
+            }
+        }
+
+        private void LoadServiceEmployee()
+        {
+            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string query = "SELECT Employee.EmployeeID, Employee.FirstName, EmployeeType.Name FROM [TechHouse].[Employee] INNER JOIN [TechHouse].[EmployeeType] ON Employee.EmployeeTypeID = EmployeeType.EmployeeTypeID";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        // Limpe o ComboBox antes de preenchê-lo
+                        Request_EID.Items.Clear();
+
+                        while (reader.Read())
+                        {
+                            // Adicione o nome da categoria ao ComboBox
+                            Request_EID.Items.Add(reader["EmployeeID"].ToString() + " - " + reader["FirstName"].ToString() + " - " + reader["Name"].ToString());
+                        }
+                    }
+                }
+
+            }
+        }
+
+        private void LoadServiceStatus()
+        {
+            Request_Status.Items.Clear();
+            Request_Status.Items.Add("Pending");
+            Request_Status.Items.Add("In Progress");
+            Request_Status.Items.Add("Completed");
+        }
+
+        private void DeleteRequest_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string query = "DELETE FROM [TechHouse].[ServicesRequests] WHERE RequestID = @RequestID";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    // Assume that the ID of the user is in the first column of the DataGridView
+                    int selectedRequestId = (int)dataGridView7.SelectedRows[0].Cells[0].Value;
+                    command.Parameters.AddWithValue("@RequestID", selectedRequestId);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+
+            MessageBox.Show("Request deleted successfully");
+        }
+
+        private void SearchRequest_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            StringBuilder query = new StringBuilder("SELECT * FROM [TechHouse].[ServicesRequests] WHERE 1=1");
+
+            if (RequestdateChanged == true)
+            {
+                string formattedDate = Request_RD.Value.ToString("yyyy-MM-dd");
+                query.Append($" AND RequestDate LIKE '%{formattedDate}%'");
+            }
+
+            if (!string.IsNullOrEmpty(Request_UID.Text))
+            {
+                query.Append($" AND UserID LIKE '%{Request_UID.Text.Split('-')[0].Trim()}%'");
+            }
+
+            if (!string.IsNullOrEmpty(Request_EID.Text))
+            {
+                query.Append($" AND EmployeeID LIKE '%{Request_EID.Text.Split('-')[0].Trim()}%'");
+            }
+
+            if (!string.IsNullOrEmpty(Request_Description.Text))
+            {
+                query.Append($" AND Description LIKE '%{Request_Description.Text}%'");
+            }
+
+            if (!string.IsNullOrEmpty(Request_Status.Text))
+            {
+                query.Append($" AND Status LIKE '%{Request_Status.Text}%'");
+            }
+
+            if (!string.IsNullOrEmpty(Request_RID.Text))
+            {
+                query.Append($" AND RequestID LIKE '%{Request_RID.Text}%'");
+            }
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlDataAdapter adapter = new SqlDataAdapter(query.ToString(), connection))
+                {
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+                    dataGridView7.DataSource = table;
+                    dataGridView7.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                }
+            }
+        }
+
+        bool RequestdateChanged = false;
+        private void Request_RD_ValueChanged(object sender, EventArgs e)
+        {
+            RequestdateChanged = true;
+        }
+
+
+        //////////////////////////////////////////////////  ACCESS lOGS TAB PAGE  //////////////////////////////////////////////////
+
+
+        private void DeleteLog_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string query = "DELETE FROM [TechHouse].[AccessLogs] WHERE LogID = @LogID";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    // Assume that the ID of the user is in the first column of the DataGridView
+                    int selectedLogId = (int)dataGridView8.SelectedRows[0].Cells[0].Value;
+                    command.Parameters.AddWithValue("@LogID", selectedLogId);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+
+            MessageBox.Show("Log deleted successfully");
+        }
+
+        private void LoadUserLog()
+        {
+            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string query = "SELECT UserID,FirstName FROM [TechHouse].[User]";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        // Limpe o ComboBox antes de preenchê-lo
+                        Log_UID.Items.Clear();
+
+                        while (reader.Read())
+                        {
+                            // Adicione o nome da categoria ao ComboBox
+                            Log_UID.Items.Add(reader["UserID"].ToString() + " - " + reader["FirstName"].ToString());
+                        }
+                    }
+                }
+
+            }
+        }
+        private void SearchLog_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            StringBuilder query = new StringBuilder("SELECT * FROM [TechHouse].[AccessLogs] WHERE 1=1");
+            string DateNotChanged = Logs_DT.Value.ToString();
+
+            if (!string.IsNullOrEmpty(Log_UID.Text))
+            {
+                query.Append($" AND UserID LIKE '%{Log_UID.Text.Split('-')[0].Trim()}%'");
+            }
+
+            if (LogdateChanged == true)
+            {
+                DateTime logDate;
+                if (DateTime.TryParse(Logs_DT.Text, out logDate))
+                {
+                    string formattedDate = logDate.ToString("yyyy-MM-dd");
+                    query.Append($" AND CAST(DateTime AS DATE) = '{formattedDate}'");
+                }
+            }
+
+            if (!string.IsNullOrEmpty(Logs_Action.Text))
+            {
+                query.Append($" AND Action LIKE '%{Logs_Action.Text}%'");
+            }
+
+            if (!string.IsNullOrEmpty(Logs_LogID.Text))
+            {
+                query.Append($" AND LogID LIKE '%{Logs_LogID.Text}%'");
+            }
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlDataAdapter adapter = new SqlDataAdapter(query.ToString(), connection))
+                {
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+                    dataGridView8.DataSource = table;
+                    dataGridView8.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                }
+            }
+
+        }
+
+        bool LogdateChanged = false;
+        private void Logs_DT_ValueChanged(object sender, EventArgs e)
+        {
+            LogdateChanged = true;
+
         }
     }
 }

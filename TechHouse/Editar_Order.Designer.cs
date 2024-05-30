@@ -36,12 +36,12 @@
             label17 = new Label();
             label18 = new Label();
             ShippingAddress = new TextBox();
-            Status = new TextBox();
             Save = new Button();
             Cancel = new Button();
             PaymentMethod = new ComboBox();
             OrderDate = new DateTimePicker();
             UserID = new ComboBox();
+            Status = new ComboBox();
             SuspendLayout();
             // 
             // label11
@@ -112,13 +112,6 @@
             ShippingAddress.Size = new Size(211, 23);
             ShippingAddress.TabIndex = 72;
             // 
-            // Status
-            // 
-            Status.Location = new Point(152, 100);
-            Status.Name = "Status";
-            Status.Size = new Size(211, 23);
-            Status.TabIndex = 69;
-            // 
             // Save
             // 
             Save.Location = new Point(169, 264);
@@ -163,11 +156,20 @@
             UserID.Size = new Size(211, 23);
             UserID.TabIndex = 84;
             // 
+            // Status
+            // 
+            Status.FormattingEnabled = true;
+            Status.Location = new Point(152, 103);
+            Status.Name = "Status";
+            Status.Size = new Size(211, 23);
+            Status.TabIndex = 85;
+            // 
             // Editar_Order
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(444, 310);
+            Controls.Add(Status);
             Controls.Add(UserID);
             Controls.Add(OrderDate);
             Controls.Add(PaymentMethod);
@@ -181,8 +183,8 @@
             Controls.Add(label17);
             Controls.Add(label18);
             Controls.Add(ShippingAddress);
-            Controls.Add(Status);
             Name = "Editar_Order";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Editar_Order";
             Load += LoadOrder;
             ResumeLayout(false);
@@ -199,11 +201,11 @@
         private Label label17;
         private Label label18;
         public TextBox ShippingAddress;
-        public TextBox Status;
         private Button Save;
         private Button Cancel;
         public ComboBox PaymentMethod;
         public DateTimePicker OrderDate;
         public ComboBox UserID;
+        public ComboBox Status;
     }
 }

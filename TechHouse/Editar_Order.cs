@@ -21,7 +21,7 @@ namespace TechHouse
         public Editar_Order()
         {
             InitializeComponent();
-            TextBoxes = new List<System.Windows.Forms.TextBox> { OrderID, Status, ShippingAddress };
+            TextBoxes = new List<System.Windows.Forms.TextBox> { OrderID, ShippingAddress };
         }
         private void Save_Click(object sender, EventArgs e)
         {
@@ -64,7 +64,7 @@ namespace TechHouse
 
                     if (!(UserID.Text == ""))
                     {
-                        command.Parameters.AddWithValue("@UserID", UserID.Text);
+                        command.Parameters.AddWithValue("@UserID", UserID.Text.Split('-')[0].Trim());
                     }
                     else
                     {
@@ -99,6 +99,7 @@ namespace TechHouse
         {
             LoadOrderUser();
             LoadPayMethod();
+            LoadOrderStatus();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -140,6 +141,17 @@ namespace TechHouse
             PaymentMethod.Items.Add("Debit Card");
             PaymentMethod.Items.Add("Paypal");
             PaymentMethod.Items.Add("Cash");
+        }
+
+        private void LoadOrderStatus()
+        {
+            Status.Items.Clear();
+            Status.Items.Add("Pending");
+            Status.Items.Add("Processing");
+            Status.Items.Add("Shipped");
+            Status.Items.Add("Delivered");
+            Status.Items.Add("Cancelled");
+
         }
 
         private void Cancel_Click(object sender, EventArgs e)

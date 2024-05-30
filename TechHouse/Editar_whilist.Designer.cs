@@ -152,6 +152,7 @@
             Controls.Add(label41);
             Controls.Add(textBox30);
             Name = "Editar_whilist";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Editar_whilist";
             Load += Editar_whilist_Load;
             ResumeLayout(false);

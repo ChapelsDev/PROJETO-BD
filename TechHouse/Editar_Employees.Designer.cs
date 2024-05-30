@@ -201,6 +201,7 @@
             Controls.Add(LN_Employee);
             Controls.Add(FN_Employee);
             Name = "Editar_Employees";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Editar_Employees";
             Load += LoadEmployees;
             ResumeLayout(false);
