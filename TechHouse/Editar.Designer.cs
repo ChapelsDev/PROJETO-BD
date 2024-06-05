@@ -221,6 +221,7 @@
             Controls.Add(label1);
             Controls.Add(label6);
             Name = "Editar";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Editar";
             Load += Editar_Load_1;
             ResumeLayout(false);

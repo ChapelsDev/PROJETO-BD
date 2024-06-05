@@ -21,7 +21,7 @@ namespace TechHouse
         public Editar_Order()
         {
             InitializeComponent();
-            TextBoxes = new List<System.Windows.Forms.TextBox> { OrderID, Status, ShippingAddress};
+            TextBoxes = new List<System.Windows.Forms.TextBox> { OrderID, ShippingAddress };
         }
         private void Save_Click(object sender, EventArgs e)
         {
@@ -64,11 +64,20 @@ namespace TechHouse
 
                     if (!(UserID.Text == ""))
                     {
-                        command.Parameters.AddWithValue("@UserID", UserID.Text);
+                        command.Parameters.AddWithValue("@UserID", UserID.Text.Split('-')[0].Trim());
                     }
                     else
                     {
                         MessageBox.Show("Please enter a valid UserID");
+                        i++;
+                    }
+                    if (!(PaymentMethod.Text == ""))
+                    {
+                        command.Parameters.AddWithValue("@PaymentMethod", PaymentMethod.Text);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter a valid Payment Method");
                         i++;
                     }
 
@@ -89,6 +98,8 @@ namespace TechHouse
         private void LoadOrder(object sender, EventArgs e)
         {
             LoadOrderUser();
+            LoadPayMethod();
+            LoadOrderStatus();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -122,6 +133,30 @@ namespace TechHouse
                     }
                 }
             }
+        }
+        private void LoadPayMethod()
+        {
+            PaymentMethod.Items.Clear();
+            PaymentMethod.Items.Add("Credit Card");
+            PaymentMethod.Items.Add("Debit Card");
+            PaymentMethod.Items.Add("Paypal");
+            PaymentMethod.Items.Add("Cash");
+        }
+
+        private void LoadOrderStatus()
+        {
+            Status.Items.Clear();
+            Status.Items.Add("Pending");
+            Status.Items.Add("Processing");
+            Status.Items.Add("Shipped");
+            Status.Items.Add("Delivered");
+            Status.Items.Add("Cancelled");
+
+        }
+
+        private void Cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

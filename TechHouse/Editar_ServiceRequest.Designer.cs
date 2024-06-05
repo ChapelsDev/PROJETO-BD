@@ -35,13 +35,13 @@
             label29 = new Label();
             label30 = new Label();
             label31 = new Label();
-            EID = new TextBox();
-            Status = new TextBox();
-            UID = new TextBox();
             Description = new TextBox();
             Save = new Button();
             Cancel = new Button();
             dateTimePicker1 = new DateTimePicker();
+            UserID = new ComboBox();
+            EmployeeID = new ComboBox();
+            Status = new ComboBox();
             SuspendLayout();
             // 
             // label10
@@ -105,27 +105,6 @@
             label31.TabIndex = 89;
             label31.Text = "Description";
             // 
-            // EID
-            // 
-            EID.Location = new Point(153, 142);
-            EID.Name = "EID";
-            EID.Size = new Size(199, 23);
-            EID.TabIndex = 88;
-            // 
-            // Status
-            // 
-            Status.Location = new Point(153, 84);
-            Status.Name = "Status";
-            Status.Size = new Size(199, 23);
-            Status.TabIndex = 86;
-            // 
-            // UID
-            // 
-            UID.Location = new Point(153, 113);
-            UID.Name = "UID";
-            UID.Size = new Size(199, 23);
-            UID.TabIndex = 85;
-            // 
             // Description
             // 
             Description.Location = new Point(153, 55);
@@ -151,6 +130,7 @@
             Cancel.TabIndex = 97;
             Cancel.Text = "Cancel";
             Cancel.UseVisualStyleBackColor = true;
+            Cancel.Click += Cancel_Click;
             // 
             // dateTimePicker1
             // 
@@ -159,11 +139,38 @@
             dateTimePicker1.Size = new Size(200, 23);
             dateTimePicker1.TabIndex = 98;
             // 
+            // UserID
+            // 
+            UserID.FormattingEnabled = true;
+            UserID.Location = new Point(153, 113);
+            UserID.Name = "UserID";
+            UserID.Size = new Size(199, 23);
+            UserID.TabIndex = 99;
+            // 
+            // EmployeeID
+            // 
+            EmployeeID.FormattingEnabled = true;
+            EmployeeID.Location = new Point(153, 142);
+            EmployeeID.Name = "EmployeeID";
+            EmployeeID.Size = new Size(200, 23);
+            EmployeeID.TabIndex = 100;
+            // 
+            // Status
+            // 
+            Status.FormattingEnabled = true;
+            Status.Location = new Point(153, 84);
+            Status.Name = "Status";
+            Status.Size = new Size(199, 23);
+            Status.TabIndex = 101;
+            // 
             // Editar_ServiceRequest
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(444, 310);
+            Controls.Add(Status);
+            Controls.Add(EmployeeID);
+            Controls.Add(UserID);
             Controls.Add(dateTimePicker1);
             Controls.Add(Cancel);
             Controls.Add(Save);
@@ -174,12 +181,11 @@
             Controls.Add(label29);
             Controls.Add(label30);
             Controls.Add(label31);
-            Controls.Add(EID);
-            Controls.Add(Status);
-            Controls.Add(UID);
             Controls.Add(Description);
             Name = "Editar_ServiceRequest";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Editar_ServiceRequest";
+            Load += Editar_ServiceRequest_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -193,12 +199,12 @@
         private Label label29;
         private Label label30;
         private Label label31;
-        public TextBox EID;
-        public TextBox Status;
-        public TextBox UID;
         public TextBox Description;
         private Button Save;
         private Button Cancel;
         public DateTimePicker dateTimePicker1;
+        public ComboBox UserID;
+        public ComboBox EmployeeID;
+        public ComboBox Status;
     }
 }
