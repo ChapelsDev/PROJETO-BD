@@ -20,7 +20,7 @@ namespace TechHouse
 
         }
 
-        private void button33_Click_1(object sender, EventArgs e) //logica para quando clica no botão de editar
+        private void button33_Click_1(object sender, EventArgs e) //logica para quando clica no botï¿½o de editar
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
@@ -46,7 +46,7 @@ namespace TechHouse
 
         }
 
-        private void button34_Click_1(object sender, EventArgs e) //logica para quando clica no botão de editar
+        private void button34_Click_1(object sender, EventArgs e) //logica para quando clica no botï¿½o de editar
         {
             if (dataGridView2.SelectedRows.Count > 0)
             {
@@ -74,7 +74,7 @@ namespace TechHouse
 
         }
 
-        private void button35_Click_1(object sender, EventArgs e) //logica para quando clica no botão de editar
+        private void button35_Click_1(object sender, EventArgs e) //logica para quando clica no botï¿½o de editar
         {
             if (dataGridView3.SelectedRows.Count > 0)
             {
@@ -110,7 +110,7 @@ namespace TechHouse
             }
         }
 
-        private void button36_Click_1(object sender, EventArgs e) //logica para quando clica no botão editar
+        private void button36_Click_1(object sender, EventArgs e) //logica para quando clica no botï¿½o editar
         {
             if (dataGridView4.SelectedRows.Count > 0)
             {
@@ -125,7 +125,7 @@ namespace TechHouse
                 // Fill the TextBoxes in the Edit form with the values of the selected row
                 for (int i = 0; i < dataGridView4.Columns.Count; i++)
                 {
-                    if (i == 5) { continue; } //skip the sixth column porque não é textbox
+                    if (i == 5) { continue; } //skip the sixth column porque nï¿½o ï¿½ textbox
                     Edi4.TextBoxes[textBoxIndex].Text = dataGridView4.SelectedRows[0].Cells[i].Value.ToString();
                     textBoxIndex++;
                 }
@@ -138,7 +138,7 @@ namespace TechHouse
             }
         }
 
-        private void button37_Click_1(object sender, EventArgs e) //logica para quando clica no botão editar
+        private void button37_Click_1(object sender, EventArgs e) //logica para quando clica no botï¿½o editar
         {
             if (dataGridView5.SelectedRows.Count > 0)
             {
@@ -153,7 +153,7 @@ namespace TechHouse
                 // Fill the TextBoxes in the Edit form with the values of the selected row
                 for (int i = 0; i < dataGridView5.Columns.Count; i++)
                 {
-                    if (i == 1) { continue; } //skip the second column porque não é textbox
+                    if (i == 1) { continue; } //skip the second column porque nï¿½o ï¿½ textbox
                     Edi5.TextBoxes[textBoxIndex].Text = dataGridView5.SelectedRows[0].Cells[i].Value.ToString();
                     textBoxIndex++;
                 }
@@ -166,7 +166,7 @@ namespace TechHouse
             }
         }
 
-        private void button38_Click_1(object sender, EventArgs e) //logica para quando clica no botão editar
+        private void button38_Click_1(object sender, EventArgs e) //logica para quando clica no botï¿½o editar
         {
             if (dataGridView6.SelectedRows.Count > 0)
             {
@@ -181,7 +181,7 @@ namespace TechHouse
                 // Fill the TextBoxes in the Edit form with the values of the selected row
                 for (int i = 0; i < dataGridView6.Columns.Count; i++)
                 {
-                    if (i == 3) { continue; } //skip the fourth column porque não é textbox
+                    if (i == 3) { continue; } //skip the fourth column porque nï¿½o ï¿½ textbox
                     Edi6.TextBoxes[textBoxIndex].Text = dataGridView6.SelectedRows[0].Cells[i].Value.ToString();
                     textBoxIndex++;
                 }
@@ -194,7 +194,7 @@ namespace TechHouse
             }
         }
 
-        private void button39_Click_1(object sender, EventArgs e) //logica para quando clica no botão editar
+        private void button39_Click_1(object sender, EventArgs e) //logica para quando clica no botï¿½o editar
         {
             if (dataGridView7.SelectedRows.Count > 0)
             {
@@ -209,7 +209,7 @@ namespace TechHouse
                 // Fill the TextBoxes in the Edit form with the values of the selected row
                 for (int i = 0; i < dataGridView7.Columns.Count; i++)
                 {
-                    if (i == 4) { continue; } //skip the fifth column porque não é textbox
+                    if (i == 4) { continue; } //skip the fifth column porque nï¿½o ï¿½ textbox
                     Edi7.TextBoxes[textBoxIndex].Text = dataGridView7.SelectedRows[0].Cells[i].Value.ToString();
                     textBoxIndex++;
                 }
@@ -224,7 +224,7 @@ namespace TechHouse
 
         private void button40_Click_1(object sender, EventArgs e)
         {
-            if (dataGridView8.SelectedRows.Count > 0) //logica para quando clica no botão editar
+            if (dataGridView8.SelectedRows.Count > 0) //logica para quando clica no botï¿½o editar
             {
                 // Assume that the ID of the user is in the first column of the DataGridView
                 int selectedLogId = (int)dataGridView8.SelectedRows[0].Cells[0].Value;
@@ -237,7 +237,7 @@ namespace TechHouse
                 // Fill the TextBoxes in the Edit form with the values of the selected row
                 for (int i = 0; i < dataGridView8.Columns.Count; i++)
                 {
-                    if (i == 2) { continue; } //skip the second column porque não é textbox
+                    if (i == 2) { continue; } //skip the second column porque nï¿½o ï¿½ textbox
                     Edi8.TextBoxes[textBoxIndex].Text = dataGridView8.SelectedRows[0].Cells[i].Value.ToString();
                     textBoxIndex++;
                 }
@@ -284,7 +284,7 @@ namespace TechHouse
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string connectionString = "Data Source=tcp:mednat.ieeta.pt\\SQLSERVER,8101;Persist Security Info=True;User ID=p1g10;Password=G10123!;Encrypt=False";
             string tableName;
 
             switch (tabControl1.SelectedIndex)
@@ -330,7 +330,7 @@ namespace TechHouse
 
         private void AddUser_Click(object sender, EventArgs e)
         {
-            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string connectionString = "Data Source=tcp:mednat.ieeta.pt\\SQLSERVER,8101;Persist Security Info=True;User ID=p1g10;Password=G10123!;Encrypt=False";
             string query = "INSERT INTO [TechHouse].[User] (FirstName, LastName, Email, PhoneNumber, Password, Address) VALUES (@FirstName, @LastName, @Email, @PhoneNumber, @Password, @Address)";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -354,7 +354,7 @@ namespace TechHouse
 
         private void DeleteUser_Click(object sender, EventArgs e)
         {
-            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string connectionString = "Data Source=tcp:mednat.ieeta.pt\\SQLSERVER,8101;Persist Security Info=True;User ID=p1g10;Password=G10123!;Encrypt=False";
             string query = "DELETE FROM [TechHouse].[User] WHERE UserID = @UserID";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -380,7 +380,7 @@ namespace TechHouse
 
         private void SearchUser_Click(object sender, EventArgs e)
         {
-            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string connectionString = "Data Source=tcp:mednat.ieeta.pt\\SQLSERVER,8101;Persist Security Info=True;User ID=p1g10;Password=G10123!;Encrypt=False";
             StringBuilder query = new StringBuilder("SELECT * FROM [TechHouse].[User] WHERE 1=1");
 
             if (!string.IsNullOrEmpty(Users_FName.Text))
@@ -432,7 +432,7 @@ namespace TechHouse
 
         private void AddProduct_Click(object sender, EventArgs e)
         {
-            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string connectionString = "Data Source=tcp:mednat.ieeta.pt\\SQLSERVER,8101;Persist Security Info=True;User ID=p1g10;Password=G10123!;Encrypt=False";
             string query = "INSERT INTO [TechHouse].[Products] (Name, Brand, Price, StockQty, CategoryID) VALUES (@Name, @Brand, @Price, @StockQty, @CategoryID)";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -474,7 +474,7 @@ namespace TechHouse
 
         private void LoadProductsCategory()
         {
-            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string connectionString = "Data Source=tcp:mednat.ieeta.pt\\SQLSERVER,8101;Persist Security Info=True;User ID=p1g10;Password=G10123!;Encrypt=False";
             string query = "SELECT CategoryID, Name FROM [TechHouse].[Category]";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -484,7 +484,7 @@ namespace TechHouse
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        // Limpe o ComboBox antes de preenchê-lo
+                        // Limpe o ComboBox antes de preenchï¿½-lo
                         Product_CategoryID.Items.Clear();
 
                         while (reader.Read())
@@ -499,9 +499,8 @@ namespace TechHouse
 
         private void DeleteProduct_Click(object sender, EventArgs e)
         {
-            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-            string query = "DELETE FROM [TechHouse].[Products] WHERE ProductID = @ProductID";
-
+            string query = "DELETE FROM [TechHouse].[Product] WHERE UserID = @ProductID";
+            string connectionString = "Data Source=tcp:mednat.ieeta.pt\\SQLSERVER,8101;Persist Security Info=True;User ID=p1g10;Password=G10123!;Encrypt=False";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
@@ -520,7 +519,7 @@ namespace TechHouse
 
         private void SearchProduct_Click(object sender, EventArgs e)
         {
-            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string connectionString = "Data Source=tcp:mednat.ieeta.pt\\SQLSERVER,8101;Persist Security Info=True;User ID=p1g10;Password=G10123!;Encrypt=False";
             StringBuilder query = new StringBuilder("SELECT * FROM [TechHouse].[Products] WHERE 1=1");
 
             if (!string.IsNullOrEmpty(Products_ProductName.Text))
@@ -569,7 +568,7 @@ namespace TechHouse
         //////////////////////////////////////////////////  ORDERS TAB PAGE  //////////////////////////////////////////////////
         private void AddOrder_Click(object sender, EventArgs e)
         {
-            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string connectionString = "Data Source=tcp:mednat.ieeta.pt\\SQLSERVER,8101;Persist Security Info=True;User ID=p1g10;Password=G10123!;Encrypt=False";
             string query = "INSERT INTO [TechHouse].[Orders] (OrderDate, Status, ShippingAddress, PaymentMethod, UserID) VALUES (@OrderDate, @Status, @ShippingAddress, @PaymentMethod, @UserID)";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -599,7 +598,7 @@ namespace TechHouse
 
         private void DeleteOrder_Click(object sender, EventArgs e)
         {
-            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string connectionString = "Data Source=tcp:mednat.ieeta.pt\\SQLSERVER,8101;Persist Security Info=True;User ID=p1g10;Password=G10123!;Encrypt=False";
             string query = "DELETE FROM [TechHouse].[Orders] WHERE OrderID = @OrderID";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -620,10 +619,9 @@ namespace TechHouse
 
         private void SearchOrder_Click(object sender, EventArgs e)
         {
-            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-            StringBuilder query = new StringBuilder("SELECT * FROM [TechHouse].[Orders] WHERE 1=1");
+            string connectionString = "Data Source=tcp:mednat.ieeta.pt\\SQLSERVER,8101;Persist Security Info=True;User ID=p1g10;Password=G10123!;Encrypt=False";
             string orderdateNotChanged = Order_OrderDate.Value.ToString();
-
+            StringBuilder query = new StringBuilder("SELECT * FROM [TechHouse].[Order] WHERE 1=1");
             if ((!string.IsNullOrEmpty(Order_OrderDate.Value.ToString())) && Order_OrderDate.Value.ToString() != orderdateNotChanged)
             {
                 string formattedDate = Order_OrderDate.Value.ToString("yyyy-MM-dd");
@@ -672,7 +670,7 @@ namespace TechHouse
 
         private void LoadOrderUser()
         {
-            string connectionString = "Server=tcp:tech-house.database.windows.net,1433;Initial Catalog=Tech House;Persist Security Info=False;User ID=user;Password=G101234!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string connectionString = "Data Source=tcp:mednat.ieeta.pt\\SQLSERVER,8101;Persist Security Info=True;User ID=p1g10;Password=G10123!;Encrypt=False";
             string query = "SELECT UserID,FirstName FROM [TechHouse].[User]";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -681,7 +679,7 @@ namespace TechHouse
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        // Limpe o ComboBox antes de preenchê-lo
+                        // Limpe o ComboBox antes de preenchï¿½-lo
                         Orders_UserID.Items.Clear();
 
                         while (reader.Read())

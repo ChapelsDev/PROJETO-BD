@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TechHouse")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+67dbb80f76e8072132cfb50477d4e1972706b5c5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e0b01592af7504a478165279d49c84c8bbfd940f")]
 [assembly: System.Reflection.AssemblyProductAttribute("TechHouse")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TechHouse")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
