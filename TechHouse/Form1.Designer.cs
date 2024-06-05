@@ -472,7 +472,7 @@
             DeleteProduct.TabIndex = 49;
             DeleteProduct.Text = "Delete Product";
             DeleteProduct.UseVisualStyleBackColor = true;
-            DeleteProduct.Click += DeleteProduct_Click;
+       
             // 
             // AddProduct
             // 
@@ -626,7 +626,7 @@
             SearchOrder.TabIndex = 70;
             SearchOrder.Text = "Search";
             SearchOrder.UseVisualStyleBackColor = true;
-            SearchOrder.Click += SearchOrder_Click;
+           
             // 
             // Order_OrderDate
             // 
