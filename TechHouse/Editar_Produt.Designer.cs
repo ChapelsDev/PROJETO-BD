@@ -181,6 +181,7 @@
             Controls.Add(Product_Brand);
             Controls.Add(ProductName);
             Name = "Editar_Produt";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Editar_Produt";
             Load += Editar_Produt_Load;
             ResumeLayout(false);

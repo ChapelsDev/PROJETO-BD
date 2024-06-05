@@ -94,7 +94,6 @@ namespace TechHouse
                     }
                     else
                     {
-                        Product_CategoryID.Text = TextBoxes[5].Text;
                         MessageBox.Show("Please enter a valid Category ID");
                         i++;
                     }

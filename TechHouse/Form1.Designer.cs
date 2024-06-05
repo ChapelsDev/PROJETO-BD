@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             tabControl1 = new TabControl();
             Users = new TabPage();
             button33 = new Button();
@@ -68,6 +69,7 @@
             Product_Brand = new TextBox();
             Products_ProductName = new TextBox();
             tabPage3 = new TabPage();
+            Order_Status = new ComboBox();
             Orders_UserID = new ComboBox();
             button35 = new Button();
             SearchOrder = new Button();
@@ -84,7 +86,6 @@
             label17 = new Label();
             label18 = new Label();
             Order_ShippAddr = new TextBox();
-            Order_Status = new TextBox();
             tabPage4 = new TabPage();
             button36 = new Button();
             Employ_EmpType = new ComboBox();
@@ -106,6 +107,8 @@
             LN_Employee = new TextBox();
             FN_Employee = new TextBox();
             tabPage5 = new TabPage();
+            Reviews_UID = new ComboBox();
+            Reviews_PID = new ComboBox();
             button37 = new Button();
             Reviews_Rating = new ComboBox();
             SearchReview = new Button();
@@ -118,10 +121,10 @@
             label12 = new Label();
             label19 = new Label();
             label20 = new Label();
-            Reviews_PID = new TextBox();
-            Reviews_UID = new TextBox();
             Reviews_Comment = new TextBox();
             tabPage6 = new TabPage();
+            WhishlistPID = new ComboBox();
+            Whishlist_UserID = new ComboBox();
             button38 = new Button();
             Wish_DAdd = new DateTimePicker();
             SearchWhish = new Button();
@@ -133,9 +136,9 @@
             label37 = new Label();
             label40 = new Label();
             label41 = new Label();
-            Whish_PID = new TextBox();
-            Whish_UID = new TextBox();
             tabPage7 = new TabPage();
+            Request_EID = new ComboBox();
+            Request_UID = new ComboBox();
             button39 = new Button();
             SearchRequest = new Button();
             Request_Status = new ComboBox();
@@ -150,22 +153,18 @@
             label29 = new Label();
             label30 = new Label();
             label31 = new Label();
-            Request_EID = new TextBox();
-            Request_UID = new TextBox();
             Request_Description = new TextBox();
             tabPage8 = new TabPage();
-            button40 = new Button();
+            Log_UID = new ComboBox();
             Logs_DT = new DateTimePicker();
             SearchLog = new Button();
             label32 = new Label();
             Logs_LogID = new TextBox();
             DeleteLog = new Button();
-            AddLog = new Button();
             dataGridView8 = new DataGridView();
             label33 = new Label();
             label34 = new Label();
             label36 = new Label();
-            Logs_UID = new TextBox();
             Logs_Action = new TextBox();
             tabControl1.SuspendLayout();
             Users.SuspendLayout();
@@ -290,6 +289,7 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = SystemColors.ActiveCaption;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(22, 77);
             dataGridView1.Name = "dataGridView1";
@@ -486,6 +486,7 @@
             // 
             // dataGridView2
             // 
+            dataGridView2.BackgroundColor = SystemColors.ActiveCaption;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Location = new Point(23, 98);
             dataGridView2.Name = "dataGridView2";
@@ -567,6 +568,7 @@
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(Order_Status);
             tabPage3.Controls.Add(Orders_UserID);
             tabPage3.Controls.Add(button35);
             tabPage3.Controls.Add(SearchOrder);
@@ -583,13 +585,20 @@
             tabPage3.Controls.Add(label17);
             tabPage3.Controls.Add(label18);
             tabPage3.Controls.Add(Order_ShippAddr);
-            tabPage3.Controls.Add(Order_Status);
             tabPage3.Location = new Point(4, 24);
             tabPage3.Name = "tabPage3";
             tabPage3.Size = new Size(1026, 591);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Orders";
             tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // Order_Status
+            // 
+            Order_Status.FormattingEnabled = true;
+            Order_Status.Location = new Point(462, 19);
+            Order_Status.Name = "Order_Status";
+            Order_Status.Size = new Size(164, 23);
+            Order_Status.TabIndex = 73;
             // 
             // Orders_UserID
             // 
@@ -625,6 +634,7 @@
             Order_OrderDate.Name = "Order_OrderDate";
             Order_OrderDate.Size = new Size(179, 23);
             Order_OrderDate.TabIndex = 69;
+            Order_OrderDate.ValueChanged += Order_OrderDate_ValueChanged;
             // 
             // Order_PayMethod
             // 
@@ -672,6 +682,7 @@
             // 
             // dataGridView3
             // 
+            dataGridView3.BackgroundColor = SystemColors.ActiveCaption;
             dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView3.Location = new Point(23, 93);
             dataGridView3.Name = "dataGridView3";
@@ -730,13 +741,6 @@
             Order_ShippAddr.Size = new Size(164, 23);
             Order_ShippAddr.TabIndex = 56;
             // 
-            // Order_Status
-            // 
-            Order_Status.Location = new Point(462, 21);
-            Order_Status.Name = "Order_Status";
-            Order_Status.Size = new Size(164, 23);
-            Order_Status.TabIndex = 53;
-            // 
             // tabPage4
             // 
             tabPage4.Controls.Add(button36);
@@ -791,6 +795,7 @@
             SearchEmployee.TabIndex = 52;
             SearchEmployee.Text = "Search";
             SearchEmployee.UseVisualStyleBackColor = true;
+            SearchEmployee.Click += SearchEmployee_Click;
             // 
             // label21
             // 
@@ -816,6 +821,7 @@
             DeleteEmployee.TabIndex = 49;
             DeleteEmployee.Text = "Delete Employee";
             DeleteEmployee.UseVisualStyleBackColor = true;
+            DeleteEmployee.Click += DeleteEmployee_Click;
             // 
             // AddEmployee
             // 
@@ -825,9 +831,11 @@
             AddEmployee.TabIndex = 47;
             AddEmployee.Text = "Add Employee";
             AddEmployee.UseVisualStyleBackColor = true;
+            AddEmployee.Click += AddEmployee_Click;
             // 
             // dataGridView4
             // 
+            dataGridView4.BackgroundColor = SystemColors.ActiveCaption;
             dataGridView4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView4.Location = new Point(23, 77);
             dataGridView4.Name = "dataGridView4";
@@ -925,6 +933,8 @@
             // 
             // tabPage5
             // 
+            tabPage5.Controls.Add(Reviews_UID);
+            tabPage5.Controls.Add(Reviews_PID);
             tabPage5.Controls.Add(button37);
             tabPage5.Controls.Add(Reviews_Rating);
             tabPage5.Controls.Add(SearchReview);
@@ -937,8 +947,6 @@
             tabPage5.Controls.Add(label12);
             tabPage5.Controls.Add(label19);
             tabPage5.Controls.Add(label20);
-            tabPage5.Controls.Add(Reviews_PID);
-            tabPage5.Controls.Add(Reviews_UID);
             tabPage5.Controls.Add(Reviews_Comment);
             tabPage5.Location = new Point(4, 24);
             tabPage5.Name = "tabPage5";
@@ -946,6 +954,22 @@
             tabPage5.TabIndex = 4;
             tabPage5.Text = "Reviews";
             tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // Reviews_UID
+            // 
+            Reviews_UID.FormattingEnabled = true;
+            Reviews_UID.Location = new Point(749, 49);
+            Reviews_UID.Name = "Reviews_UID";
+            Reviews_UID.Size = new Size(164, 23);
+            Reviews_UID.TabIndex = 88;
+            // 
+            // Reviews_PID
+            // 
+            Reviews_PID.FormattingEnabled = true;
+            Reviews_PID.Location = new Point(749, 18);
+            Reviews_PID.Name = "Reviews_PID";
+            Reviews_PID.Size = new Size(164, 23);
+            Reviews_PID.TabIndex = 87;
             // 
             // button37
             // 
@@ -973,6 +997,7 @@
             SearchReview.TabIndex = 84;
             SearchReview.Text = "Search";
             SearchReview.UseVisualStyleBackColor = true;
+            SearchReview.Click += SearchReview_Click;
             // 
             // label8
             // 
@@ -998,6 +1023,7 @@
             DeleteReview.TabIndex = 81;
             DeleteReview.Text = "Delete Review";
             DeleteReview.UseVisualStyleBackColor = true;
+            DeleteReview.Click += DeleteReview_Click;
             // 
             // AddReview
             // 
@@ -1007,9 +1033,11 @@
             AddReview.TabIndex = 79;
             AddReview.Text = "Add Review";
             AddReview.UseVisualStyleBackColor = true;
+            AddReview.Click += AddReview_Click;
             // 
             // dataGridView5
             // 
+            dataGridView5.BackgroundColor = SystemColors.ActiveCaption;
             dataGridView5.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView5.Location = new Point(23, 91);
             dataGridView5.Name = "dataGridView5";
@@ -1052,20 +1080,6 @@
             label20.TabIndex = 73;
             label20.Text = "Rating";
             // 
-            // Reviews_PID
-            // 
-            Reviews_PID.Location = new Point(755, 18);
-            Reviews_PID.Name = "Reviews_PID";
-            Reviews_PID.Size = new Size(164, 23);
-            Reviews_PID.TabIndex = 71;
-            // 
-            // Reviews_UID
-            // 
-            Reviews_UID.Location = new Point(755, 49);
-            Reviews_UID.Name = "Reviews_UID";
-            Reviews_UID.Size = new Size(164, 23);
-            Reviews_UID.TabIndex = 70;
-            // 
             // Reviews_Comment
             // 
             Reviews_Comment.Location = new Point(456, 33);
@@ -1075,6 +1089,8 @@
             // 
             // tabPage6
             // 
+            tabPage6.Controls.Add(WhishlistPID);
+            tabPage6.Controls.Add(Whishlist_UserID);
             tabPage6.Controls.Add(button38);
             tabPage6.Controls.Add(Wish_DAdd);
             tabPage6.Controls.Add(SearchWhish);
@@ -1086,14 +1102,28 @@
             tabPage6.Controls.Add(label37);
             tabPage6.Controls.Add(label40);
             tabPage6.Controls.Add(label41);
-            tabPage6.Controls.Add(Whish_PID);
-            tabPage6.Controls.Add(Whish_UID);
             tabPage6.Location = new Point(4, 24);
             tabPage6.Name = "tabPage6";
             tabPage6.Size = new Size(1026, 591);
             tabPage6.TabIndex = 5;
-            tabPage6.Text = "WishList";
+            tabPage6.Text = "Whishlist";
             tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // WhishlistPID
+            // 
+            WhishlistPID.FormattingEnabled = true;
+            WhishlistPID.Location = new Point(840, 19);
+            WhishlistPID.Name = "WhishlistPID";
+            WhishlistPID.Size = new Size(164, 23);
+            WhishlistPID.TabIndex = 56;
+            // 
+            // Whishlist_UserID
+            // 
+            Whishlist_UserID.FormattingEnabled = true;
+            Whishlist_UserID.Location = new Point(604, 19);
+            Whishlist_UserID.Name = "Whishlist_UserID";
+            Whishlist_UserID.Size = new Size(164, 23);
+            Whishlist_UserID.TabIndex = 55;
             // 
             // button38
             // 
@@ -1111,6 +1141,7 @@
             Wish_DAdd.Name = "Wish_DAdd";
             Wish_DAdd.Size = new Size(175, 23);
             Wish_DAdd.TabIndex = 53;
+            Wish_DAdd.ValueChanged += Wish_DAdd_ValueChanged;
             // 
             // SearchWhish
             // 
@@ -1120,6 +1151,7 @@
             SearchWhish.TabIndex = 52;
             SearchWhish.Text = "Search";
             SearchWhish.UseVisualStyleBackColor = true;
+            SearchWhish.Click += SearchWhish_Click;
             // 
             // label35
             // 
@@ -1145,6 +1177,7 @@
             DeleteWhish.TabIndex = 49;
             DeleteWhish.Text = "Delete Wishlist";
             DeleteWhish.UseVisualStyleBackColor = true;
+            DeleteWhish.Click += DeleteWhish_Click;
             // 
             // AddWhish
             // 
@@ -1154,9 +1187,11 @@
             AddWhish.TabIndex = 47;
             AddWhish.Text = "Add Whishlist";
             AddWhish.UseVisualStyleBackColor = true;
+            AddWhish.Click += AddWhish_Click;
             // 
             // dataGridView6
             // 
+            dataGridView6.BackgroundColor = SystemColors.ActiveCaption;
             dataGridView6.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView6.Location = new Point(23, 60);
             dataGridView6.Name = "dataGridView6";
@@ -1190,23 +1225,10 @@
             label41.TabIndex = 40;
             label41.Text = "WhishlistID";
             // 
-            // Whish_PID
-            // 
-            Whish_PID.Location = new Point(840, 19);
-            Whish_PID.Name = "Whish_PID";
-            Whish_PID.PasswordChar = '*';
-            Whish_PID.Size = new Size(164, 23);
-            Whish_PID.TabIndex = 39;
-            // 
-            // Whish_UID
-            // 
-            Whish_UID.Location = new Point(604, 19);
-            Whish_UID.Name = "Whish_UID";
-            Whish_UID.Size = new Size(164, 23);
-            Whish_UID.TabIndex = 34;
-            // 
             // tabPage7
             // 
+            tabPage7.Controls.Add(Request_EID);
+            tabPage7.Controls.Add(Request_UID);
             tabPage7.Controls.Add(button39);
             tabPage7.Controls.Add(SearchRequest);
             tabPage7.Controls.Add(Request_Status);
@@ -1221,8 +1243,6 @@
             tabPage7.Controls.Add(label29);
             tabPage7.Controls.Add(label30);
             tabPage7.Controls.Add(label31);
-            tabPage7.Controls.Add(Request_EID);
-            tabPage7.Controls.Add(Request_UID);
             tabPage7.Controls.Add(Request_Description);
             tabPage7.Location = new Point(4, 24);
             tabPage7.Name = "tabPage7";
@@ -1230,6 +1250,22 @@
             tabPage7.TabIndex = 6;
             tabPage7.Text = "ServicesRequest";
             tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // Request_EID
+            // 
+            Request_EID.FormattingEnabled = true;
+            Request_EID.Location = new Point(455, 47);
+            Request_EID.Name = "Request_EID";
+            Request_EID.Size = new Size(164, 23);
+            Request_EID.TabIndex = 89;
+            // 
+            // Request_UID
+            // 
+            Request_UID.FormattingEnabled = true;
+            Request_UID.Location = new Point(455, 18);
+            Request_UID.Name = "Request_UID";
+            Request_UID.Size = new Size(164, 23);
+            Request_UID.TabIndex = 88;
             // 
             // button39
             // 
@@ -1249,6 +1285,7 @@
             SearchRequest.TabIndex = 86;
             SearchRequest.Text = "Search";
             SearchRequest.UseVisualStyleBackColor = true;
+            SearchRequest.Click += SearchRequest_Click;
             // 
             // Request_Status
             // 
@@ -1264,6 +1301,7 @@
             Request_RD.Name = "Request_RD";
             Request_RD.Size = new Size(176, 23);
             Request_RD.TabIndex = 84;
+            Request_RD.ValueChanged += Request_RD_ValueChanged;
             // 
             // label10
             // 
@@ -1289,6 +1327,7 @@
             DeleteRequest.TabIndex = 81;
             DeleteRequest.Text = "Delete Request";
             DeleteRequest.UseVisualStyleBackColor = true;
+            DeleteRequest.Click += DeleteRequest_Click;
             // 
             // AddRequest
             // 
@@ -1298,9 +1337,11 @@
             AddRequest.TabIndex = 79;
             AddRequest.Text = "Add Request";
             AddRequest.UseVisualStyleBackColor = true;
+            AddRequest.Click += AddRequest_Click;
             // 
             // dataGridView7
             // 
+            dataGridView7.BackgroundColor = SystemColors.ActiveCaption;
             dataGridView7.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView7.Location = new Point(23, 91);
             dataGridView7.Name = "dataGridView7";
@@ -1352,20 +1393,6 @@
             label31.TabIndex = 73;
             label31.Text = "Description";
             // 
-            // Request_EID
-            // 
-            Request_EID.Location = new Point(455, 47);
-            Request_EID.Name = "Request_EID";
-            Request_EID.Size = new Size(164, 23);
-            Request_EID.TabIndex = 72;
-            // 
-            // Request_UID
-            // 
-            Request_UID.Location = new Point(455, 18);
-            Request_UID.Name = "Request_UID";
-            Request_UID.Size = new Size(164, 23);
-            Request_UID.TabIndex = 69;
-            // 
             // Request_Description
             // 
             Request_Description.Location = new Point(174, 50);
@@ -1375,18 +1402,16 @@
             // 
             // tabPage8
             // 
-            tabPage8.Controls.Add(button40);
+            tabPage8.Controls.Add(Log_UID);
             tabPage8.Controls.Add(Logs_DT);
             tabPage8.Controls.Add(SearchLog);
             tabPage8.Controls.Add(label32);
             tabPage8.Controls.Add(Logs_LogID);
             tabPage8.Controls.Add(DeleteLog);
-            tabPage8.Controls.Add(AddLog);
             tabPage8.Controls.Add(dataGridView8);
             tabPage8.Controls.Add(label33);
             tabPage8.Controls.Add(label34);
             tabPage8.Controls.Add(label36);
-            tabPage8.Controls.Add(Logs_UID);
             tabPage8.Controls.Add(Logs_Action);
             tabPage8.Location = new Point(4, 24);
             tabPage8.Name = "tabPage8";
@@ -1395,15 +1420,13 @@
             tabPage8.Text = "AccessLogs";
             tabPage8.UseVisualStyleBackColor = true;
             // 
-            // button40
+            // Log_UID
             // 
-            button40.Location = new Point(240, 554);
-            button40.Name = "button40";
-            button40.Size = new Size(94, 23);
-            button40.TabIndex = 66;
-            button40.Text = "Edit Logs";
-            button40.UseVisualStyleBackColor = true;
-            button40.Click += button40_Click_1;
+            Log_UID.FormattingEnabled = true;
+            Log_UID.Location = new Point(840, 15);
+            Log_UID.Name = "Log_UID";
+            Log_UID.Size = new Size(164, 23);
+            Log_UID.TabIndex = 67;
             // 
             // Logs_DT
             // 
@@ -1411,6 +1434,8 @@
             Logs_DT.Name = "Logs_DT";
             Logs_DT.Size = new Size(200, 23);
             Logs_DT.TabIndex = 65;
+            Logs_DT.Value = new DateTime(2024, 5, 30, 18, 3, 46, 0);
+            Logs_DT.ValueChanged += Logs_DT_ValueChanged;
             // 
             // SearchLog
             // 
@@ -1440,24 +1465,17 @@
             // 
             // DeleteLog
             // 
-            DeleteLog.Location = new Point(123, 554);
+            DeleteLog.Location = new Point(23, 554);
             DeleteLog.Name = "DeleteLog";
             DeleteLog.Size = new Size(94, 23);
             DeleteLog.TabIndex = 61;
             DeleteLog.Text = "Delete Log";
             DeleteLog.UseVisualStyleBackColor = true;
-            // 
-            // AddLog
-            // 
-            AddLog.Location = new Point(23, 554);
-            AddLog.Name = "AddLog";
-            AddLog.Size = new Size(84, 23);
-            AddLog.TabIndex = 59;
-            AddLog.Text = "Add Log";
-            AddLog.UseVisualStyleBackColor = true;
+            DeleteLog.Click += DeleteLog_Click;
             // 
             // dataGridView8
             // 
+            dataGridView8.BackgroundColor = SystemColors.ActiveCaption;
             dataGridView8.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView8.Location = new Point(23, 56);
             dataGridView8.Name = "dataGridView8";
@@ -1491,14 +1509,6 @@
             label36.TabIndex = 55;
             label36.Text = "Log ID";
             // 
-            // Logs_UID
-            // 
-            Logs_UID.Location = new Point(840, 15);
-            Logs_UID.Name = "Logs_UID";
-            Logs_UID.PasswordChar = '*';
-            Logs_UID.Size = new Size(164, 23);
-            Logs_UID.TabIndex = 54;
-            // 
             // Logs_Action
             // 
             Logs_Action.Location = new Point(317, 15);
@@ -1510,10 +1520,13 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ControlLightLight;
             ClientSize = new Size(1034, 619);
             Controls.Add(tabControl1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "Form1";
-            Text = "Form1";
+            Text = "TechHouse";
             Activated += Form1_Load;
             Load += Form1_Load;
             tabControl1.ResumeLayout(false);
@@ -1610,8 +1623,6 @@
         private Label label37;
         private Label label40;
         private Label label41;
-        private TextBox Whish_PID;
-        private TextBox Whish_UID;
         private Label label11;
         private TextBox Order_OrderID;
         private Button DeleteOrder;
@@ -1623,7 +1634,6 @@
         private Label label17;
         private Label label18;
         private TextBox Order_ShippAddr;
-        private TextBox Order_Status;
         private Label label8;
         private TextBox Reviews_RID;
         private Button DeleteReview;
@@ -1633,8 +1643,6 @@
         private Label label12;
         private Label label19;
         private Label label20;
-        private TextBox Reviews_PID;
-        private TextBox Reviews_UID;
         private TextBox Reviews_Comment;
         private Label label10;
         private TextBox Request_RID;
@@ -1646,18 +1654,14 @@
         private Label label29;
         private Label label30;
         private Label label31;
-        private TextBox Request_EID;
-        private TextBox Request_UID;
         private TextBox Request_Description;
         private Label label32;
         private TextBox Logs_LogID;
         private Button DeleteLog;
-        private Button AddLog;
         private DataGridView dataGridView8;
         private Label label33;
         private Label label34;
         private Label label36;
-        private TextBox Logs_UID;
         private TextBox Logs_Action;
         private ComboBox Order_PayMethod;
         private Button SearchUser;
@@ -1682,8 +1686,15 @@
         private Button button37;
         private Button button38;
         private Button button39;
-        private Button button40;
         private ComboBox Product_CategoryID;
         private ComboBox Orders_UserID;
+        private ComboBox Reviews_UID;
+        private ComboBox Reviews_PID;
+        private ComboBox WhishlistPID;
+        private ComboBox Whishlist_UserID;
+        private ComboBox Request_EID;
+        private ComboBox Request_UID;
+        private ComboBox Log_UID;
+        private ComboBox Order_Status;
     }
 }

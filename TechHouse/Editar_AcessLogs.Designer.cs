@@ -142,6 +142,7 @@
             Controls.Add(LogID);
             Controls.Add(LogAction);
             Name = "Editar_AcessLogs";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Editar_AcessLogs";
             ResumeLayout(false);
             PerformLayout();
