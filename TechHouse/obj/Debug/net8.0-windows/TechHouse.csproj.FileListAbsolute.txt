@@ -56,6 +56,7 @@ D:\Universidade\Ano 3\PROJETO-BD\TechHouse\obj\Debug\net8.0-windows\TechHouse.pd
 D:\Universidade\Ano 3\PROJETO-BD\TechHouse\obj\Debug\net8.0-windows\TechHouse.genruntimeconfig.cache
 D:\Universidade\Ano 3\PROJETO-BD\TechHouse\obj\Debug\net8.0-windows\ref\TechHouse.dll
 <<<<<<< HEAD
+<<<<<<< HEAD
 D:\Disco-1TB-Dados\BD\PROJETO-BD\TechHouse\bin\Debug\net8.0-windows\TechHouse.exe
 D:\Disco-1TB-Dados\BD\PROJETO-BD\TechHouse\bin\Debug\net8.0-windows\TechHouse.deps.json
 D:\Disco-1TB-Dados\BD\PROJETO-BD\TechHouse\bin\Debug\net8.0-windows\TechHouse.runtimeconfig.json
@@ -90,6 +91,8 @@ D:\Disco-1TB-Dados\BD\PROJETO-BD\TechHouse\obj\Debug\net8.0-windows\TechHouse.pd
 D:\Disco-1TB-Dados\BD\PROJETO-BD\TechHouse\obj\Debug\net8.0-windows\TechHouse.genruntimeconfig.cache
 D:\Disco-1TB-Dados\BD\PROJETO-BD\TechHouse\obj\Debug\net8.0-windows\ref\TechHouse.dll
 =======
+=======
+>>>>>>> cf45a63a8351055a1ee9994ff3f9c6fd040b1cb8
 C:\Users\Marcelo Lino Junior\Desktop\BaseDados1\PROJETO-BD\TechHouse\obj\Debug\net8.0-windows\TechHouse.csproj.AssemblyReference.cache
 C:\Users\Marcelo Lino Junior\Desktop\BaseDados1\PROJETO-BD\TechHouse\obj\Debug\net8.0-windows\TechHouse.Editar.resources
 C:\Users\Marcelo Lino Junior\Desktop\BaseDados1\PROJETO-BD\TechHouse\obj\Debug\net8.0-windows\TechHouse.Editar_AcessLogs.resources
@@ -123,4 +126,7 @@ C:\Users\Marcelo Lino Junior\Desktop\BaseDados1\PROJETO-BD\TechHouse\bin\Debug\n
 C:\Users\Marcelo Lino Junior\Desktop\BaseDados1\PROJETO-BD\TechHouse\bin\Debug\net8.0-windows\TechHouse.pdb
 C:\Users\Marcelo Lino Junior\Desktop\BaseDados1\PROJETO-BD\TechHouse\obj\Debug\net8.0-windows\TechHouse.genruntimeconfig.cache
 C:\Users\Marcelo Lino Junior\Desktop\BaseDados1\PROJETO-BD\TechHouse\obj\Debug\net8.0-windows\ref\TechHouse.dll
+<<<<<<< HEAD
 >>>>>>> 974e7f5 (....)
+=======
+>>>>>>> cf45a63a8351055a1ee9994ff3f9c6fd040b1cb8
