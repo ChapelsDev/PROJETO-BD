@@ -1,41 +1,70 @@
---Trigers suppliee
-Create trigger TechHouse.Suppi on TechHouse.Supplier
-after UPDATE , insert 
-as 
-    if EXISTS(select * from TechHouse.Technician where EmployeeID in(SELECT EmployeeID from instead ))
-            OR EXISTS(select * FROM TechHouse.Worker WHERE EmployeeID in (SELECT EmployeeID from instead))
-    BEGIN 
-        RAISERROR('Conflito de Dados' , 16 , 1)
-        ROLLBACK TRAN
+CREATE TRIGGER TechHouse.Suppi
+ON TechHouse.Supplier
+AFTER UPDATE, INSERT
+AS
+BEGIN
+    IF EXISTS (
+        SELECT * 
+        FROM TechHouse.Technician 
+        WHERE EmployeeID IN (SELECT EmployeeID FROM inserted)
+    )
+    OR EXISTS (
+        SELECT * 
+        FROM TechHouse.Worker 
+        WHERE EmployeeID IN (SELECT EmployeeID FROM inserted)
+    )
+    BEGIN
+        RAISERROR('Conflito de Dados', 16, 1);
+        ROLLBACK TRANSACTION;
     END
-go
+END
+GO
 
---Triggers technician
-Create trigger TechHouse.Technicn on TechHouse.Technician
-after UPDATE , insert 
-as 
-    if EXISTS(select * from TechHouse.Supplier where EmployeeID in(SELECT EmployeeID from instead ))
-            OR EXISTS(select * FROM TechHouse.Worker WHERE EmployeeID in (SELECT EmployeeID from instead))
-    BEGIN 
-        RAISERROR('Conflito de Dados' , 16 , 1)
-        ROLLBACK TRAN
+CREATE TRIGGER TechHouse.Technicn
+ON TechHouse.Technician
+AFTER UPDATE, INSERT
+AS
+BEGIN
+    IF EXISTS (
+        SELECT * 
+        FROM TechHouse.Supplier 
+        WHERE EmployeeID IN (SELECT EmployeeID FROM inserted)
+    )
+    OR EXISTS (
+        SELECT * 
+        FROM TechHouse.Worker 
+        WHERE EmployeeID IN (SELECT EmployeeID FROM inserted)
+    )
+    BEGIN
+        RAISERROR('Conflito de Dados', 16, 1);
+        ROLLBACK TRANSACTION;
     END
-go
+END
+GO
 
---Triggers Worker
-Create trigger [TechHouse].[Workr] on [TechHouse].[Worker]
-after UPDATE , insert 
-as 
-    if EXISTS(select * from TechHouse.Supplier where EmployeeID in(SELECT EmployeeID from instead ))
-            OR EXISTS(select * FROM TechHouse.Worke WHERE EmployeeID in (SELECT EmployeeID from instead))
-    BEGIN 
-        RAISERROR('Conflito de Dados' , 16 , 1)
-        ROLLBACK TRAN
+CREATE TRIGGER TechHouse.Workr
+ON TechHouse.Worker
+AFTER UPDATE, INSERT
+AS
+BEGIN
+    IF EXISTS (
+        SELECT * 
+        FROM TechHouse.Supplier 
+        WHERE EmployeeID IN (SELECT EmployeeID FROM inserted)
+    )
+    OR EXISTS (
+        SELECT * 
+        FROM TechHouse.Technician 
+        WHERE EmployeeID IN (SELECT EmployeeID FROM inserted)
+    )
+    BEGIN
+        RAISERROR('Conflito de Dados', 16, 1);
+        ROLLBACK TRANSACTION;
     END
-go
+END
+GO
 
 -- Triggers EmployeeTypes
-
 CREATE TRIGGER TechHouse.EmployeeType_Disjoint
 ON TechHouse.EmployeeType
 AFTER UPDATE, INSERT
@@ -62,3 +91,5 @@ BEGIN
     END
 END
 GO
+
+
